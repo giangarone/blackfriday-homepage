@@ -1,0 +1,45 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "css/components.css"
+        ],
+        "createdAt": "2026-11-17T22:52:58.471Z",
+        "reason": "Codex: Arial is the existing Webflow base stylesheet body default. The hero declares its own font family."
+      },
+      {
+        "rule": "overused-font",
+        "value": "helvetica",
+        "files": [
+          "css/components.css"
+        ],
+        "createdAt": "2026-11-17T22:53:02.757Z",
+        "reason": "Codex: Helvetica is an existing fallback in the Webflow lightbox component font stack."
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          "css/marketstream-showcase.css"
+        ],
+        "createdAt": "2026-11-18T14:39:26.813Z",
+        "reason": "Codex: Match the existing homepage typography; its section headings and body copy already use Plus Jakarta Sans in css/v1-7.css."
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          "marketstream-lifetime.html",
+          "prime-automation-lifetime.html"
+        ],
+        "createdAt": "2026-11-20T00:25:49.002Z",
+        "reason": "Codex: User approved matching the homepage hero typography. Both its heading and supporting copy use Plus Jakarta Sans in css/v1-7.css."
+      }
+    ]
+  }
+}
