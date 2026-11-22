@@ -1314,12 +1314,13 @@ background: linear-gradient(115deg,
                   </div>
                 </div>
               </div>
-              <p class="bf-gold-offer">
-                Bought Prime Automation during the 2025 Black Friday sale? <a href="#gold-plan">Save on the Gold Plan</a>.
-                <br>
-                <span><strong>$1,000 off</strong> for Ultimate buyers.</span>
-                <span><strong>$500 off</strong> for buyers of any other plan.</span>
-              </p>
+              <div class="bf-gold-offer">
+                <p>Bought Prime Automation during the 2025 Black Friday sale? <a href="#gold-plan">Save on this year’s Gold Plan</a>.</p>
+                <ul class="bf-gold-offer-chips" role="list">
+                  <li><strong class="n-off-tag n-off-tag-text bf-gold-offer-amount">$1,000 off</strong> <span>for Prime Automation Ultimate buyers</span></li>
+                  <li><strong class="n-off-tag n-off-tag-text bf-gold-offer-amount">$500 off</strong> <span>for all other Prime Automation buyers</span></li>
+                </ul>
+              </div>
             </div>
           </div>
           <div id="monthly-yearly" class="anchor-link monthly-yearly-anchor"></div>
@@ -5916,7 +5917,7 @@ head.appendChild(script);
   display: none;
 }
 .bf-gold-offer {
-  max-width: 44rem;
+  max-width: 50rem;
   margin: 0;
   color: var(--text-muted);
   font-family: Plus Jakarta Sans, sans-serif;
@@ -5925,20 +5926,39 @@ head.appendChild(script);
   text-align: center;
   text-wrap: balance;
 }
-.bf-gold-offer span {
-  display: inline-block;
-}
-.bf-gold-offer a,
-.bf-gold-offer strong {
-  color: var(--soft-white);
+.bf-gold-offer p {
+  margin: 0;
 }
 .bf-gold-offer a {
+  color: inherit;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .bf-gold-offer a:focus-visible {
   outline: 2px solid var(--soft-white);
   outline-offset: 3px;
+}
+.bf-gold-offer-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 16px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.bf-gold-offer-chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-align: start;
+}
+.bf-gold-offer-amount {
+  padding: 4px 7px;
+  border-color: #2f684b;
+  background-color: #143421;
+  color: #9bedb5;
+  white-space: nowrap;
 }
 #gold-plan {
   scroll-margin-top: 96px;
