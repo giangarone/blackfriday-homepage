@@ -1316,7 +1316,7 @@ background: linear-gradient(115deg,
               </div>
               <div class="bf-gold-offer">
                 <p>Bought Prime Automation during last year’s Black Friday sale?</p>
-                <p>Get <span class="bf-gold-offer-amount">$500 off</span> this year’s Gold Plan, or <span class="bf-gold-offer-amount">$1,000 off</span> if you bought Ultimate.</p>
+                <p>Get <span class="n-off-tag n-off-tag-text bf-gold-offer-amount">$500 off</span> this year’s Gold Plan, or <span class="n-off-tag n-off-tag-text bf-gold-offer-amount">$1,000 off</span> if you bought Ultimate.</p>
               </div>
             </div>
           </div>
@@ -5930,8 +5930,13 @@ head.appendChild(script);
   margin-top: 4px;
 }
 .bf-gold-offer-amount {
+  display: inline-flex;
+  padding: 3px 4px;
+  border-radius: 6px;
+  border-color: #245b3f;
+  background-color: #143421;
   color: #96f2b3;
-  letter-spacing: -.02em;
+  letter-spacing: -.04em;
   white-space: nowrap;
 }
 .bf-checkout-aurora {
