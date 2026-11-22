@@ -1314,6 +1314,12 @@ background: linear-gradient(115deg,
                   </div>
                 </div>
               </div>
+              <p class="bf-gold-offer">
+                Bought Prime Automation during the 2025 Black Friday sale? <a href="#gold-plan">Save on the Gold Plan</a>.
+                <br>
+                <span><strong>$1,000 off</strong> for Ultimate buyers.</span>
+                <span><strong>$500 off</strong> for buyers of any other plan.</span>
+              </p>
             </div>
           </div>
           <div id="monthly-yearly" class="anchor-link monthly-yearly-anchor"></div>
@@ -1845,7 +1851,7 @@ background: linear-gradient(115deg,
             </div>
           </div>
           <div class="nn-checkout-plan gold-plan">
-            <div class="nn-plan-head">
+            <div id="gold-plan" class="nn-plan-head" tabindex="-1">
               <div class="div-block-432">
                 <div class="n-plan-name-copy">Gold</div>
                 <div class="div-block-434">
@@ -5908,6 +5914,38 @@ head.appendChild(script);
 }
 #n-checkout .bf-checkout-countdown .countdown-item > .rotating-countdown-rainbow {
   display: none;
+}
+.bf-gold-offer {
+  max-width: 44rem;
+  margin: 0;
+  color: var(--text-muted);
+  font-family: Plus Jakarta Sans, sans-serif;
+  font-size: .8125rem;
+  line-height: 1.5;
+  text-align: center;
+  text-wrap: balance;
+}
+.bf-gold-offer span {
+  display: inline-block;
+}
+.bf-gold-offer a,
+.bf-gold-offer strong {
+  color: var(--soft-white);
+}
+.bf-gold-offer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.bf-gold-offer a:focus-visible {
+  outline: 2px solid var(--soft-white);
+  outline-offset: 3px;
+}
+#gold-plan {
+  scroll-margin-top: 96px;
+}
+#gold-plan:focus-visible {
+  outline: 2px solid var(--home-gold-light);
+  outline-offset: -4px;
 }
 .bf-checkout-aurora {
   --aurora-background: var(--soft-black);
