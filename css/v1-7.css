@@ -46268,7 +46268,11 @@ html.w-mod-js [data-ix="show-chart"] {
 
 @media screen and (max-width: 767px) {
   .image-91 {
-    width: 56px;
+    width: 52px;
+  }
+
+  .new-hero.bf-hero {
+    padding-top: 48px;
   }
 
   .main-heading-hero {
