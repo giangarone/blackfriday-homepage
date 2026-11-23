@@ -14,7 +14,7 @@
   const hasSelection = params.has('bundle') || params.has('method');
 
   let price;
-  if (bundle) {
+  if (bundle && !review) {
     price = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(bundle.price);
     document.querySelector('[data-bundle-name]').textContent = bundle.name;
     document.querySelector('[data-bundle-price]').textContent = price;
@@ -74,10 +74,6 @@
     const payLater = method === 'clarity';
     document.getElementById('checkout-back').href = optionsUrl;
     document.getElementById('checkout-back-label').textContent = 'Payment options';
-    document.getElementById('order-total').textContent = price;
-    for (const section of review.querySelectorAll('[data-account-preview]')) {
-      section.hidden = true;
-    }
 
     if (payLater) {
       document.getElementById('bundle-payment').textContent = 'Pay over time with Clarity Pay';
@@ -87,9 +83,6 @@
       document.getElementById('payment-method').textContent = 'Clarity Pay';
       document.getElementById('continue-payment-label').textContent = 'Continue with Clarity Pay';
       document.getElementById('card-processor-note').hidden = true;
-    } else if (bundleId !== 'gold') {
-      document.getElementById('gold-renewal-rates').hidden = true;
-      document.getElementById('card-renewal-description').textContent = 'Any subscription renewals are charged to your card when the included access ends.';
     }
   }
 

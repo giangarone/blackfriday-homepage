@@ -634,8 +634,8 @@ h1, h2, h3 {
 
 .payment-provider .payment-button:disabled {
   border-radius: 8px;
-  background: #282828;
-  color: var(--muted);
+  background: #624bf0;
+  color: #fff;
   cursor: default;
 }
 
