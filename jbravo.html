@@ -655,7 +655,7 @@ background: linear-gradient(115deg,
       <div class="new-hero-content">
         <div class="bf-countdown-container">
           <div class="new-tag-content-copy">
-            <div class="new-tag-name">Black Friday Ends</div>
+            <div class="new-tag-name">Get the offer before it's gone</div>
             <div class="w-embed">
               <style>
   /* Use the hero countdown inside the existing Webflow wrapper. */
@@ -669,13 +669,15 @@ background: linear-gradient(115deg,
     display: grid;
     justify-items: center;
     gap: 12px;
-    width: 264px;
+    width: max-content;
     max-width: 100%;
     margin-inline: auto;
     font-family: "Plus Jakarta Sans", sans-serif;
   }
   .cp-bf-sale-countdown .cp-bf-sale-label {
+    flex: none;
     padding: 4px 8px;
+    white-space: nowrap;
     border-radius: 999px;
     background-color: #dbc6ff;
     background-image: linear-gradient(114deg, transparent 16%, rgb(255 255 255 / 76%) 50%, transparent 84%);
@@ -690,10 +692,11 @@ background: linear-gradient(115deg,
   }
   .cp-bf-sale-countdown .cp-bf-deadline {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: 4px 8px;
+    gap: 6px;
+    max-width: 100%;
   }
   .cp-bf-sale-countdown .cp-bf-deadline-label {
     color: #e2d8f2;
@@ -703,7 +706,8 @@ background: linear-gradient(115deg,
   .cp-bf-sale-countdown .cp-bf-timer {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    width: 100%;
+    width: 264px;
+    max-width: 100%;
   }
   .cp-bf-sale-countdown .cp-bf-unit {
     width: 100%;
@@ -741,10 +745,10 @@ background: linear-gradient(115deg,
 </style>
               <div class="cp-bf-sale-countdown">
                 <div class="cp-bf-deadline">
-                  <span class="cp-bf-sale-label">Mega Sale</span>
-                  <span class="cp-bf-deadline-label">Black Friday ends in</span>
+                  <span class="cp-bf-sale-label">Black Friday</span>
+                  <span class="cp-bf-deadline-label">Get the offer before it's gone</span>
                 </div>
-                <div class="countdown-box cp-bf-timer" role="timer" aria-label="Time remaining in the Black Friday sale">
+                <div class="countdown-box cp-bf-timer" role="timer" aria-label="Black Friday deals countdown">
                   <div class="countdown-item cp-bf-unit">
                     <span class="countdown-number"><span data-cp-bf-digit="">00</span><span class="countdown-label">Days</span></span>
                   </div>
@@ -1224,7 +1228,7 @@ background: linear-gradient(115deg,
             <div class="nn-checkout-header">
               <div class="section-heading"><strong class="section-heading">Unlock Your Exclusive<br>Black Friday Bundle</strong></div>
               <div class="bf-checkout-countdown">
-                <div class="n-plan-desc-copy">Black Friday Ends</div>
+                <div class="n-plan-desc-copy">Get the offer before it's gone</div>
                 <div class="countdown-wrap">
                   <div class="countdown-box">
                     <div class="countdown-item">

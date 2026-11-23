@@ -53,41 +53,58 @@
       </section>
 
       <div class="payment-flow">
-        <fieldset class="payment-methods" id="payment-methods">
-          <legend>Payment method</legend>
-          <div class="payment-method-list">
-            <label class="payment-method-option">
-              <input type="radio" name="payment-method" value="card" checked>
-              <span>Card</span>
-            </label>
-            <label class="payment-method-option">
-              <input type="radio" name="payment-method" value="crypto">
-              <span>Crypto</span>
-            </label>
-            <label class="payment-method-option">
-              <input type="radio" name="payment-method" value="clarity">
-              <span>Clarity Pay</span>
-            </label>
-          </div>
-        </fieldset>
-
         <div class="payment-provider" id="payment-provider">
-          <p class="provider-preview">Payment preview. The payment provider hasn’t been connected yet.</p>
-
-          <fieldset class="provider-fields" disabled>
-            <legend>Billing details</legend>
+          <fieldset class="provider-fields" aria-label="Billing details" disabled>
             <div class="provider-field-grid">
-              <label>First name <input type="text" autocomplete="given-name" required></label>
-              <label>Last name <input type="text" autocomplete="family-name" required></label>
-              <label class="provider-field-wide">Email <input type="email" autocomplete="email" placeholder="name@example.com" required></label>
-              <label class="provider-field-wide">Billing address <input type="text" autocomplete="street-address" placeholder="Start typing an address" required></label>
+              <label>
+                <span>First Name <span class="field-required" aria-hidden="true">*</span></span>
+                <input type="text" autocomplete="given-name" required>
+              </label>
+              <label>
+                <span>Last Name <span class="field-required" aria-hidden="true">*</span></span>
+                <input type="text" autocomplete="family-name" required>
+              </label>
+              <label class="provider-field-wide">
+                <span>Email <span class="field-required" aria-hidden="true">*</span></span>
+                <input type="email" autocomplete="email" placeholder="name@example.com" required>
+              </label>
+              <label class="provider-field-wide">
+                <span>Billing Address <span class="field-required" aria-hidden="true">*</span></span>
+                <input type="text" autocomplete="street-address" placeholder="Start typing an address..." required>
+              </label>
             </div>
           </fieldset>
 
-          <fieldset class="provider-fields" data-provider-method="card" disabled>
-            <legend>Card details</legend>
+          <fieldset class="payment-methods" id="payment-methods" aria-label="Payment method">
+            <div class="payment-method-list">
+              <label class="payment-method-option">
+                <input type="radio" name="payment-method" value="card" checked>
+                <span>Card</span>
+              </label>
+              <label class="payment-method-option">
+                <input type="radio" name="payment-method" value="crypto">
+                <span>Crypto</span>
+              </label>
+              <label class="payment-method-option">
+                <input type="radio" name="payment-method" value="clarity">
+                <span>Clarity Pay</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="provider-fields" data-provider-method="card" aria-label="Card details" disabled>
             <div class="provider-field-grid">
-              <label class="provider-field-wide">Card number <input type="text" inputmode="numeric" autocomplete="cc-number" placeholder="1234 1234 1234 1234" required></label>
+              <label class="provider-field-wide">
+                Card number
+                <span class="provider-card-number">
+                  <input type="text" inputmode="numeric" autocomplete="cc-number" placeholder="1234 1234 1234 1234" required>
+                  <span class="provider-card-brands" aria-hidden="true">
+                    <img src="images/visa.svg" width="60" height="41" alt="">
+                    <img src="images/mastercard.svg" width="59" height="41" alt="">
+                    <img src="images/amex.svg" width="59" height="41" alt="">
+                  </span>
+                </span>
+              </label>
               <label>Expiration date <input type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY" required></label>
               <label>Security code <input type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="CVC" required></label>
             </div>

@@ -49,8 +49,9 @@
       paymentScreen.querySelector('[data-account-preview]').hidden = true;
     }
 
+    const provider = document.getElementById('payment-provider');
     const methods = document.getElementById('payment-methods');
-    const panels = paymentScreen.querySelectorAll('[data-provider-method]');
+    const panels = provider.querySelectorAll('[data-provider-method]');
     const payButton = document.getElementById('provider-pay-button');
     const buttonLabels = { card: 'Pay', crypto: 'Continue with crypto', clarity: 'Continue with Clarity Pay' };
     const initialMethod = method || 'card';
