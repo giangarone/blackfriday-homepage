@@ -683,7 +683,7 @@ background: linear-gradient(115deg,
     width: max-content;
     max-width: 100%;
     margin-inline: auto;
-    padding: 4px 9px 4px 4px;
+    padding: 5px 9px 5px 5px;
     border: 1px solid #765eaa;
     border-radius: 999px;
     background-color: rgb(28 22 37 / 76%);
@@ -692,7 +692,7 @@ background: linear-gradient(115deg,
     font-family: "Plus Jakarta Sans", sans-serif;
   }
   .cp-bf-sale-countdown .cp-bf-sale-label {
-    padding: 5px 8px;
+    padding: 5px 9px;
     border-radius: 999px;
     background-color: #dbc6ff;
     background-image: linear-gradient(114deg, transparent 16%, rgb(255 255 255 / 76%) 50%, transparent 84%);
@@ -700,7 +700,7 @@ background: linear-gradient(115deg,
     background-size: 50% 100%;
     background-repeat: no-repeat;
     color: #261b3c;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: -0.01em;
     line-height: 1.3;
@@ -713,7 +713,7 @@ background: linear-gradient(115deg,
   }
   .cp-bf-sale-countdown .cp-bf-deadline-label {
     color: #e2d8f2;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
   }
   .cp-bf-sale-countdown .cp-bf-timer {
@@ -725,14 +725,14 @@ background: linear-gradient(115deg,
     align-items: baseline;
     gap: 2px;
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
   }
   .cp-bf-sale-countdown .cp-bf-unit abbr {
     border-bottom: 0;
     color: #dfd1f5;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     text-decoration: none;
   }
@@ -820,7 +820,6 @@ background: linear-gradient(115deg,
                 <div class="cp-bf-deadline">
                   <span class="cp-bf-deadline-label">Ends in</span>
                   <span class="cp-bf-timer" role="timer" aria-label="Time remaining in the Black Friday sale">
-                    <span class="cp-bf-unit"><span data-cp-bf-digit="">00</span><abbr title="days">D</abbr></span>
                     <span class="cp-bf-unit"><span data-cp-bf-digit="">00</span><abbr title="hours">H</abbr></span>
                     <span class="cp-bf-unit"><span data-cp-bf-digit="">00</span><abbr title="minutes">M</abbr></span>
                     <span class="cp-bf-unit"><span data-cp-bf-digit="">00</span><abbr title="seconds">S</abbr></span>
@@ -6893,17 +6892,17 @@ head.appendChild(script);
       var nextResetUTC = RESET_TIME_UTC + (cycle + 1) * SECONDS_PER_DAY;
       var secondsRemaining = nextResetUTC - nowUTC;
       var days = Math.floor(secondsRemaining / SECONDS_PER_DAY);
-      var hours = Math.floor((secondsRemaining % SECONDS_PER_DAY) / 3600);
+      var totalHours = Math.floor(secondsRemaining / 3600);
       var minutes = Math.floor((secondsRemaining % 3600) / 60);
       var seconds = secondsRemaining % 60;
-      var values = [days, hours, minutes, seconds];
+      var values = [totalHours, minutes, seconds];
       heroDigits.forEach(function (digit, index) {
         var value = pad(values[index]);
         if (digit.textContent !== value) digit.textContent = value;
       });
       document.querySelectorAll('.countdown-wrap').forEach(function (countdown) {
         countdown.querySelector('.cd-days').textContent = pad(days);
-        countdown.querySelector('.cd-hours').textContent = pad(hours);
+        countdown.querySelector('.cd-hours').textContent = pad(totalHours % 24);
         countdown.querySelector('.cd-minutes').textContent = pad(minutes);
         countdown.querySelector('.cd-seconds').textContent = pad(seconds);
       });
