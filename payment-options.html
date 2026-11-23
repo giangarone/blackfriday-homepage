@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choose how to pay | ChartPrime</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="css/checkout.css">
+  <script src="js/checkout.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="page-width header-content">
+      <img class="brand" src="images/n-logo.svg" width="164" height="25" alt="ChartPrime">
+      <a class="back-link" href="index.html#n-checkout">
+        <span class="arrow arrow-back" aria-hidden="true"></span>
+        Back to bundles
+      </a>
+    </div>
+  </header>
+
+  <main class="page-width checkout payment-choice">
+    <h1>Choose how to pay</h1>
+
+    <div id="payment-options" hidden>
+      <section class="order-summary payment-choice-summary" aria-labelledby="bundle-name">
+        <h2 id="bundle-name" data-bundle-name></h2>
+        <dl class="payment-choice-price">
+          <dt>Bundle price</dt>
+          <dd data-bundle-price></dd>
+        </dl>
+      </section>
+
+      <div class="payment-options">
+        <section class="payment-option" aria-labelledby="card-heading">
+          <div class="payment-option-heading">
+            <h2 id="card-heading">Pay now by card</h2>
+          </div>
+          <p>Pay the full bundle price today.</p>
+          <div class="payment-option-details">
+            <h3>Automatic renewals</h3>
+            <p data-gold-only hidden>Market data renews after 2 months. MarketStream Elite and Prime Automation Builder renew after 1 year.</p>
+            <p>Any renewals are charged to the same card. Cancel anytime from Billing.</p>
+          </div>
+          <a class="payment-button" data-payment-method="card">
+            Continue with card
+            <span class="arrow" aria-hidden="true"></span>
+          </a>
+        </section>
+
+        <section class="payment-option" aria-labelledby="clarity-heading">
+          <div class="payment-option-heading">
+            <h2 id="clarity-heading">Buy now, pay later</h2>
+            <img class="clarity-logo" src="images/clarity-pay-logo.svg" width="201" height="38" alt="Clarity Pay">
+          </div>
+          <p>Spread the bundle price over time with Clarity Pay.</p>
+          <div class="payment-option-details">
+            <h3>Manual renewals</h3>
+            <p>Your bundle subscriptions won’t renew automatically. Add a card in Billing to renew when the included access ends.</p>
+          </div>
+          <a class="payment-button" data-payment-method="clarity">
+            Continue with Clarity Pay
+            <span class="arrow" aria-hidden="true"></span>
+          </a>
+        </section>
+      </div>
+    </div>
+
+    <p id="bundle-unavailable" hidden>Choose a bundle to see its payment options.</p>
+    <noscript><p>Enable JavaScript to view the payment options for your bundle.</p></noscript>
+  </main>
+</body>
+</html>

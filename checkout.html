@@ -8,14 +8,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&amp;display=swap">
   <link rel="stylesheet" href="css/checkout.css">
+  <script src="js/checkout.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <div class="page-width header-content">
       <img class="brand" src="images/n-logo.svg" width="164" height="25" alt="ChartPrime">
-      <a class="back-link" href="index.html#n-checkout">
+      <a class="back-link" href="index.html#n-checkout" id="checkout-back">
         <span class="arrow arrow-back" aria-hidden="true"></span>
-        Go Back
+        <span id="checkout-back-label">Go Back</span>
       </a>
     </div>
   </header>
@@ -23,33 +24,33 @@
   <main class="page-width checkout">
     <h1>Review your order</h1>
 
-    <div class="checkout-layout">
+    <div class="checkout-layout" id="checkout-review" hidden>
       <section class="order-summary" aria-labelledby="bundle-name">
-        <h2 id="bundle-name">Gold Bundle BF</h2>
-        <p class="bundle-payment">One-time bundle payment</p>
+        <h2 id="bundle-name" data-bundle-name>Gold Bundle BF</h2>
+        <p class="bundle-payment" id="bundle-payment">One-time bundle payment</p>
 
         <dl class="price-breakdown">
-          <div class="price-row">
+          <div class="price-row" data-account-preview>
             <dt>Bundle price</dt>
-            <dd>$2,999.00</dd>
+            <dd data-bundle-price>$2,999.00</dd>
           </div>
-          <div class="price-row credit-row">
+          <div class="price-row credit-row" data-account-preview>
             <dt>Unused plan credit</dt>
             <dd>−$147.44</dd>
           </div>
           <div class="price-row total-row">
-            <dt>Due today</dt>
-            <dd>$2,851.56</dd>
+            <dt id="order-total-label">Due today</dt>
+            <dd id="order-total">$2,851.56</dd>
           </div>
         </dl>
       </section>
 
       <div class="purchase-details">
-        <section class="renewal-panel" aria-labelledby="renewal-heading">
+        <section class="renewal-panel" id="card-renewals" aria-labelledby="renewal-heading">
           <h2 id="renewal-heading">Upcoming charges</h2>
-          <p class="renewal-description">These subscriptions renew automatically using your payment method.</p>
+          <p class="renewal-description" id="card-renewal-description">These subscriptions renew automatically using your payment method.</p>
 
-          <div class="billing-timeline">
+          <div class="billing-timeline" id="gold-renewal-rates">
             <div class="billing-group">
               <h3>First charge 2 months after purchase</h3>
               <dl class="renewal-rates">
@@ -82,7 +83,12 @@
           <p class="billing-note">Cancel any subscription at any time from Billing.</p>
         </section>
 
-        <section class="plan-change" aria-labelledby="plan-heading">
+        <section class="renewal-panel" id="clarity-renewals" aria-labelledby="bundle-access-heading" hidden>
+          <h2 id="bundle-access-heading">Bundle access</h2>
+          <p class="renewal-description">Your bundle subscriptions won’t renew automatically. You can add a card in Billing to renew when the included access ends.</p>
+        </section>
+
+        <section class="plan-change" aria-labelledby="plan-heading" data-account-preview>
           <h2 id="plan-heading">Your current plan</h2>
           <p>When you pay, your existing MarketStream Elite plan ends and billing for that plan stops. The bundle includes <strong>12 months of MarketStream Elite</strong>, and the unused time on your old plan is credited toward today’s total.</p>
         </section>
@@ -91,37 +97,27 @@
       <section class="payment" aria-labelledby="payment-heading">
         <h2 id="payment-heading">Payment details</h2>
         <dl class="payment-details">
-          <div>
+          <div data-account-preview>
             <dt>Buying as</dt>
             <dd>account@example.com</dd>
           </div>
           <div>
             <dt>Payment method</dt>
-            <dd>Card</dd>
+            <dd id="payment-method">Card</dd>
           </div>
         </dl>
 
         <button class="payment-button" type="button" aria-controls="payment-preview" aria-expanded="false">
-          Continue to payment
+          <span id="continue-payment-label">Continue to payment</span>
           <span class="arrow" aria-hidden="true"></span>
         </button>
         <p class="payment-preview" id="payment-preview" hidden>You’re viewing a static checkout preview.</p>
 
         <p class="payment-terms">By continuing, you agree to the <a href="https://chartprime.com/terms-conditions">Terms</a> and <a href="https://chartprime.com/refund-policy">Refund Policy</a>.</p>
-        <p class="payment-terms">Card details go directly to the payment processor. ChartPrime provides tools and education for informational purposes.</p>
+        <p class="payment-terms" id="card-processor-note">Card details go directly to the payment processor. ChartPrime provides tools and education for informational purposes.</p>
       </section>
     </div>
+    <noscript><p>Enable JavaScript to review your order.</p></noscript>
   </main>
-
-  <script>
-    const paymentButton = document.querySelector('.payment-button');
-    const paymentPreview = document.getElementById('payment-preview');
-
-    paymentButton.addEventListener('click', () => {
-      const showPreview = paymentPreview.hidden;
-      paymentPreview.hidden = !showPreview;
-      paymentButton.setAttribute('aria-expanded', String(showPreview));
-    });
-  </script>
 </body>
 </html>

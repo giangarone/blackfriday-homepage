@@ -39,6 +39,26 @@
         ],
         "createdAt": "2026-11-20T00:25:49.002Z",
         "reason": "Codex: User approved matching the homepage hero typography. Both its heading and supporting copy use Plus Jakarta Sans in css/v1-7.css."
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          "checkout.html",
+          "css/checkout.css",
+          "payment-options.html"
+        ],
+        "createdAt": "2026-11-23T16:06:54.157Z",
+        "reason": "Codex: Plus Jakarta Sans is the existing checkout typeface. The payment choices use the same typography to match checkout.html as requested."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "checkout.html"
+        ],
+        "createdAt": "2026-11-23T16:06:54.171Z",
+        "reason": "Codex: These pre-existing edge-spacing reports are false positives. The renewal rows have 9px and the payment detail rows have 10px of padding-block. Replacing logical padding with equivalent physical padding in a temporary checkout copy cleared every spacing report."
       }
     ]
   }
