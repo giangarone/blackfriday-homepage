@@ -664,7 +664,7 @@ background: linear-gradient(115deg,
             <div class="new-tag-name">Black Friday Ends</div>
             <div class="w-embed">
               <style>
-  /* Use the new sale badge inside the existing Webflow wrapper. */
+  /* Use the hero countdown inside the existing Webflow wrapper. */
   .bf-hero .bf-countdown-container > .new-tag-content-copy:has(> .w-embed .cp-bf-sale-countdown) {
     display: contents;
   }
@@ -672,23 +672,12 @@ background: linear-gradient(115deg,
     display: none;
   }
   .cp-bf-sale-countdown {
-    position: relative;
-    isolation: isolate;
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 4px 8px;
-    width: max-content;
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+    width: 264px;
     max-width: 100%;
     margin-inline: auto;
-    padding: 5px 9px 5px 5px;
-    border: 1px solid #765eaa;
-    border-radius: 999px;
-    background-color: rgb(28 22 37 / 76%);
-    -webkit-backdrop-filter: blur(16px);
-    backdrop-filter: blur(16px);
     font-family: "Plus Jakarta Sans", sans-serif;
   }
   .cp-bf-sale-countdown .cp-bf-sale-label {
@@ -707,9 +696,10 @@ background: linear-gradient(115deg,
   }
   .cp-bf-sale-countdown .cp-bf-deadline {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    gap: 6px;
-    white-space: nowrap;
+    gap: 4px 8px;
   }
   .cp-bf-sale-countdown .cp-bf-deadline-label {
     color: #e2d8f2;
@@ -717,93 +707,33 @@ background: linear-gradient(115deg,
     font-weight: 600;
   }
   .cp-bf-sale-countdown .cp-bf-timer {
-    display: flex;
-    gap: 6px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
   }
   .cp-bf-sale-countdown .cp-bf-unit {
-    display: flex;
-    align-items: baseline;
-    gap: 2px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
+    width: 100%;
+    padding: 8px;
+    border-color: #795cab;
+    background: #2e214499;
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+  .cp-bf-sale-countdown .countdown-number {
+    color: #f8f2ff;
     font-variant-numeric: tabular-nums;
   }
-  .cp-bf-sale-countdown .cp-bf-unit abbr {
+  .cp-bf-sale-countdown .countdown-label {
     border-bottom: 0;
-    color: #dfd1f5;
-    font-size: 11px;
-    font-weight: 600;
+    color: #ddcbf9;
     text-decoration: none;
   }
-  .cp-bf-sale-countdown .cp-bf-unit:last-child [data-cp-bf-digit] {
-    color: #e9dcff;
-  }
-  @media (max-width: 359px) {
-    .cp-bf-sale-countdown {
-      flex-direction: column;
-      padding: 5px 10px;
-    }
-  }
-  @property --cp-bf-sale-angle {
-    syntax: "<angle>";
-    initial-value: -56deg;
-    inherits: true;
-  }
-  @supports (mask-composite: exclude) {
-    .cp-bf-sale-countdown::before {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      padding: 1px;
-      border-radius: inherit;
-      pointer-events: none;
-      background: conic-gradient(
-        from var(--cp-bf-sale-angle, -56deg),
-        transparent 0deg 8deg,
-        rgb(166 121 249 / 24%) 29deg,
-        #d8c4ff 55deg,
-        #fbf7ff 62deg 75deg,
-        #d8c4ff 82deg,
-        transparent 91deg 360deg
-      );
-      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      mask-composite: exclude;
-    }
-    .cp-bf-sale-countdown::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      inset: 0;
-      border-radius: inherit;
-      pointer-events: none;
-      background: conic-gradient(
-        from var(--cp-bf-sale-angle, -56deg),
-        transparent 0deg 25deg,
-        rgb(184 150 255 / 6%) 49deg,
-        rgb(184 150 255 / 14%) 68deg,
-        transparent 94deg 360deg
-      );
-      mask-image: radial-gradient(ellipse closest-side, transparent 24%, #000 100%);
-    }
-  }
   @media (prefers-reduced-motion: no-preference) {
-    @supports (mask-composite: exclude) {
-      .cp-bf-sale-countdown {
-        animation: cp-bf-sale-orbit 4.4s linear infinite paused;
-      }
-    }
     .cp-bf-sale-countdown .cp-bf-sale-label {
       animation: cp-bf-sale-shine 2s ease-in-out infinite paused;
     }
-    .cp-bf-sale-countdown.cp-bf-sale-visible,
     .cp-bf-sale-countdown.cp-bf-sale-visible .cp-bf-sale-label {
       animation-play-state: running;
-    }
-  }
-  @keyframes cp-bf-sale-orbit {
-    to {
-      --cp-bf-sale-angle: 304deg;
     }
   }
   @keyframes cp-bf-sale-shine {
@@ -816,14 +746,23 @@ background: linear-gradient(115deg,
   }
 </style>
               <div class="cp-bf-sale-countdown">
-                <span class="cp-bf-sale-label">Black Friday Sale</span>
                 <div class="cp-bf-deadline">
+                  <span class="cp-bf-sale-label">Black Friday Sale</span>
                   <span class="cp-bf-deadline-label">Ends in</span>
-                  <span class="cp-bf-timer" role="timer" aria-label="Time remaining in the Black Friday sale">
-                    <span class="cp-bf-unit"><span data-cp-bf-digit="">00</span><abbr title="hours">H</abbr></span>
-                    <span class="cp-bf-unit"><span data-cp-bf-digit="">00</span><abbr title="minutes">M</abbr></span>
-                    <span class="cp-bf-unit"><span data-cp-bf-digit="">00</span><abbr title="seconds">S</abbr></span>
-                  </span>
+                </div>
+                <div class="countdown-box cp-bf-timer" role="timer" aria-label="Time remaining in the Black Friday sale">
+                  <div class="countdown-item cp-bf-unit">
+                    <span class="countdown-number"><span data-cp-bf-digit="">00</span><span class="countdown-label">Days</span></span>
+                  </div>
+                  <div class="countdown-item cp-bf-unit">
+                    <span class="countdown-number"><span data-cp-bf-digit="">00</span><abbr class="countdown-label" title="hours">Hrs</abbr></span>
+                  </div>
+                  <div class="countdown-item cp-bf-unit">
+                    <span class="countdown-number"><span data-cp-bf-digit="">00</span><abbr class="countdown-label" title="minutes">Min</abbr></span>
+                  </div>
+                  <div class="countdown-item cp-bf-unit">
+                    <span class="countdown-number"><span data-cp-bf-digit="">00</span><abbr class="countdown-label" title="seconds">Sec</abbr></span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -6892,17 +6831,17 @@ head.appendChild(script);
       var nextResetUTC = RESET_TIME_UTC + (cycle + 1) * SECONDS_PER_DAY;
       var secondsRemaining = nextResetUTC - nowUTC;
       var days = Math.floor(secondsRemaining / SECONDS_PER_DAY);
-      var totalHours = Math.floor(secondsRemaining / 3600);
+      var hours = Math.floor((secondsRemaining % SECONDS_PER_DAY) / 3600);
       var minutes = Math.floor((secondsRemaining % 3600) / 60);
       var seconds = secondsRemaining % 60;
-      var values = [totalHours, minutes, seconds];
+      var values = [days, hours, minutes, seconds];
       heroDigits.forEach(function (digit, index) {
         var value = pad(values[index]);
         if (digit.textContent !== value) digit.textContent = value;
       });
       document.querySelectorAll('.countdown-wrap').forEach(function (countdown) {
         countdown.querySelector('.cd-days').textContent = pad(days);
-        countdown.querySelector('.cd-hours').textContent = pad(totalHours % 24);
+        countdown.querySelector('.cd-hours').textContent = pad(hours);
         countdown.querySelector('.cd-minutes').textContent = pad(minutes);
         countdown.querySelector('.cd-seconds').textContent = pad(seconds);
       });
