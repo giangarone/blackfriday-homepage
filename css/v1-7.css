@@ -46267,6 +46267,10 @@ html.w-mod-js [data-ix="show-chart"] {
 }
 
 @media screen and (max-width: 767px) {
+  .image-91 {
+    width: 56px;
+  }
+
   .main-heading-hero {
     font-size: 44px;
     line-height: 100%;
