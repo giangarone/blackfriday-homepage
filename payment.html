@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment | ChartPrime</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="css/checkout.css">
+  <script src="js/checkout.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="page-width header-content">
+      <img class="brand" src="images/n-logo.svg" width="164" height="25" alt="ChartPrime">
+      <a class="back-link" href="checkout.html" id="payment-back">
+        <span class="arrow arrow-back" aria-hidden="true"></span>
+        Review order
+      </a>
+    </div>
+  </header>
+
+  <main class="page-width checkout">
+    <h1>Payment</h1>
+
+    <div class="payment-screen" id="payment-screen" hidden>
+      <aside class="clarity-callout" aria-label="Buy now, pay later">
+        <img class="clarity-logo" src="images/clarity-pay-logo.svg" width="201" height="38" alt="Clarity Pay">
+        <p>Want to buy now, pay later? Select <strong>Clarity Pay</strong> below.</p>
+      </aside>
+
+      <section class="order-summary" aria-labelledby="payment-order-heading">
+        <h2 id="payment-order-heading">Your order</h2>
+        <dl class="price-breakdown">
+          <div class="price-row">
+            <dt>Bundle</dt>
+            <dd data-bundle-name>Gold Bundle BF</dd>
+          </div>
+          <div class="price-row">
+            <dt>Bundle price</dt>
+            <dd data-bundle-price>$2,999.00</dd>
+          </div>
+          <div class="price-row credit-row" data-account-preview>
+            <dt>Unused plan credit</dt>
+            <dd>−$147.44</dd>
+          </div>
+          <div class="price-row total-row">
+            <dt>Total</dt>
+            <dd id="payment-total">$2,851.56</dd>
+          </div>
+        </dl>
+      </section>
+
+      <div class="payment-flow">
+        <fieldset class="payment-methods" id="payment-methods">
+          <legend>Payment method</legend>
+          <div class="payment-method-list">
+            <label class="payment-method-option">
+              <input type="radio" name="payment-method" value="card" checked>
+              <span>Card</span>
+            </label>
+            <label class="payment-method-option">
+              <input type="radio" name="payment-method" value="crypto">
+              <span>Crypto</span>
+            </label>
+            <label class="payment-method-option">
+              <input type="radio" name="payment-method" value="clarity">
+              <span>Clarity Pay</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="payment-provider" id="payment-provider">
+          <p class="provider-preview">Payment preview. The payment provider hasn’t been connected yet.</p>
+
+          <fieldset class="provider-fields" disabled>
+            <legend>Billing details</legend>
+            <div class="provider-field-grid">
+              <label>First name <input type="text" autocomplete="given-name" required></label>
+              <label>Last name <input type="text" autocomplete="family-name" required></label>
+              <label class="provider-field-wide">Email <input type="email" autocomplete="email" placeholder="name@example.com" required></label>
+              <label class="provider-field-wide">Billing address <input type="text" autocomplete="street-address" placeholder="Start typing an address" required></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="provider-fields" data-provider-method="card" disabled>
+            <legend>Card details</legend>
+            <div class="provider-field-grid">
+              <label class="provider-field-wide">Card number <input type="text" inputmode="numeric" autocomplete="cc-number" placeholder="1234 1234 1234 1234" required></label>
+              <label>Expiration date <input type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY" required></label>
+              <label>Security code <input type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="CVC" required></label>
+            </div>
+          </fieldset>
+
+          <section class="provider-method-details" data-provider-method="crypto" aria-labelledby="crypto-payment-heading" hidden>
+            <h2 id="crypto-payment-heading">Pay with crypto</h2>
+            <p>The payment provider will show supported currencies and payment instructions.</p>
+          </section>
+
+          <section class="provider-method-details" data-provider-method="clarity" aria-labelledby="clarity-payment-heading" hidden>
+            <h2 id="clarity-payment-heading">Pay over time with Clarity Pay</h2>
+            <p>Clarity Pay will show the available payment plans.</p>
+          </section>
+
+          <button class="payment-button" id="provider-pay-button" type="button" disabled>Pay</button>
+        </div>
+      </div>
+    </div>
+    <noscript><p>Enable JavaScript to view your payment details.</p></noscript>
+  </main>
+</body>
+</html>

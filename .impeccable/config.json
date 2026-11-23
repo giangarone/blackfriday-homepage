@@ -59,6 +59,15 @@
         ],
         "createdAt": "2026-11-23T16:06:54.171Z",
         "reason": "Codex: These pre-existing edge-spacing reports are false positives. The renewal rows have 9px and the payment detail rows have 10px of padding-block. Replacing logical padding with equivalent physical padding in a temporary checkout copy cleared every spacing report."
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          "payment.html"
+        ],
+        "createdAt": "2026-11-23T16:23:53.313Z",
+        "reason": "Codex: Reuse the existing checkout typeface on the payment screen for consistency across the checkout flow."
       }
     ]
   }
