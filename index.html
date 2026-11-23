@@ -2464,12 +2464,12 @@ text-decoration: underline dotted #b3b3b3;
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
   border: 0;
   background: var(--soft-black);
+  pointer-events: none;
 }
 iframe.product-showcase__frame {
-  pointer-events: none;
+  aspect-ratio: 16 / 9;
 }
 video.product-showcase__frame {
   object-fit: contain;
@@ -2670,7 +2670,7 @@ video.product-showcase__frame {
               </a>
             </div>
             <figure class="product-showcase__demo">
-              <video class="product-showcase__frame" data-src="Connect%20-%20Claude.mp4" aria-label="Setting up the Prime Automation connector in Claude" autoplay muted loop playsinline controls preload="metadata"></video>
+              <video class="product-showcase__frame" data-src="Connect%20-%20Claude.mp4" aria-label="Setting up the Prime Automation connector in Claude" width="1920" height="1200" autoplay muted loop playsinline preload="metadata"></video>
             </figure>
           </section>
         </div>
@@ -2696,7 +2696,7 @@ video.product-showcase__frame {
               </a>
             </div>
             <figure class="product-showcase__demo">
-              <video class="product-showcase__frame" data-src="MCP%20chat%20-%20Strategy%20health%20(Claude).mp4" aria-label="Asking Claude for a strategy health report" autoplay muted loop playsinline controls preload="metadata"></video>
+              <video class="product-showcase__frame" data-src="MCP%20chat%20-%20Strategy%20health%20(Claude).mp4" aria-label="Asking Claude for a strategy health report" width="1920" height="1200" autoplay muted loop playsinline preload="metadata"></video>
             </figure>
           </section>
         </div>
@@ -2719,7 +2719,7 @@ video.product-showcase__frame {
               </a>
             </div>
             <figure class="product-showcase__demo">
-              <video class="product-showcase__frame" data-src="AI%20Builder%20modes%20tour.mp4" aria-label="Building and backtesting strategies with Quant Studio and Autobuild" autoplay muted loop playsinline controls preload="metadata"></video>
+              <video class="product-showcase__frame" data-src="AI%20Builder%20modes%20tour.mp4" aria-label="Building and backtesting strategies with Quant Studio and Autobuild" width="1920" height="1080" autoplay muted loop playsinline preload="metadata"></video>
             </figure>
           </section>
         </div>
@@ -2734,7 +2734,7 @@ video.product-showcase__frame {
     if (motion.matches) {
       video.pause();
     } else {
-      video.play().catch(() => {}); // Native controls remain available if autoplay is blocked.
+      video.play().catch(() => {}); // Autoplay may be blocked by browser settings.
     }
   }
   function loadVideo(video) {
