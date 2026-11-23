@@ -820,7 +820,6 @@ background: linear-gradient(115deg,
                 <div class="cp-bf-deadline">
                   <span class="cp-bf-deadline-label">Ends in</span>
                   <span class="cp-bf-timer" role="timer" aria-label="Time remaining in the Black Friday sale">
-                    <span class="cp-bf-unit"><span data-cp-bf-digit="">00</span><abbr title="days">D</abbr></span>
                     <span class="cp-bf-unit"><span data-cp-bf-digit="">00</span><abbr title="hours">H</abbr></span>
                     <span class="cp-bf-unit"><span data-cp-bf-digit="">00</span><abbr title="minutes">M</abbr></span>
                     <span class="cp-bf-unit"><span data-cp-bf-digit="">00</span><abbr title="seconds">S</abbr></span>
@@ -1291,11 +1290,6 @@ background: linear-gradient(115deg,
                 <div class="n-plan-desc-copy">Black Friday Ends</div>
                 <div class="countdown-wrap">
                   <div class="countdown-box">
-                    <div class="countdown-item">
-                      <div class="countdown-fill">
-                        <div class="countdown-number"><span class="cd-days">00</span> <span class="countdown-label">DAYS</span></div>
-                      </div>
-                    </div>
                     <div class="countdown-item">
                       <div class="countdown-fill">
                         <div class="countdown-number"><span class="cd-hours">00</span> <span class="countdown-label">HRS</span></div>
@@ -6864,15 +6858,15 @@ head.appendChild(script);
 </script>
   <script>
   (function () {
-    var END_DATE = Date.parse('2026-12-01T00:00:00Z') / 1000;
+    var SECONDS_PER_DAY = 24 * 60 * 60;
+    var RESET_TIME_UTC = 13 * 3600 + 30 * 60; // 5:30 a.m. PST (UTC-08:00).
     var hero = document.querySelector('.bf-hero .cp-bf-sale-countdown');
     var heroDigits = hero ? hero.querySelectorAll('[data-cp-bf-digit]') : [];
     var motion = window.matchMedia('(prefers-reduced-motion: no-preference)');
     var inView = !('IntersectionObserver' in window);
-    var secondsRemaining = 0;
     function syncMotion() {
       hero.classList.toggle('cp-bf-sale-visible',
-        inView && !document.hidden && motion.matches && secondsRemaining > 0);
+        inView && !document.hidden && motion.matches);
     }
     if (hero) {
       if (!inView) {
@@ -6889,26 +6883,26 @@ head.appendChild(script);
     }
     function updateCountdowns() {
       var nowUTC = Math.floor(Date.now() / 1000);
-      secondsRemaining = Math.max(0, END_DATE - nowUTC);
-      var days = Math.floor(secondsRemaining / 86400);
-      var hours = Math.floor((secondsRemaining % 86400) / 3600);
+      var cycle = Math.floor((nowUTC - RESET_TIME_UTC) / SECONDS_PER_DAY);
+      var nextResetUTC = RESET_TIME_UTC + (cycle + 1) * SECONDS_PER_DAY;
+      var secondsRemaining = nextResetUTC - nowUTC;
+      var hours = Math.floor(secondsRemaining / 3600);
       var minutes = Math.floor((secondsRemaining % 3600) / 60);
       var seconds = secondsRemaining % 60;
-      var values = [days, hours, minutes, seconds];
+      var values = [hours, minutes, seconds];
       heroDigits.forEach(function (digit, index) {
         var value = pad(values[index]);
         if (digit.textContent !== value) digit.textContent = value;
       });
       document.querySelectorAll('.countdown-wrap').forEach(function (countdown) {
-        countdown.querySelector('.cd-days').textContent = pad(days);
         countdown.querySelector('.cd-hours').textContent = pad(hours);
         countdown.querySelector('.cd-minutes').textContent = pad(minutes);
         countdown.querySelector('.cd-seconds').textContent = pad(seconds);
       });
       if (hero) syncMotion();
+      setTimeout(updateCountdowns, 1000 - (Date.now() % 1000));
     }
     updateCountdowns();
-    setInterval(updateCountdowns, 1000);
   })();
 </script>
 </body>
