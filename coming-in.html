@@ -301,7 +301,13 @@ html {
   transition: opacity 0.5s ease;
 }
 .cta-btn-arrow {
+  flex: none;
+  color: var(--soft-white);
   transition: transform 0.4s ease;
+}
+.cta-btn:focus-visible {
+  outline: 2px solid #dbc6ff;
+  outline-offset: 4px;
 }
 .cta-btn:hover .btn-glow-hover {
   opacity: 1;
@@ -599,50 +605,67 @@ background: linear-gradient(115deg,
 }
 </style>
       <style>
-  .countdown-wrap {
-    display: flex;
-    justify-content: center;
+  .launch-hero .new-hero-heading {
+    margin-top: 0;
+    text-wrap: balance;
   }
-  .countdown-box {
-    display: flex;
+  .launch-hero .new-hero-subheading {
+    margin-bottom: 0;
+    text-wrap: balance;
+  }
+  .launch-countdown {
+    display: grid;
+    justify-items: center;
     gap: 8px;
+    width: 264px;
+    max-width: 100%;
+    font-family: "Plus Jakarta Sans", sans-serif;
   }
-  .countdown-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
+  .launch-countdown[hidden] {
+    display: none;
+  }
+  .launch-countdown .countdown-box {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+  }
+  .launch-countdown .countdown-item {
     height: 60px;
-    background: var(--soft-black);
-    border-radius: 12px;
   }
-  .countdown-number {
-    font-family: Plus Jakarta Sans, sans-serif;
-    font-weight: 700;
+  .launch-countdown .countdown-number {
+    color: #fff;
     font-size: 22px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
     line-height: 1;
-    color: #ffffff;
   }
-  .countdown-label {
-    font-family: Plus Jakarta Sans, sans-serif;
-    font-weight: 600;
+  .launch-countdown .countdown-label {
+    border-bottom: 0;
+    color: #8a8a8a;
     font-size: 10px;
+    font-weight: 600;
     letter-spacing: 0.8px;
     text-transform: uppercase;
-    color: #8a8a8a;
+    text-decoration: none;
   }
-  @media (max-width: 480px) {
-    .countdown-item {
-      width: 60px;
-      height: 60px;
+  @media (max-width: 360px) {
+    .launch-hero .hero-stats {
+      column-gap: 4px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-items: start;
+    }
+    .launch-hero .hero-stat-desc {
+      font-size: 11px;
+      line-height: 1.2;
+      white-space: normal;
     }
   }
 </style>
     </div>
   </div>
   <div class="_w-page overflow-hidden">
-    <div class="new-hero">
+    <div class="new-hero launch-hero">
       <div class="hero-blobs w-embed">
         <div class="blobs-frame">
           <div class="blob blob-1"></div>
@@ -652,12 +675,71 @@ background: linear-gradient(115deg,
         </div>
       </div>
       <div class="new-hero-content">
-        <p class="new-hero-heading">Turn Every Chart Into<br>a Clear Trading Plan</p>
-        <p class="new-hero-subheading">Spot high-probability trades and filter out weak ones — powered by 50+ professional-grade tools, live sessions, and a room full of traders.</p>
+        <div id="launch-countdown" class="launch-countdown" data-launch-at="2026-11-23T16:00:00-06:00" hidden>
+          <div class="n-plan-desc-copy">Black Friday starts in</div>
+          <div class="countdown-box" role="timer" aria-label="Time until Black Friday starts">
+            <div class="countdown-item">
+              <div class="countdown-fill">
+                <span class="countdown-number"><span data-launch-digit>00</span> <span class="countdown-label">Days</span></span>
+              </div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-fill">
+                <span class="countdown-number"><span data-launch-digit>00</span> <abbr class="countdown-label" title="hours">Hrs</abbr></span>
+              </div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-fill">
+                <span class="countdown-number"><span data-launch-digit>00</span> <abbr class="countdown-label" title="minutes">Min</abbr></span>
+              </div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-fill">
+                <span class="countdown-number"><span data-launch-digit>00</span> <abbr class="countdown-label" title="seconds">Sec</abbr></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h1 class="new-hero-heading">Black Friday<br><span id="launch-heading-line">drops today.</span></h1>
+        <p class="new-hero-subheading">Our biggest sale of the year bundles lifetime access to the ChartPrime&nbsp;Suite with AI-powered chart analysis from MarketStream and customizable crypto trading bots from Prime&nbsp;Automation.</p>
+        <script>
+          (() => {
+            const countdown = document.getElementById('launch-countdown');
+            const launchTime = Date.parse(countdown.dataset.launchAt);
+            const digits = countdown.querySelectorAll('[data-launch-digit]');
+
+            function updateCountdown() {
+              const remaining = launchTime - Date.now();
+              if (remaining <= 0) {
+                countdown.hidden = true;
+                document.getElementById('launch-heading-line').textContent = 'at ChartPrime.';
+                return;
+              }
+
+              const seconds = Math.ceil(remaining / 1000);
+              const values = [
+                Math.floor(seconds / 86400),
+                Math.floor(seconds / 3600) % 24,
+                Math.floor(seconds / 60) % 60,
+                seconds % 60
+              ];
+              digits.forEach((digit, index) => {
+                digit.textContent = String(values[index]).padStart(2, '0');
+              });
+              countdown.hidden = false;
+              setTimeout(updateCountdown, remaining % 1000 || 1000);
+            }
+
+            updateCountdown();
+          })();
+        </script>
         <a href="#register" class="cta-btn w-inline-block">
           <div class="btn-glow-hover"></div>
           <div class="cta-btn-fill">
-            <div class="btn-text">Try risk-free for 7 days</div><img src="images/right-arrow.svg" loading="lazy" alt="" class="cta-btn-arrow">
+            <div class="btn-text">Try-risk free for 7 days.</div>
+            <svg class="cta-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m-7-7 7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
         </a>
         <div class="hero-stats">
@@ -3293,7 +3375,10 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href="#register" class="cta-btn w-inline-block">
           <div class="btn-glow-hover"></div>
           <div class="cta-btn-fill">
-            <div class="btn-text">Get ChartPrime</div><img loading="lazy" src="images/right-arrow.svg" alt="" class="cta-btn-arrow">
+            <div class="btn-text">Get ChartPrime</div>
+            <svg class="cta-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m-7-7 7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
         </a>
       </div>
