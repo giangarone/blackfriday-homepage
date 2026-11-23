@@ -2363,6 +2363,10 @@ text-decoration: underline dotted #b3b3b3;
   --aurora-base: #8e49ed;
   --aurora-highlight: #b580ff;
 }
+.product-showcase__row[aria-labelledby="prime-automation-performance"] {
+  --aurora-base: #3287ec;
+  --aurora-highlight: #7cbcff;
+}
 /* Keep the strongest light on the outside edge of each demo. */
 .product-showcase__aurora {
   position: absolute;
@@ -2405,7 +2409,7 @@ text-decoration: underline dotted #b3b3b3;
 .product-showcase__copy {
   grid-area: copy;
 }
-.prime-automation__claude-logo {
+.prime-automation__integration-logo {
   display: block;
   width: 112px;
   height: auto;
@@ -2651,7 +2655,7 @@ video.product-showcase__frame {
           <section class="product-showcase__row" aria-labelledby="prime-automation-connect">
             <div class="product-showcase__aurora" aria-hidden="true"><canvas width="480" height="260"></canvas></div>
             <div class="product-showcase__copy">
-              <img class="prime-automation__claude-logo" src="claude-logo.svg" width="690" height="149" loading="lazy" decoding="async" alt="">
+              <img class="prime-automation__integration-logo" src="claude-logo.svg" width="690" height="149" loading="lazy" decoding="async" alt="">
               <h2 id="prime-automation-connect">Connect Claude to Prime Automation.</h2>
               <p>Model Context Protocol (MCP) links Claude to your Prime Automation account. Ask about your strategies or have Claude start a research run with your approval.</p>
               <dl class="product-showcase__details">
@@ -2720,6 +2724,33 @@ video.product-showcase__frame {
             </div>
             <figure class="product-showcase__demo">
               <video class="product-showcase__frame" data-src="AI%20Builder%20modes%20tour.mp4" aria-label="Building and backtesting strategies with Quant Studio and Autobuild" width="1920" height="1080" autoplay muted loop playsinline preload="metadata"></video>
+            </figure>
+          </section>
+        </div>
+        <div>
+          <section class="product-showcase__row product-showcase__row--reverse" aria-labelledby="prime-automation-performance">
+            <div class="product-showcase__aurora" aria-hidden="true"><canvas width="480" height="260"></canvas></div>
+            <div class="product-showcase__copy">
+              <img class="prime-automation__integration-logo" src="openai-logo.svg" width="2500" height="689" loading="lazy" decoding="async" alt="OpenAI">
+              <h2 id="prime-automation-performance">Track performance in ChatGPT.</h2>
+              <p>Ask “How did my strategies do this month?” ChatGPT pulls a performance summary across your Prime Automation strategies and shows it right in the chat.</p>
+              <dl class="product-showcase__details">
+                <div><dt>PnL</dt>
+                  <dd>Track realized gains and losses</dd>
+                </div>
+                <div><dt>Trades</dt>
+                  <dd>See closed trades and win rate</dd>
+                </div>
+                <div><dt>Best day</dt>
+                  <dd>Compare daily results</dd>
+                </div>
+              </dl>
+              <a href="#register" class="n-cta-btn product-showcase__cta w-inline-block">
+                <span class="btn-text black">Get Started</span><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDVMMTkgMTJMMTIgMTkiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2U9ImJsYWNrIi8+CjxwYXRoIGQ9Ik01IDEyTDE5IDEyIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlPSJibGFjayIvPgo8L3N2Zz4K" loading="lazy" alt="" class="cta-btn-arrow">
+              </a>
+            </div>
+            <figure class="product-showcase__demo">
+              <video class="product-showcase__frame" data-src="MCP%20chat%20-%20PnL%20summary%20(ChatGPT).mp4" aria-label="Asking ChatGPT for a Prime Automation performance summary with realized PnL, closed trades, win rate, and best day" width="1920" height="1200" autoplay muted loop playsinline preload="metadata"></video>
             </figure>
           </section>
         </div>
