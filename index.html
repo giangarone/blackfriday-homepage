@@ -2018,7 +2018,7 @@ text-decoration: underline dotted #b3b3b3;
               </div>
               <div class="div-800">
                 <div class="n-plan-price-old-copy">$67.00</div>
-                <div class="n-plan-price-copy-copy">$33.50</div>
+                <div class="n-plan-price-copy-copy">$33.50<span class="text-span-70">/mo</span></div>
                 <div class="n-billed">first month $33.50, then $67.00/mo</div>
               </div>
             </div>
@@ -2227,7 +2227,7 @@ text-decoration: underline dotted #b3b3b3;
               </div>
               <div class="div-800">
                 <div class="n-plan-price-old-copy">$117.00</div>
-                <div class="n-plan-price-copy-copy">$58.50</div>
+                <div class="n-plan-price-copy-copy">$58.50<span class="text-span-70">/mo</span></div>
                 <div class="n-billed">first month $58.50, then $117.00/mo</div>
               </div>
             </div>
@@ -2441,7 +2441,7 @@ text-decoration: underline dotted #b3b3b3;
               </div>
               <div class="div-800">
                 <div class="n-plan-price-old-copy">$149.00</div>
-                <div class="n-plan-price-copy-copy">$74.50</div>
+                <div class="n-plan-price-copy-copy">$74.50<span class="text-span-70">/mo</span></div>
                 <div class="n-billed">first month $74.50, then $149.00/mo</div>
               </div>
             </div>
@@ -2650,7 +2650,7 @@ text-decoration: underline dotted #b3b3b3;
               </div>
               <div class="div-800">
                 <div class="n-plan-price-old-copy">$199.00</div>
-                <div class="n-plan-price-copy-copy">$99.50</div>
+                <div class="n-plan-price-copy-copy">$99.50<span class="text-span-70">/mo</span></div>
                 <div class="n-billed">first month $99.50, then $199.00/mo</div>
               </div>
             </div>
@@ -2867,7 +2867,7 @@ text-decoration: underline dotted #b3b3b3;
               </div>
               <div class="div-800">
                 <div class="n-plan-price-old-copy">$489.00</div>
-                <div class="n-plan-price-copy-copy">$244.50</div>
+                <div class="n-plan-price-copy-copy">$244.50<span class="text-span-70">/yr</span></div>
                 <div class="n-billed">first year $244.50, then $489.00/yr</div>
               </div>
             </div>
@@ -3076,7 +3076,7 @@ text-decoration: underline dotted #b3b3b3;
               </div>
               <div class="div-800">
                 <div class="n-plan-price-old-copy">$708.00</div>
-                <div class="n-plan-price-copy-copy">$354.00</div>
+                <div class="n-plan-price-copy-copy">$354.00<span class="text-span-70">/yr</span></div>
                 <div class="n-billed">first year $354.00, then $708.00/yr</div>
               </div>
             </div>
@@ -3290,7 +3290,7 @@ text-decoration: underline dotted #b3b3b3;
               </div>
               <div class="div-800">
                 <div class="n-plan-price-old-copy">$1,428.00</div>
-                <div class="n-plan-price-copy-copy">$714.00</div>
+                <div class="n-plan-price-copy-copy">$714.00<span class="text-span-70">/yr</span></div>
                 <div class="n-billed">first year $714.00, then $1,428.00/yr</div>
               </div>
             </div>
@@ -3499,7 +3499,7 @@ text-decoration: underline dotted #b3b3b3;
               </div>
               <div class="div-800">
                 <div class="n-plan-price-old-copy">$2,028.00</div>
-                <div class="n-plan-price-copy-copy">$1,014.00</div>
+                <div class="n-plan-price-copy-copy">$1,014.00<span class="text-span-70">/yr</span></div>
                 <div class="n-billed">first year $1,014.00, then $2,028.00/yr</div>
               </div>
             </div>
@@ -3743,10 +3743,15 @@ text-decoration: underline dotted #b3b3b3;
 }
 
 #subscription-checkout .elite-data-feature-heading {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 4px 8px;
+}
+
+#subscription-checkout .elite-data-feature-heading .bf-time-duration {
+  margin-inline-start: auto;
 }
 
 #subscription-checkout .n-billed {
