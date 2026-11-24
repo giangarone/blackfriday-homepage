@@ -1325,9 +1325,7 @@ background: linear-gradient(115deg,
                     <h2 id="bravo-financing-heading">Buy now,<br>pay later</h2>
                     <p>Spread the cost over monthly payments.</p>
                   </div>
-                  <div class="bravo-financing-art" aria-hidden="true">
-                    <span class="bravo-financing-calendar"></span>
-                  </div>
+                  <div class="bravo-financing-receipts" aria-hidden="true"></div>
                 </div>
                 <div class="bravo-financing-provider">
                   <img src="images/clarity-pay-logo-golden.svg" width="201" height="38" alt="Clarity Pay">
@@ -1554,45 +1552,39 @@ head.appendChild(script);
   font-weight: 500;
   line-height: 1.5;
 }
-.bravo-financing-art {
-  display: grid;
+.bravo-financing-receipts {
   position: relative;
-  place-items: center;
   aspect-ratio: 1;
 }
-.bravo-financing-art::before,
-.bravo-financing-art::after {
+.bravo-financing-receipts::before,
+.bravo-financing-receipts::after {
   content: "";
   position: absolute;
-  inset: 4%;
-  border: 1px solid #f5bd6838;
-  border-radius: 50%;
+  width: 56%;
+  height: 72%;
+  border-radius: 4px 4px 0 0;
 }
-.bravo-financing-art::after {
-  inset: 17%;
+.bravo-financing-receipts::before {
+  right: 12%;
+  bottom: 11%;
+  border: 1px solid #c29051;
+  border-radius: 4px;
+  background: linear-gradient(155deg, #936234, #39230f);
+  transform: rotate(16deg);
 }
-.bravo-financing-calendar {
-  position: relative;
-  z-index: 1;
-  width: 68%;
-  aspect-ratio: 1.06;
-  border: 1px solid #ffdc91;
-  border-radius: 7px;
-  background: linear-gradient(145deg, #fff0bd 6%, #f3bb5d 54%, #ad6327);
-  box-shadow: 0 6px 14px #0008;
-  transform: rotate(-11deg);
-}
-.bravo-financing-calendar::before {
-  content: "";
-  position: absolute;
-  inset: 28% 0 auto;
-  border-top: 1px solid #7c471d73;
-}
-.bravo-financing-calendar::after {
-  content: "";
-  position: absolute;
-  inset: 42% 20% 15%;
-  background: radial-gradient(circle, #693b15 25%, transparent 31%) 0 0 / 33.333% 50%;
+.bravo-financing-receipts::after {
+  top: 9%;
+  left: 12%;
+  background:
+    linear-gradient(#75451e, #75451e) 28% 27% / 52% 2px no-repeat,
+    linear-gradient(#75451e99, #75451e99) 21% 42% / 36% 1px no-repeat,
+    linear-gradient(#75451e99, #75451e99) 30% 55% / 58% 1px no-repeat,
+    linear-gradient(#75451e, #75451e) 72% 75% / 26% 2px no-repeat,
+    linear-gradient(145deg, #fff3cb, #edb45e 70%, #cf8b40);
+  mask:
+    linear-gradient(#000 0 0) top / 100% calc(100% - 4px) no-repeat,
+    radial-gradient(circle at 50% 0, #000 4px, transparent 4.5px) bottom / 8px 4px repeat-x;
+  transform: rotate(-12deg);
 }
 .bravo-financing-provider {
   display: flex;
