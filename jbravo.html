@@ -1235,13 +1235,31 @@ background: linear-gradient(115deg,
             <div class="nn-checkout-header">
               <div class="section-heading"><strong class="section-heading">Grab My <span class="bravo-checkout-heading-event">Black Friday</span> Bundle</strong></div>
               <p class="section-subheading bravo-checkout-subheading">Get my exclusive indicators, automate the strategies I trade, and join me for live trading in Discord.</p>
-              <div class="bravo-checkout-countdown">
-                <span id="bravo-countdown-label">Offer ends soon</span>
+              <div class="bf-checkout-countdown">
+                <div class="n-plan-desc-copy" id="bravo-countdown-label">Offer ends soon</div>
                 <div class="countdown-wrap" role="timer" aria-labelledby="bravo-countdown-label">
-                  <span><span class="cd-days">00</span> <abbr title="days">d</abbr></span>
-                  <span><span class="cd-hours">00</span> <abbr title="hours">h</abbr></span>
-                  <span><span class="cd-minutes">00</span> <abbr title="minutes">m</abbr></span>
-                  <span><span class="cd-seconds">00</span> <abbr title="seconds">s</abbr></span>
+                  <div class="countdown-box">
+                    <div class="countdown-item">
+                      <div class="countdown-fill">
+                        <div class="countdown-number"><span class="cd-days">00</span> <span class="countdown-label">DAYS</span></div>
+                      </div>
+                    </div>
+                    <div class="countdown-item">
+                      <div class="countdown-fill">
+                        <div class="countdown-number"><span class="cd-hours">00</span> <span class="countdown-label">HRS</span></div>
+                      </div>
+                    </div>
+                    <div class="countdown-item">
+                      <div class="countdown-fill">
+                        <div class="countdown-number"><span class="cd-minutes">00</span> <span class="countdown-label">MIN</span></div>
+                      </div>
+                    </div>
+                    <div class="countdown-item">
+                      <div class="countdown-fill">
+                        <div class="countdown-number"><span class="cd-seconds">00</span> <span class="countdown-label">SEC</span></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -5439,7 +5457,7 @@ head.appendChild(script);
   align-items: center;
   gap: 7px;
   min-height: 44px;
-  color: var(--home-gold-light);
+  color: #ffc663;
   font-family: Plus Jakarta Sans, sans-serif;
   font-size: 13px;
   font-weight: 700;
@@ -5573,29 +5591,12 @@ head.appendChild(script);
     max-width: min(100%, 42rem);
   }
 }
-.bravo-checkout-countdown {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 8px 12px;
-  margin-top: 12px;
-  color: #d2d0d0;
-  font: 600 .8125rem/1.4 Plus Jakarta Sans, sans-serif;
+#n-checkout .bf-checkout-countdown > .n-plan-desc-copy {
+  letter-spacing: -0.03em;
 }
-.bravo-checkout-countdown .countdown-wrap {
-  gap: 8px;
-  padding-inline-start: 12px;
-  border-inline-start: 1px solid #51412c;
-  color: var(--white);
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-.bravo-checkout-countdown abbr {
-  border-bottom: 0;
-  color: #d2d0d0;
-  font-weight: 500;
-  text-decoration: none;
+#n-checkout .bf-checkout-countdown .countdown-item {
+  border: 1px solid #3d3d3d;
+  padding: 0;
 }
 .bf-gold-offer {
   margin-top: 12px;
