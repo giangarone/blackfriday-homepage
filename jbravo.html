@@ -1522,18 +1522,15 @@ head.appendChild(script);
 .bravo-financing {
   width: 100%;
   margin-top: 20px;
-  padding: 15px;
-  border: 1px solid #72542f;
-  border-radius: 14px;
-  background:
-    radial-gradient(ellipse at 100% 0%, #463014, transparent 67%),
-    #18130e;
+  margin-bottom: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--home-gold-divider);
   font-family: Plus Jakarta Sans, sans-serif;
   scroll-margin-top: 88px;
 }
 .bravo-financing-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 30%;
+  grid-template-columns: minmax(0, 1fr) min(30%, 84px);
   align-items: center;
   gap: 10px;
 }
@@ -1592,9 +1589,7 @@ head.appendChild(script);
   align-items: center;
   justify-content: space-between;
   gap: 6px 12px;
-  margin-top: 13px;
-  padding-top: 11px;
-  border-top: 1px solid #f5bd6840;
+  margin-top: 12px;
 }
 .bravo-financing-provider img {
   display: block;
@@ -1605,8 +1600,15 @@ head.appendChild(script);
   font-size: 12px;
 }
 .bravo-financing:focus-visible {
-  outline: 2px solid var(--home-gold-light);
-  outline-offset: 3px;
+  outline: none;
+  box-shadow: inset 0 1px var(--home-gold-light);
+  border-top-color: var(--home-gold-light);
+}
+@media (forced-colors: active) {
+  .bravo-financing:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 3px;
+  }
 }
 .gold-plan .div-block-432 {
   flex-wrap: wrap;
