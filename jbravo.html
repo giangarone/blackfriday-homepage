@@ -1320,14 +1320,19 @@ background: linear-gradient(115deg,
                 </li>
               </ul>
               <section class="bravo-financing" id="bravo-financing" aria-labelledby="bravo-financing-heading" tabindex="-1">
-                <h2 id="bravo-financing-heading">Buy now, pay later</h2>
-                <p>Get The Bravo Bundle today and spread the cost over monthly payments.</p>
-                <a class="bravo-financing-link" href="checkout.html?bundle=bravo&amp;method=clarity">
-                  Explore monthly financing
-                  <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path d="m4 2.5 4 3.5-4 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
+                <div class="bravo-financing-intro">
+                  <div>
+                    <h2 id="bravo-financing-heading">Buy now,<br>pay later</h2>
+                    <p>Spread the cost over monthly payments.</p>
+                  </div>
+                  <div class="bravo-financing-art" aria-hidden="true">
+                    <span class="bravo-financing-calendar"></span>
+                  </div>
+                </div>
+                <div class="bravo-financing-provider">
+                  <img src="images/clarity-pay-logo.svg" width="201" height="38" alt="Clarity Pay">
+                  <p>Select at checkout</p>
+                </div>
               </section>
               <div class="checkout-payment-actions">
                 <a href="#" class="nn-checkout-button btn-on-plan-head gold w-inline-block">
@@ -1518,48 +1523,96 @@ head.appendChild(script);
 }
 .bravo-financing {
   width: 100%;
-  margin-top: 16px;
-  border-top: 1px solid var(--home-gold-divider);
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #72542f;
+  border-radius: 14px;
+  background:
+    radial-gradient(ellipse at 100% 0%, #463014, transparent 67%),
+    #18130e;
   font-family: Plus Jakarta Sans, sans-serif;
   scroll-margin-top: 88px;
 }
+.bravo-financing-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 30%;
+  align-items: center;
+  gap: 10px;
+}
 .bravo-financing h2 {
-  margin: 12px 0 5px;
-  color: var(--white);
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -.025em;
+  margin: 0 0 7px;
+  color: #fff5df;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.035em;
 }
 .bravo-financing p {
   margin: 0;
-  color: #d2d0d0;
-  font-size: 12px;
+  color: #e6d6bc;
+  font-size: 13px;
   font-weight: 500;
   line-height: 1.5;
 }
-.bravo-financing-link {
-  display: inline-flex;
+.bravo-financing-art {
+  display: grid;
+  position: relative;
+  place-items: center;
+  aspect-ratio: 1;
+}
+.bravo-financing-art::before,
+.bravo-financing-art::after {
+  content: "";
+  position: absolute;
+  inset: 4%;
+  border: 1px solid #f5bd6838;
+  border-radius: 50%;
+}
+.bravo-financing-art::after {
+  inset: 17%;
+}
+.bravo-financing-calendar {
+  position: relative;
+  z-index: 1;
+  width: 68%;
+  aspect-ratio: 1.06;
+  border: 1px solid #ffdc91;
+  border-radius: 7px;
+  background: linear-gradient(145deg, #fff0bd 6%, #f3bb5d 54%, #ad6327);
+  box-shadow: 0 6px 14px #0008;
+  transform: rotate(-11deg);
+}
+.bravo-financing-calendar::before {
+  content: "";
+  position: absolute;
+  inset: 28% 0 auto;
+  border-top: 1px solid #7c471d73;
+}
+.bravo-financing-calendar::after {
+  content: "";
+  position: absolute;
+  inset: 42% 20% 15%;
+  background: radial-gradient(circle, #693b15 25%, transparent 31%) 0 0 / 33.333% 50%;
+}
+.bravo-financing-provider {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 7px;
-  min-height: 44px;
-  color: #ffc663;
-  font-family: Plus Jakarta Sans, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.35;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  justify-content: space-between;
+  gap: 6px 12px;
+  margin-top: 13px;
+  padding-top: 11px;
+  border-top: 1px solid #f5bd6840;
 }
-.bravo-financing-link svg {
-  flex-shrink: 0;
-  transform: translateY(2px);
+.bravo-financing-provider img {
+  display: block;
+  width: 98px;
+  height: auto;
 }
-.bravo-financing-link:hover {
-  color: #fff;
+.bravo-financing-provider p {
+  font-size: 12px;
 }
-.bravo-financing:focus-visible,
-.bravo-financing-link:focus-visible {
+.bravo-financing:focus-visible {
   outline: 2px solid var(--home-gold-light);
   outline-offset: 3px;
 }
