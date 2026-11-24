@@ -68,6 +68,15 @@
         ],
         "createdAt": "2026-11-23T16:23:53.313Z",
         "reason": "Codex: Reuse the existing checkout typeface on the payment screen for consistency across the checkout flow."
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "jbravo.html"
+        ],
+        "createdAt": "2026-11-24T18:50:41.237Z",
+        "reason": "User confirmed the Bravo Bundle card should keep its original gold radial fill and requested restoring it after trying a charcoal replacement."
       }
     ]
   }
