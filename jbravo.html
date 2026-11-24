@@ -1233,9 +1233,10 @@ background: linear-gradient(115deg,
         <div class="n-checkout-header bf-n-checkout-header">
           <div class="checkout-header">
             <div class="nn-checkout-header">
-              <div class="section-heading"><strong class="section-heading">Grab My Black Friday Bundle</strong></div>
+              <div class="section-heading"><strong class="section-heading">Grab My <span class="bravo-checkout-heading-accent">Black Friday</span> Bundle</strong></div>
+              <p class="section-subheading bravo-checkout-subheading">Get my exclusive indicators, automate the strategies I trade, and join me for live trading in Discord.</p>
               <div class="bf-checkout-countdown">
-                <div class="n-plan-desc-copy">Get the offer before it's gone</div>
+                <div class="n-plan-desc-copy">Offer ends soon</div>
                 <div class="countdown-wrap">
                   <div class="countdown-box">
                     <div class="countdown-item">
@@ -5409,10 +5410,12 @@ head.appendChild(script);
     transition: filter 150ms ease, border-color 150ms ease;
   }
 }
+#n-checkout {
+  --home-gold-gradient: linear-gradient(115deg, #b8651a, #ee9a31 28%, #ffd98a 55%, #fac66b 78%, #d07c22);
+}
 .nn-checkout-plan.gold-plan {
   --home-gold: #fac66b;
   --home-gold-light: #ffd98a;
-  --home-gold-gradient: linear-gradient(115deg, #b8651a, #ee9a31 28%, #ffd98a 55%, #fac66b 78%, #d07c22);
   --home-gold-tag-bg: #987123;
   --home-gold-divider: #624c27;
   position: relative;
@@ -5562,6 +5565,40 @@ head.appendChild(script);
 #n-checkout .nn-checkout-header > .section-heading > .section-heading {
   display: block;
   font-size: min(4rem, 6cqi);
+}
+.bravo-checkout-heading-accent {
+  white-space: nowrap;
+}
+@media (forced-colors: none) {
+  @supports (background-clip: text) {
+    .bravo-checkout-heading-accent {
+      background-image: var(--home-gold-gradient);
+      background-clip: text;
+      color: transparent;
+    }
+  }
+}
+@media (max-width: 767px) {
+  #n-checkout,
+  #n-checkout > #register {
+    scroll-margin-top: 48px;
+  }
+  #n-checkout .nn-checkout-header > .section-heading > .section-heading {
+    font-size: clamp(2rem, 10cqi, 2.75rem);
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+}
+.bravo-checkout-subheading {
+  max-width: min(100%, 56rem);
+  color: #d9d9d9;
+  font-size: clamp(.875rem, 1.8cqi, 1.125rem);
+  text-wrap: balance;
+}
+@media (min-width: 768px) {
+  .bravo-checkout-subheading {
+    max-width: min(100%, 42rem);
+  }
 }
 #n-checkout .bf-checkout-countdown > .n-plan-desc-copy {
   letter-spacing: -0.03em;
