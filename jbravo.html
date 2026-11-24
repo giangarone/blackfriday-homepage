@@ -1287,7 +1287,12 @@ background: linear-gradient(115deg,
               <section class="bravo-financing" id="bravo-financing" aria-labelledby="bravo-financing-heading" tabindex="-1">
                 <h2 id="bravo-financing-heading">Buy now, pay monthly</h2>
                 <p>Get The Bravo Bundle today and spread the cost over monthly payments.</p>
-                <a class="bravo-financing-link" href="checkout.html?bundle=bravo&amp;method=clarity">Explore monthly financing</a>
+                <a class="bravo-financing-link" href="checkout.html?bundle=bravo&amp;method=clarity">
+                  Explore monthly financing
+                  <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="m4 2.5 4 3.5-4 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
               </section>
               <div class="checkout-payment-actions">
                 <a href="#" class="nn-checkout-button btn-on-plan-head gold w-inline-block">
@@ -5447,7 +5452,7 @@ head.appendChild(script);
 .bravo-financing-link {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 7px;
   min-height: 44px;
   color: var(--home-gold-light);
   font-family: Plus Jakarta Sans, sans-serif;
@@ -5457,13 +5462,9 @@ head.appendChild(script);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.bravo-financing-link::after {
-  content: "";
-  flex: 0 0 7px;
-  height: 7px;
-  border-top: 1px solid;
-  border-right: 1px solid;
-  transform: rotate(45deg);
+.bravo-financing-link svg {
+  flex-shrink: 0;
+  transform: translateY(2px);
 }
 .bravo-financing-link:hover {
   color: #fff;
