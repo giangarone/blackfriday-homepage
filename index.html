@@ -148,6 +148,53 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
   <style>
+.bf-offer-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px 16px;
+  padding: 7px 16px;
+  background: #5426ac;
+  color: #fff;
+  text-align: center;
+  font: 600 13px/1.45 "Plus Jakarta Sans", sans-serif;
+}
+
+.bf-offer-banner p {
+  margin: 0;
+  font-weight: 400;
+}
+
+.bf-offer-banner a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.bf-offer-banner a:hover {
+  color: #e9d9ff;
+}
+
+.bf-offer-banner a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.bf-offer-banner__countdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  background: #35156f;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.bf-offer-banner__digits {
+  font-variant-numeric: tabular-nums;
+}
+
 @media screen and (max-width: 767px) {
   #n-checkout .nn-checkout-plan {
     border-width: 1px;
@@ -160,6 +207,13 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7RG9GK3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!--  End Google Tag Manager (noscript)  -->
   </div>
+  <aside class="bf-offer-banner" aria-label="Black Friday offers">
+    <p><a href="#subscription-checkout">50% off your first subscription payment with code <strong>BF2026</strong></a> and <a href="#register">limited-time Black Friday bundles</a></p>
+    <div class="bf-offer-banner__countdown" role="timer">
+      <span>Time left</span>
+      <span id="bf-offer-banner-timer" class="bf-offer-banner__digits">--D --H --M --S</span>
+    </div>
+  </aside>
   <div data-w-id="402302c9-d66c-12f2-a22e-2caa2fa9b16f" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="n-nav w-nav">
     <div class="n-nav-content">
       <a href="index.html" aria-current="page" class="brand brand_v2 w-nav-brand w--current"><img width="168" loading="eager" alt="" src="images/n-logo.svg" class="n-nav-logo"></a>
@@ -8474,6 +8528,7 @@ head.appendChild(script);
     var RESET_TIME_UTC = 13 * 3600 + 30 * 60; // 5:30 a.m. PST (UTC-08:00).
     var hero = document.querySelector('.bf-hero .cp-bf-sale-countdown');
     var heroDigits = hero ? hero.querySelectorAll('[data-cp-bf-digit]') : [];
+    var bannerTimer = document.getElementById('bf-offer-banner-timer');
     var motion = window.matchMedia('(prefers-reduced-motion: no-preference)');
     var inView = !('IntersectionObserver' in window);
     function syncMotion() {
@@ -8513,6 +8568,9 @@ head.appendChild(script);
         countdown.querySelector('.cd-minutes').textContent = pad(minutes);
         countdown.querySelector('.cd-seconds').textContent = pad(seconds);
       });
+      if (bannerTimer) {
+        bannerTimer.textContent = pad(days) + 'D ' + pad(hours) + 'H ' + pad(minutes) + 'M ' + pad(seconds) + 'S';
+      }
       if (hero) syncMotion();
       setTimeout(updateCountdowns, 1000 - (Date.now() % 1000));
     }
