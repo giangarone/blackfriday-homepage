@@ -1262,8 +1262,8 @@ background: linear-gradient(115deg,
                 </div>
               </div>
               <div class="bf-gold-offer">
-                <p>Bought Prime Automation during last year’s Black Friday?</p>
-                <p>Get up to <span class="bf-gold-offer-amount">$1,000 off</span> The Bravo Bundle.</p>
+                <p>Bought Lifetime last year? You qualify for a special discount on The Bravo Bundle.</p>
+                <p><button type="button" class="bf-gold-offer-login">Log in</button> to see your discount.</p>
               </div>
             </div>
           </div>
@@ -1285,7 +1285,7 @@ background: linear-gradient(115deg,
                 <div class="n-plan-price-copy-copy">$2,499</div>
               </div>
               <section class="bravo-financing" id="bravo-financing" aria-labelledby="bravo-financing-heading" tabindex="-1">
-                <h2 id="bravo-financing-heading">Buy now, pay monthly</h2>
+                <h2 id="bravo-financing-heading">Buy now, pay later</h2>
                 <p>Get The Bravo Bundle today and spread the cost over monthly payments.</p>
                 <a class="bravo-financing-link" href="checkout.html?bundle=bravo&amp;method=clarity">
                   Explore monthly financing
@@ -5587,12 +5587,23 @@ head.appendChild(script);
   margin: 0;
 }
 
-.bf-gold-offer-amount {
-  margin: 0 2px;
+.bf-gold-offer-login {
+  padding: 0 0 6px;
+  border: 0;
+  background: transparent;
   color: #ffc663;
-  font-weight: 600;
-  letter-spacing: -.04em;
-  white-space: nowrap;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.bf-gold-offer-login:hover {
+  color: #fff0d6;
+}
+.bf-gold-offer-login:focus-visible {
+  outline: 2px solid #ffc663;
+  outline-offset: 2px;
 }
 .bf-checkout-aurora {
   --aurora-background: var(--soft-black);
