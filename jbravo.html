@@ -1284,12 +1284,15 @@ background: linear-gradient(115deg,
                 <div class="n-plan-price-old-copy">$4,499.00</div>
                 <div class="n-plan-price-copy-copy">$2,499</div>
               </div>
-              <p class="n-plan-desc">Copy my trading strategies, customize them to fit your style, and let automation handle the execution.</p>
+              <section class="bravo-financing" id="bravo-financing" aria-labelledby="bravo-financing-heading" tabindex="-1">
+                <h2 id="bravo-financing-heading">Buy now, pay monthly</h2>
+                <p>Get The Bravo Bundle today and spread the cost over monthly payments.</p>
+                <a class="bravo-financing-link" href="checkout.html?bundle=bravo&amp;method=clarity">Explore monthly financing</a>
+              </section>
               <div class="checkout-payment-actions">
                 <a href="#" class="nn-checkout-button btn-on-plan-head gold w-inline-block">
                   <div class="bf-checkout-button-text">Get The Bravo Bundle</div>
                 </a>
-                <button type="button" class="checkout-payment-secondary" aria-label="Pay over time for The Bravo Bundle" aria-disabled="true" tabindex="-1">Pay over time</button>
               </div>
             </div>
             <div class="nnn-checkout-plan-body gold">
@@ -1678,7 +1681,6 @@ background: linear-gradient(115deg,
                 <a href="#" class="nn-checkout-button gold w-inline-block">
                   <div class="bf-checkout-button-text">Get The Bravo Bundle</div>
                 </a>
-                <button type="button" class="checkout-payment-secondary" aria-label="Pay over time for The Bravo Bundle" aria-disabled="true" tabindex="-1">Pay over time</button>
               </div>
             </div>
           </div>
@@ -5415,11 +5417,61 @@ head.appendChild(script);
     linear-gradient(165deg, #221a0d, #19150d 55%, #231b0e) padding-box,
     var(--home-gold-gradient) border-box;
 }
-.gold-plan :is(.n-plan-name-copy, .n-plan-price-copy-copy, .n-plan-desc, .n-off-tag.gold .n-off-tag-text) {
+.gold-plan :is(.n-plan-name-copy, .n-plan-price-copy-copy, .n-off-tag.gold .n-off-tag-text) {
   color: var(--white);
 }
 .gold-plan .n-plan-name-copy {
   font-weight: 700;
+}
+.bravo-financing {
+  width: 100%;
+  margin-top: 16px;
+  border-top: 1px solid var(--home-gold-divider);
+  font-family: Plus Jakarta Sans, sans-serif;
+  scroll-margin-top: 88px;
+}
+.bravo-financing h2 {
+  margin: 12px 0 5px;
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -.025em;
+}
+.bravo-financing p {
+  margin: 0;
+  color: #d2d0d0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.bravo-financing-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  color: var(--home-gold-light);
+  font-family: Plus Jakarta Sans, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.bravo-financing-link::after {
+  content: "";
+  flex: 0 0 7px;
+  height: 7px;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  transform: rotate(45deg);
+}
+.bravo-financing-link:hover {
+  color: #fff;
+}
+.bravo-financing:focus-visible,
+.bravo-financing-link:focus-visible {
+  outline: 2px solid var(--home-gold-light);
+  outline-offset: 3px;
 }
 .gold-plan .div-block-432 {
   flex-wrap: wrap;

@@ -27,7 +27,7 @@
     <div class="payment-screen" id="payment-screen" hidden>
       <aside class="clarity-callout" aria-label="Buy now, pay later">
         <img class="clarity-logo" src="images/clarity-pay-logo.svg" width="201" height="38" alt="Clarity Pay">
-        <p>Want to buy now, pay later? Select <strong>Clarity Pay</strong> below.</p>
+        <p id="clarity-callout-copy">Want to buy now, pay later? Select <strong>Clarity Pay</strong> below.</p>
       </aside>
 
       <section class="order-summary" aria-labelledby="payment-order-heading">
@@ -118,6 +118,7 @@
           <section class="provider-method-details" data-provider-method="clarity" aria-labelledby="clarity-payment-heading" hidden>
             <h2 id="clarity-payment-heading">Pay over time with Clarity Pay</h2>
             <p>Clarity Pay will show the available payment plans.</p>
+            <p id="clarity-preview-note" hidden>This checkout is a preview. Financing applications are unavailable here.</p>
           </section>
 
           <button class="payment-button" id="provider-pay-button" type="button" disabled>Pay</button>

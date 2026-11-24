@@ -3,6 +3,7 @@
     ['basic', { name: 'Basic Bundle', price: 1999 }],
     ['silver', { name: 'Silver Bundle', price: 2499 }],
     ['gold', { name: 'Gold Bundle', price: 2999 }],
+    ['bravo', { name: 'The Bravo Bundle', price: 2499 }],
   ]);
   const params = new URLSearchParams(window.location.search);
   const bundleId = params.get('bundle');
@@ -12,15 +13,20 @@
   const review = document.getElementById('checkout-review');
   const paymentScreen = document.getElementById('payment-screen');
   const hasSelection = params.has('bundle') || params.has('method');
+  const isBravo = bundleId === 'bravo';
+  const bravoOfferUrl = 'jbravo.html#bravo-financing';
 
-  let price;
-  if (bundle && !review) {
-    price = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(bundle.price);
+  const price = bundle && new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(bundle.price);
+  if (bundle && (!review || isBravo)) {
     document.querySelector('[data-bundle-name]').textContent = bundle.name;
     document.querySelector('[data-bundle-price]').textContent = price;
   }
 
   if (options) {
+    if (isBravo) {
+      window.location.replace(bravoOfferUrl);
+      return;
+    }
     if (!bundle) {
       document.getElementById('bundle-unavailable').hidden = false;
       return;
@@ -35,8 +41,8 @@
     return;
   }
 
-  const optionsUrl = bundle ? `payment-options.html?bundle=${bundleId}` : 'payment-options.html';
-  if (hasSelection && (!bundle || (method !== 'card' && method !== 'clarity'))) {
+  const optionsUrl = isBravo ? bravoOfferUrl : bundle ? `payment-options.html?bundle=${bundleId}` : 'payment-options.html';
+  if (hasSelection && (!bundle || (method !== 'clarity' && (isBravo || method !== 'card')))) {
     window.location.replace(optionsUrl);
     return;
   }
@@ -47,6 +53,10 @@
     if (bundle) {
       document.getElementById('payment-total').textContent = price;
       paymentScreen.querySelector('[data-account-preview]').hidden = true;
+    }
+    if (isBravo) {
+      document.getElementById('clarity-callout-copy').textContent = 'Monthly financing with Clarity Pay';
+      document.getElementById('clarity-preview-note').hidden = false;
     }
 
     const provider = document.getElementById('payment-provider');
@@ -73,10 +83,17 @@
   if (hasSelection) {
     const payLater = method === 'clarity';
     document.getElementById('checkout-back').href = optionsUrl;
-    document.getElementById('checkout-back-label').textContent = 'Payment options';
+    document.getElementById('checkout-back-label').textContent = isBravo ? 'Back to The Bravo Bundle' : 'Payment options';
+
+    if (isBravo) {
+      document.getElementById('order-total').textContent = price;
+      for (const preview of review.querySelectorAll('[data-account-preview]')) {
+        preview.hidden = true;
+      }
+    }
 
     if (payLater) {
-      document.getElementById('bundle-payment').textContent = 'Pay over time with Clarity Pay';
+      document.getElementById('bundle-payment').textContent = isBravo ? 'Pay monthly with Clarity Pay' : 'Pay over time with Clarity Pay';
       document.getElementById('order-total-label').textContent = 'Bundle total';
       document.getElementById('card-renewals').hidden = true;
       document.getElementById('clarity-renewals').hidden = false;
