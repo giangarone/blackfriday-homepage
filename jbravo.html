@@ -767,12 +767,11 @@ background: linear-gradient(115deg,
             </div>
           </div>
         </div>
-        <div class="div-block-421">
-          <div class="div-block-422"><img src="images/bravo-face-2.compressed.png" loading="lazy" alt="" class="image-91"></div>
-          <p class="with">Built with <span class="influencer-name">J Bravo</span></p>
-        </div>
-        <p class="new-hero-heading bf-heading">The Market, Fully Revealed.</p>
-        <p class="new-hero-subheading">Introducing MarketStream and the all-new Prime Automation — see everything the market does, and let proven bots trade it for you, 24/7.</p>
+        <p class="new-hero-heading bf-heading">
+          <span>Copy My Strategies.</span>
+          <span>Put Them on Autopilot.</span>
+        </p>
+        <p class="new-hero-subheading">Automate my proven trading strategies, unlock my exclusive indicators, and connect directly with me and my team in Discord.</p>
         <div class="div-801"><img src="images/pa-logo-2.svg" loading="lazy" alt="" class="logos-hero prime-automation"><img src="images/marketstream-logo.svg" loading="lazy" alt="" class="logos-hero marketstream"></div>
         <a href="#register" class="n-cta-btn w-inline-block">
           <div class="btn-text black">See Black Friday Deals</div><img src="images/black-arrow-2px.svg" loading="lazy" alt="" class="cta-btn-arrow">
@@ -897,6 +896,11 @@ background: linear-gradient(115deg,
   isolation: isolate;
   overflow: hidden;
   background-color: var(--hero-background);
+}
+@media (min-width: 480px) and (max-width: 685px) {
+  .bf-hero .new-hero-heading {
+    font-size: 7vw;
+  }
 }
 .new-hero.bf-hero > .code-embed-10 {
   position: absolute;
@@ -1227,7 +1231,7 @@ background: linear-gradient(115deg,
         <div class="n-checkout-header bf-n-checkout-header">
           <div class="checkout-header">
             <div class="nn-checkout-header">
-              <div class="section-heading"><strong class="section-heading">Unlock Your Exclusive<br>Black Friday Bundle</strong></div>
+              <div class="section-heading"><strong class="section-heading">The Bravo Bundle Is Here</strong></div>
               <div class="bf-checkout-countdown">
                 <div class="n-plan-desc-copy">Get the offer before it's gone</div>
                 <div class="countdown-wrap">
@@ -1270,9 +1274,6 @@ background: linear-gradient(115deg,
                 <div class="n-plan-name-copy">The Bravo Bundle</div>
                 <div class="div-block-434">
                   <div class="n-off-tag gold">
-                    <div class="n-off-tag-text">Popular</div>
-                  </div>
-                  <div class="n-off-tag n-off-tag-popular">
                     <div class="n-off-tag-text">44% off</div>
                   </div>
                 </div>
@@ -1281,7 +1282,7 @@ background: linear-gradient(115deg,
                 <div class="n-plan-price-old-copy">$4,499.00</div>
                 <div class="n-plan-price-copy-copy">$2,499</div>
               </div>
-              <p class="n-plan-desc">Full-depth market data and order flow for the clearest view of liquidity and market activity.</p>
+              <p class="n-plan-desc">Copy my trading strategies, customize them to fit your style, and let automation handle the execution.</p>
               <div class="checkout-payment-actions">
                 <a href="#" class="nn-checkout-button btn-on-plan-head gold w-inline-block">
                   <div class="bf-checkout-button-text">Get The Bravo Bundle</div>
@@ -5617,11 +5618,16 @@ head.appendChild(script);
 .gold-plan :is(.nnn-checkout-plan-body.gold, .plan-pack.gold) {
   border-top-color: var(--home-gold-divider);
 }
-.gold-plan :is(.bf-time-duration, .n-off-tag-popular, .plan-feature-tag.grey) {
+.gold-plan :is(.bf-time-duration, .plan-feature-tag.grey) {
   background-color: #ffffff14;
 }
 .gold-plan img.bf-check[src$="pink-check.svg"] {
   content: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M13.3333%204L5.99996%2011.3333L2.66663%208%22%20stroke%3D%22%23FAC66B%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+}
+@media (max-width: 540px) {
+  #n-checkout .nn-checkout-header > .section-heading > .section-heading {
+    font-size: min(2rem, 8vw);
+  }
 }
 #n-checkout .bf-checkout-countdown > .n-plan-desc-copy {
   letter-spacing: -0.03em;
