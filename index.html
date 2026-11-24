@@ -2148,6 +2148,7 @@ text-decoration: underline dotted #b3b3b3;
             </button>
             <button type="button" class="nn-tab-link" aria-pressed="false" aria-controls="subscription-yearly-plans">
               <span class="text-block-72">Yearly</span>
+              <span class="tab-save">Save 40%</span>
             </button>
           </div>
         </div>
@@ -2161,8 +2162,9 @@ text-decoration: underline dotted #b3b3b3;
                 </div>
               </div>
               <div class="div-800">
+                <div class="n-plan-price-old-copy">$67.00</div>
                 <div class="n-plan-price-copy-copy">$33.50</div>
-                <div class="n-billed">First month<br>Then $67.00/month</div>
+                <div class="n-billed">first month $33.50, then $67.00/mo</div>
               </div>
             </div>
             <div class="nnn-checkout-plan-body">
@@ -2471,8 +2473,9 @@ text-decoration: underline dotted #b3b3b3;
                 </div>
               </div>
               <div class="div-800">
+                <div class="n-plan-price-old-copy">$117.00</div>
                 <div class="n-plan-price-copy-copy">$58.50</div>
-                <div class="n-billed">First month<br>Then $117.00/month</div>
+                <div class="n-billed">first month $58.50, then $117.00/mo</div>
               </div>
             </div>
             <div class="nnn-checkout-plan-body">
@@ -2786,8 +2789,9 @@ text-decoration: underline dotted #b3b3b3;
                 </div>
               </div>
               <div class="div-800">
+                <div class="n-plan-price-old-copy">$149.00</div>
                 <div class="n-plan-price-copy-copy">$74.50</div>
-                <div class="n-billed">First month<br>Then $149.00/month</div>
+                <div class="n-billed">first month $74.50, then $149.00/mo</div>
               </div>
             </div>
             <div class="nnn-checkout-plan-body popular">
@@ -3096,8 +3100,9 @@ text-decoration: underline dotted #b3b3b3;
                 </div>
               </div>
               <div class="div-800">
+                <div class="n-plan-price-old-copy">$199.00</div>
                 <div class="n-plan-price-copy-copy">$99.50</div>
-                <div class="n-billed">First month<br>Then $199.00/month</div>
+                <div class="n-billed">first month $99.50, then $199.00/mo</div>
               </div>
             </div>
             <div class="nnn-checkout-plan-body">
@@ -3408,8 +3413,9 @@ text-decoration: underline dotted #b3b3b3;
                 </div>
               </div>
               <div class="div-800">
+                <div class="n-plan-price-old-copy">$489.00</div>
                 <div class="n-plan-price-copy-copy">$244.50</div>
-                <div class="n-billed">First year<br>Then $489.00/year</div>
+                <div class="n-billed">first year $244.50, then $489.00/yr</div>
               </div>
             </div>
             <div class="nnn-checkout-plan-body">
@@ -3718,8 +3724,9 @@ text-decoration: underline dotted #b3b3b3;
                 </div>
               </div>
               <div class="div-800">
+                <div class="n-plan-price-old-copy">$708.00</div>
                 <div class="n-plan-price-copy-copy">$354.00</div>
-                <div class="n-billed">First year<br>Then $708.00/year</div>
+                <div class="n-billed">first year $354.00, then $708.00/yr</div>
               </div>
             </div>
             <div class="nnn-checkout-plan-body">
@@ -4033,8 +4040,9 @@ text-decoration: underline dotted #b3b3b3;
                 </div>
               </div>
               <div class="div-800">
+                <div class="n-plan-price-old-copy">$1,428.00</div>
                 <div class="n-plan-price-copy-copy">$714.00</div>
-                <div class="n-billed">First year<br>Then $1,428.00/year</div>
+                <div class="n-billed">first year $714.00, then $1,428.00/yr</div>
               </div>
             </div>
             <div class="nnn-checkout-plan-body popular">
@@ -4343,8 +4351,9 @@ text-decoration: underline dotted #b3b3b3;
                 </div>
               </div>
               <div class="div-800">
+                <div class="n-plan-price-old-copy">$2,028.00</div>
                 <div class="n-plan-price-copy-copy">$1,014.00</div>
-                <div class="n-billed">First year<br>Then $2,028.00/year</div>
+                <div class="n-billed">first year $1,014.00, then $2,028.00/yr</div>
               </div>
             </div>
             <div class="nnn-checkout-plan-body">
@@ -4667,6 +4676,12 @@ text-decoration: underline dotted #b3b3b3;
   background-color: #fff;
 }
 
+#subscription-checkout .nn-tab-link.is-active .tab-save {
+  background: #bcff63;
+  border: .5px solid #bcff63;
+  color: #000;
+}
+
 #subscription-checkout .subscription-discount {
   background-color: #212b12;
   border-color: #a7ff33;
@@ -4678,10 +4693,11 @@ text-decoration: underline dotted #b3b3b3;
 
 #subscription-checkout .n-billed {
   color: var(--70-grey);
+  font-size: 12px;
   line-height: 1.4;
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   #subscription-checkout .checkout-with-terminal {
     flex-wrap: wrap;
   }
