@@ -195,6 +195,12 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
   font-variant-numeric: tabular-nums;
 }
 
+.bf-offer-banner__unit {
+  font-size: 0.75em;
+  color: #b9a9d9;
+  margin-left: 1px;
+}
+
 @media screen and (max-width: 767px) {
   #n-checkout .nn-checkout-plan {
     border-width: 1px;
@@ -211,7 +217,7 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
     <p><a href="#subscription-checkout">50% off your first subscription payment with code <strong>BF2026</strong></a> and <a href="#register">limited-time Black Friday bundles</a></p>
     <div class="bf-offer-banner__countdown" role="timer">
       <span>Time left</span>
-      <span id="bf-offer-banner-timer" class="bf-offer-banner__digits">--D --H --M --S</span>
+      <span id="bf-offer-banner-timer" class="bf-offer-banner__digits">--<span class="bf-offer-banner__unit">D</span> --<span class="bf-offer-banner__unit">H</span> --<span class="bf-offer-banner__unit">M</span> --<span class="bf-offer-banner__unit">S</span></span>
     </div>
   </aside>
   <div data-w-id="402302c9-d66c-12f2-a22e-2caa2fa9b16f" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="n-nav w-nav">
@@ -8569,7 +8575,7 @@ head.appendChild(script);
         countdown.querySelector('.cd-seconds').textContent = pad(seconds);
       });
       if (bannerTimer) {
-        bannerTimer.textContent = pad(days) + 'D ' + pad(hours) + 'H ' + pad(minutes) + 'M ' + pad(seconds) + 'S';
+        bannerTimer.innerHTML = pad(days) + '<span class="bf-offer-banner__unit">D</span> ' + pad(hours) + '<span class="bf-offer-banner__unit">H</span> ' + pad(minutes) + '<span class="bf-offer-banner__unit">M</span> ' + pad(seconds) + '<span class="bf-offer-banner__unit">S</span>';
       }
       if (hero) syncMotion();
       setTimeout(updateCountdowns, 1000 - (Date.now() % 1000));
