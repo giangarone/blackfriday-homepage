@@ -2211,7 +2211,7 @@ transform: translateY(0);
 .checkout-item-text-div:hover .plan-text-headline {
 text-decoration: underline dotted #b3b3b3;
 }
-.bundle-features-toggle[aria-expanded="false"] ~ .nn-checkout-items .nn-checkout-item:not([data-bundle-highlight]),
+#n-checkout .nn-checkout-item[hidden],
 .bundle-features-toggle[aria-expanded="false"] ~ .checkout-payment-actions,
 .bundle-features-toggle[aria-expanded="false"] .bundle-features-hide,
 .bundle-features-toggle[aria-expanded="true"] .bundle-features-show {
@@ -2220,15 +2220,57 @@ text-decoration: underline dotted #b3b3b3;
 </style>
           <script>
 (() => {
-  const toggles = document.querySelectorAll('#n-checkout .bundle-features-toggle');
-  for (const toggle of toggles) {
-    toggle.setAttribute('aria-expanded', 'false');
+  const checkout = document.getElementById('n-checkout');
+  const planToggles = checkout.querySelectorAll('.bundle-features-toggle');
+  const groups = [];
+
+  function syncPlanToggles() {
+    const allExpanded = groups.every(({ toggle }) => toggle.getAttribute('aria-expanded') === 'true');
+    for (const toggle of planToggles) {
+      toggle.setAttribute('aria-expanded', String(allExpanded));
+    }
+  }
+
+  for (const [index, group] of checkout.querySelectorAll('.plan-pack').entries()) {
+    const extraItems = group.querySelectorAll(':scope > .nn-checkout-item:not([data-bundle-highlight])');
+    if (!extraItems.length) continue;
+
+    const groupName = group.querySelector('.pack-title').textContent.trim();
+    const planName = group.closest('.nn-checkout-plan').querySelector('.n-plan-name-copy').textContent.trim();
+    const toggle = document.createElement('button');
+    group.id = `bundle-feature-group-${index + 1}`;
+    toggle.type = 'button';
+    toggle.className = 'bundle-group-toggle plan-text-headline';
+    toggle.setAttribute('aria-controls', group.id);
+
+    const setExpanded = (expanded) => {
+      for (const item of extraItems) {
+        item.hidden = !expanded;
+      }
+      const label = expanded ? 'Show fewer' : `Show ${extraItems.length} more`;
+      toggle.textContent = label;
+      toggle.setAttribute('aria-expanded', String(expanded));
+      toggle.setAttribute('aria-label', `${label} in ${groupName}, ${planName} plan`);
+    };
+
+    setExpanded(false);
+    toggle.addEventListener('click', () => {
+      setExpanded(toggle.getAttribute('aria-expanded') === 'false');
+      syncPlanToggles();
+    });
+    group.append(toggle);
+    groups.push({ toggle, setExpanded });
+  }
+
+  syncPlanToggles();
+  for (const toggle of planToggles) {
     toggle.hidden = false;
     toggle.addEventListener('click', () => {
       const expanded = toggle.getAttribute('aria-expanded') === 'false';
-      for (const planToggle of toggles) {
-        planToggle.setAttribute('aria-expanded', String(expanded));
+      for (const group of groups) {
+        group.setExpanded(expanded);
       }
+      syncPlanToggles();
     });
   }
 })();
@@ -5914,6 +5956,26 @@ head.appendChild(script);
 }
 #n-checkout .plan-pack {
   grid-row-gap: 8px;
+}
+.bundle-group-toggle {
+  min-height: 24px;
+  margin: 0 0 0 18px;
+  padding: 2px 4px;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.bundle-group-toggle:hover {
+  color: var(--soft-white);
+}
+.bundle-group-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 .bundle-features-toggle:not([hidden]) {
   display: flex;
