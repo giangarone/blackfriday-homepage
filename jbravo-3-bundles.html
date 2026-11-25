@@ -1268,9 +1268,6 @@ background: linear-gradient(115deg,
             <div class="nn-plan-head">
               <div class="div-block-432">
                 <div class="n-plan-name-copy">Basic</div>
-                <div class="n-off-tag">
-                  <div class="n-off-tag-text">25% off</div>
-                </div>
               </div>
               <div class="div-800">
                 <div class="n-plan-price-old-copy">$3,000.00</div>
@@ -1281,11 +1278,15 @@ background: linear-gradient(115deg,
                 <a href="#" class="nn-checkout-button btn-on-plan-head w-inline-block">
                   <div class="bf-checkout-button-text">Get Basic Bundle</div>
                 </a>
-                <button type="button" class="checkout-payment-secondary" aria-label="Pay over time for the Basic bundle" aria-disabled="true" tabindex="-1">Pay over time</button>
               </div>
             </div>
             <div class="nnn-checkout-plan-body">
-              <div class="nn-checkout-items">
+              <button type="button" class="bundle-features-toggle plan-text-headline" aria-controls="basic-bundle-features" hidden>
+                <span class="bundle-features-show">Show all features</span>
+                <span class="bundle-features-hide">Show fewer features</span>
+                <span class="bundle-sr-only"> for Basic</span>
+              </button>
+              <div class="nn-checkout-items" id="basic-bundle-features">
                 <div class="regular-check-items">
                   <div class="plan-pack first-plan-pack">
                     <div class="plan-pack-head">
@@ -1294,7 +1295,7 @@ background: linear-gradient(115deg,
                         <div class="bf-checkout-item-time">1 Year</div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">L1-based  indicators<span class="plan-feature-tag grey">Delayed</span></div>
                         <div class="plan-tooltip">
@@ -1303,7 +1304,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">L2-based indicators</div>
                         <div class="plan-tooltip">
@@ -1312,7 +1313,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">Live Nasdaq data</div>
                         <div class="plan-tooltip">
@@ -1321,7 +1322,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">Live CME futures data</div>
                         <div class="plan-tooltip">
@@ -1330,7 +1331,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Analyze any chart or asset with AI</div>
                         <div class="plan-tooltip">
@@ -1339,7 +1340,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Trade stocks, crypto, futures and commodities</div>
                         <div class="plan-tooltip">
@@ -1348,7 +1349,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">Real-time whale tracking</div>
                         <div class="plan-tooltip">
@@ -1357,7 +1358,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">Create &amp; sell your own indicators with AI</div>
                         <div class="plan-tooltip">
@@ -1366,7 +1367,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">0% marketplace commission</div>
                         <div class="plan-tooltip">
@@ -1375,7 +1376,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">Institutional dark pool activity</div>
                         <div class="plan-tooltip">
@@ -1384,7 +1385,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">Exclusive VIP 5 tier &amp; trading fee discounts</div>
                         <div class="plan-tooltip">
@@ -1393,7 +1394,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">X-Ray market vision</div>
                         <div class="plan-tooltip">
@@ -1410,7 +1411,7 @@ background: linear-gradient(115deg,
                         <div class="bf-checkout-item-time">Lifetime</div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">ChartPrime Premium indicators</div>
                         <div class="plan-tooltip">
@@ -1428,7 +1429,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Live strategy sessions and TA Plus classes</div>
                         <div class="plan-tooltip">
@@ -1446,7 +1447,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Private trading community access</div>
                         <div class="plan-tooltip">
@@ -1455,7 +1456,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">ChartPrime T+ pattern engine</div>
                       </div>
@@ -1477,7 +1478,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Multi-timeframe moving averages + trend ribbon</div>
                         <div class="plan-tooltip">
@@ -1486,7 +1487,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Bravo Bands</div>
                         <div class="plan-tooltip">
@@ -1495,7 +1496,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">10+ tools &amp; features</div>
                         <div class="plan-tooltip">
@@ -1512,7 +1513,7 @@ background: linear-gradient(115deg,
                         <div class="bf-checkout-item-time">1 Year</div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">10 automated crypto strategies</div>
                         <div class="plan-tooltip">
@@ -1530,7 +1531,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Fully customizable trading bots</div>
                         <div class="plan-tooltip">
@@ -1539,7 +1540,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/50-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Full historical strategy backtests</div>
                         <div class="plan-tooltip">
@@ -1555,19 +1556,13 @@ background: linear-gradient(115deg,
                 <a href="#" class="nn-checkout-button w-inline-block">
                   <div class="bf-checkout-button-text">Get Basic Bundle</div>
                 </a>
-                <button type="button" class="checkout-payment-secondary" aria-label="Pay over time for the Basic bundle" aria-disabled="true" tabindex="-1">Pay over time</button>
               </div>
             </div>
           </div>
-          <div class="nn-checkout-plan most-popular-plan">
+          <div class="nn-checkout-plan most-popular-plan silver-plan">
             <div class="nn-plan-head">
               <div class="div-block-432">
                 <div class="n-plan-name-copy">Silver</div>
-                <div class="div-block-434">
-                  <div class="n-off-tag n-off-tag-popular">
-                    <div class="n-off-tag-text">30% off</div>
-                  </div>
-                </div>
               </div>
               <div class="div-800">
                 <div class="n-plan-price-old-copy">$3,499.00</div>
@@ -1578,11 +1573,15 @@ background: linear-gradient(115deg,
                 <a href="#" class="nn-checkout-button most-popular-plan btn-on-plan-head w-inline-block">
                   <div class="bf-checkout-button-text">Get Silver Bundle</div>
                 </a>
-                <button type="button" class="checkout-payment-secondary" aria-label="Pay over time for the Silver bundle" aria-disabled="true" tabindex="-1">Pay over time</button>
               </div>
             </div>
             <div class="nnn-checkout-plan-body popular">
-              <div class="nn-checkout-items">
+              <button type="button" class="bundle-features-toggle plan-text-headline" aria-controls="silver-bundle-features" hidden>
+                <span class="bundle-features-show">Show all features</span>
+                <span class="bundle-features-hide">Show fewer features</span>
+                <span class="bundle-sr-only"> for Silver</span>
+              </button>
+              <div class="nn-checkout-items" id="silver-bundle-features">
                 <div class="regular-check-items">
                   <div class="plan-pack first-plan-pack">
                     <div class="plan-pack-head">
@@ -1600,7 +1599,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">L2-based indicators</div>
                         <div class="plan-tooltip">
@@ -1609,22 +1608,22 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-tooltip">
                           <div class="plan-tooltip-heading">Real-time Nasdaq market data</div>
                           <div class="plan-tooltip-desc">2 free months included. Access professional-grade Nasdaq market data for faster analysis and a clearer view of price, liquidity, and market activity.</div>
                         </div>
-                        <div class="plan-text-headline">Live Nasdaq data <span class="plan-feature-tag">L1 </span><span class="plan-feature-tag grey">2 free months</span></div>
+                        <div class="plan-text-headline">Live Nasdaq data <span class="plan-feature-tag">L1 </span><span class="plan-feature-tag grey">2 mo free</span></div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-tooltip">
                           <div class="plan-tooltip-heading">Real-time CME market data</div>
                           <div class="plan-tooltip-desc">2 free months included. Access professional-grade CME futures data for deeper insight into price action, liquidity, and futures market activity.</div>
                         </div>
-                        <div class="plan-text-headline">Live CME futures data <span class="plan-feature-tag">L1 </span><span class="plan-feature-tag grey">2 free months</span></div>
+                        <div class="plan-text-headline">Live CME futures data <span class="plan-feature-tag">L1 </span><span class="plan-feature-tag grey">2 mo free</span></div>
                       </div>
                     </div>
                     <div class="nn-checkout-item"><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
@@ -1645,7 +1644,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Real-time whale tracking</div>
                         <div class="plan-tooltip">
@@ -1654,7 +1653,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">Create &amp; sell your own indicators with AI</div>
                         <div class="plan-tooltip">
@@ -1663,7 +1662,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">0% marketplace commission</div>
                         <div class="plan-tooltip">
@@ -1672,7 +1671,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">Institutional dark pool activity</div>
                         <div class="plan-tooltip">
@@ -1681,7 +1680,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">Exclusive VIP 5 tier &amp; trading fee discounts</div>
                         <div class="plan-tooltip">
@@ -1690,7 +1689,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">X-Ray market vision</div>
                         <div class="plan-tooltip">
@@ -1707,7 +1706,7 @@ background: linear-gradient(115deg,
                         <div class="bf-checkout-item-time">Lifetime</div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">ChartPrime Premium indicators</div>
                         <div class="plan-tooltip">
@@ -1725,7 +1724,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Live strategy sessions and TA Plus classes</div>
                         <div class="plan-tooltip">
@@ -1743,7 +1742,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Private trading community access</div>
                         <div class="plan-tooltip">
@@ -1752,7 +1751,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item"><img loading="lazy" src="images/plan-cross.svg" alt="Not included" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline not-included">ChartPrime T+ pattern engine</div>
                       </div>
@@ -1774,7 +1773,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Multi-timeframe moving averages + trend ribbon</div>
                         <div class="plan-tooltip">
@@ -1783,7 +1782,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Bravo Bands</div>
                         <div class="plan-tooltip">
@@ -1792,7 +1791,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">10+ tools &amp; features</div>
                         <div class="plan-tooltip">
@@ -1818,7 +1817,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Unlimited automated crypto strategies</div>
                         <div class="plan-tooltip">
@@ -1827,12 +1826,21 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Exclusive high-return strategy library</div>
                         <div class="plan-tooltip">
                           <div class="plan-tooltip-heading">Exclusive high-return strategy library</div>
                           <div class="plan-tooltip-desc">Unlock a premium library of advanced strategies designed to pursue stronger performance.</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/check-blue.svg" alt="" class="bf-check">
+                      <div class="checkout-item-text-div">
+                        <div class="plan-text-headline">Full historical strategy backtests</div>
+                        <div class="plan-tooltip">
+                          <div class="plan-tooltip-heading">Full historical strategy backtests</div>
+                          <div class="plan-tooltip-desc">Explore detailed historical performance data to evaluate each strategy before deploying it live.</div>
                         </div>
                       </div>
                     </div>
@@ -1843,7 +1851,6 @@ background: linear-gradient(115deg,
                 <a href="#" class="nn-checkout-button most-popular-plan w-inline-block">
                   <div class="bf-checkout-button-text">Get Silver Bundle</div>
                 </a>
-                <button type="button" class="checkout-payment-secondary" aria-label="Pay over time for the Silver bundle" aria-disabled="true" tabindex="-1">Pay over time</button>
               </div>
             </div>
           </div>
@@ -1851,13 +1858,8 @@ background: linear-gradient(115deg,
             <div class="nn-plan-head">
               <div class="div-block-432">
                 <div class="n-plan-name-copy">Gold</div>
-                <div class="div-block-434">
-                  <div class="n-off-tag gold">
-                    <div class="n-off-tag-text">Popular</div>
-                  </div>
-                  <div class="n-off-tag n-off-tag-popular">
-                    <div class="n-off-tag-text">35% off</div>
-                  </div>
+                <div class="n-off-tag gold">
+                  <div class="n-off-tag-text">Popular</div>
                 </div>
               </div>
               <div class="div-800">
@@ -1869,11 +1871,15 @@ background: linear-gradient(115deg,
                 <a href="#" class="nn-checkout-button btn-on-plan-head gold w-inline-block">
                   <div class="bf-checkout-button-text">Get Gold Bundle</div>
                 </a>
-                <button type="button" class="checkout-payment-secondary" aria-label="Pay over time for the Gold bundle" aria-disabled="true" tabindex="-1">Pay over time</button>
               </div>
             </div>
             <div class="nnn-checkout-plan-body gold">
-              <div class="nn-checkout-items">
+              <button type="button" class="bundle-features-toggle plan-text-headline" aria-controls="gold-bundle-features" hidden>
+                <span class="bundle-features-show">Show all features</span>
+                <span class="bundle-features-hide">Show fewer features</span>
+                <span class="bundle-sr-only"> for Gold</span>
+              </button>
+              <div class="nn-checkout-items" id="gold-bundle-features">
                 <div class="regular-check-items">
                   <div class="plan-pack first-plan-pack">
                     <div class="plan-pack-head">
@@ -1900,22 +1906,22 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-tooltip">
                           <div class="plan-tooltip-heading">Real-time Nasdaq market data</div>
                           <div class="plan-tooltip-desc">2 free months included. Access professional-grade Nasdaq market data for faster analysis and a clearer view of price, liquidity, and market activity.</div>
                         </div>
-                        <div class="plan-text-headline">Live Nasdaq data <span class="plan-feature-tag gold-tag">⚡︎ Full depth </span><span class="plan-feature-tag grey"> 2 free months</span></div>
+                        <div class="plan-text-headline">Live Nasdaq data <span class="plan-feature-tag gold-tag">⚡︎ Full depth </span><span class="plan-feature-tag grey">2 mo free</span></div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-tooltip">
                           <div class="plan-tooltip-heading">Real-time CME market data</div>
                           <div class="plan-tooltip-desc">2 free months included. Access professional-grade CME futures data for deeper insight into price action, liquidity, and futures market activity.</div>
                         </div>
-                        <div class="plan-text-headline">Live CME futures data <span class="plan-feature-tag top-tier-tag">⚡︎ Full depth </span><span class="plan-feature-tag grey">2 free months</span></div>
+                        <div class="plan-text-headline">Live CME futures data <span class="plan-feature-tag top-tier-tag">⚡︎ Full depth </span><span class="plan-feature-tag grey">2 mo free</span></div>
                       </div>
                     </div>
                     <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
@@ -1963,7 +1969,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Institutional dark pool activity</div>
                         <div class="plan-tooltip">
@@ -2025,7 +2031,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Live session replays &amp; VODs</div>
                         <div class="plan-tooltip">
@@ -2061,7 +2067,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Daily trade setups and recommendations</div>
                         <div class="plan-tooltip">
@@ -2070,7 +2076,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Trade live with Bravo &amp; his analysts</div>
                         <div class="plan-tooltip">
@@ -2105,20 +2111,20 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
-                        <div class="plan-text-headline">Create high-performing strategies with Al</div>
+                        <div class="plan-text-headline">Create high-performing strategies with AI</div>
                         <div class="plan-tooltip">
                           <div class="plan-tooltip-heading">Create high-performing strategies with AI</div>
                           <div class="plan-tooltip-desc">Use AI to help create, refine, and configure your own automated trading strategies.</div>
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
-                        <div class="plan-text-headline">$500 in Al credits</div>
+                        <div class="plan-text-headline">$500 in AI credits</div>
                         <div class="plan-tooltip">
-                          <div class="plan-tooltip-heading">$500 in Al credits</div>
+                          <div class="plan-tooltip-heading">$500 in AI credits</div>
                           <div class="plan-tooltip-desc">Receive $500 in included credits</div>
                         </div>
                       </div>
@@ -2132,7 +2138,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Let AI manage your entire portfolio</div>
                         <div class="plan-tooltip">
@@ -2185,7 +2191,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Whale Candles &amp; Sequential</div>
                         <div class="plan-tooltip">
@@ -2194,7 +2200,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Whale Sighting</div>
                         <div class="plan-tooltip">
@@ -2212,7 +2218,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Whale Screener</div>
                         <div class="plan-tooltip">
@@ -2229,7 +2235,7 @@ background: linear-gradient(115deg,
                         <div class="bf-checkout-item-time">Lifetime</div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Explosive breakout detection</div>
                         <div class="plan-tooltip">
@@ -2238,7 +2244,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Smart breakout confirmation</div>
                         <div class="plan-tooltip">
@@ -2247,7 +2253,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Precision entry and retest signals</div>
                         <div class="plan-tooltip">
@@ -2264,7 +2270,7 @@ background: linear-gradient(115deg,
                         <div class="bf-checkout-item-time">Lifetime</div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">ChartPrime Premium indicators</div>
                         <div class="plan-tooltip">
@@ -2282,7 +2288,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">Live strategy sessions and TA Plus classes</div>
                         <div class="plan-tooltip">
@@ -2309,7 +2315,7 @@ background: linear-gradient(115deg,
                         </div>
                       </div>
                     </div>
-                    <div class="nn-checkout-item"><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
+                    <div class="nn-checkout-item" data-bundle-highlight><img loading="lazy" src="images/pink-check.svg" alt="" class="bf-check">
                       <div class="checkout-item-text-div">
                         <div class="plan-text-headline">ChartPrime T+ pattern engine </div>
                       </div>
@@ -2321,7 +2327,6 @@ background: linear-gradient(115deg,
                 <a href="#" class="nn-checkout-button gold w-inline-block">
                   <div class="bf-checkout-button-text">Get Gold Bundle</div>
                 </a>
-                <button type="button" class="checkout-payment-secondary" aria-label="Pay over time for the Gold bundle" aria-disabled="true" tabindex="-1">Pay over time</button>
               </div>
             </div>
           </div>
@@ -2347,7 +2352,26 @@ transform: translateY(0);
 .checkout-item-text-div:hover .plan-text-headline {
 text-decoration: underline dotted #b3b3b3;
 }
+.bundle-features-toggle[aria-expanded="false"] ~ .nn-checkout-items .nn-checkout-item:not([data-bundle-highlight]),
+.bundle-features-toggle[aria-expanded="false"] ~ .checkout-payment-actions,
+.bundle-features-toggle[aria-expanded="false"] .bundle-features-hide,
+.bundle-features-toggle[aria-expanded="true"] .bundle-features-show {
+  display: none;
+}
 </style>
+          <script>
+(() => {
+  const toggles = document.querySelectorAll('#n-checkout .bundle-features-toggle');
+  for (const toggle of toggles) {
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.hidden = false;
+    toggle.addEventListener('click', () => {
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isExpanded));
+    });
+  }
+})();
+</script>
         </div>
       </div>
     </section>
@@ -6027,10 +6051,59 @@ head.appendChild(script);
 .n-checkout .nn-checkout-plan .nn-checkout-button {
   box-shadow: none;
 }
+#n-checkout .plan-pack {
+  grid-row-gap: 8px;
+}
+.bundle-features-toggle:not([hidden]) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--bundle-divider, var(--stroke));
+  border-radius: 8px;
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+}
+.bundle-features-toggle::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  margin-right: 3px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+}
+.bundle-features-toggle[aria-expanded="true"]::after {
+  transform: translateY(2px) rotate(225deg);
+}
+@media (hover: hover) {
+  .bundle-features-toggle:hover {
+    background: #ffffff0a;
+  }
+}
+.bundle-features-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+.bundle-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.bundle-features-toggle[aria-expanded="false"] ~ .nn-checkout-items {
+  margin-bottom: 0;
+}
 .nn-checkout-plan.silver-plan {
   --home-silver: #a8abb2;
   --home-silver-gradient: linear-gradient(115deg, #6e7076, #c9ccd2 30%, #f2f4f7 52%, #a8abb2 78%, #74767c);
   --home-silver-divider: #444546;
+  --bundle-divider: var(--home-silver-divider);
   border-color: transparent;
   background:
     linear-gradient(155deg, #262627, #181819 46%, #202021) padding-box,
@@ -6082,6 +6155,7 @@ head.appendChild(script);
   --home-gold-gradient: linear-gradient(115deg, #b8651a, #ee9a31 28%, #ffd98a 55%, #fac66b 78%, #d07c22);
   --home-gold-tag-bg: #987123;
   --home-gold-divider: #624c27;
+  --bundle-divider: var(--home-gold-divider);
   position: relative;
   border: 1px solid transparent;
   background:
@@ -6238,7 +6312,6 @@ head.appendChild(script);
 (() => {
   const checkout = document.querySelector('.bf-n-checkout-header')?.closest('.n-checkout');
   if (!checkout || checkout.querySelector(':scope > .bf-checkout-aurora')) return;
-  checkout.querySelector('.nn-checkout-plan.most-popular-plan')?.classList.add('silver-plan');
   const gold = checkout.querySelector('.nn-checkout-plan.gold-plan');
   if (gold && !gold.querySelector(':scope > .gold-plan-border')) {
     const border = document.createElement('span');
