@@ -2090,7 +2090,7 @@ text-decoration: underline dotted #b3b3b3;
                     <div class="checkout-item-text-div">
                       <div class="elite-data-feature-heading">
                         <div class="plan-text-headline">Real-time L2 order book data</div>
-                        <span class="bf-time-duration"><span class="bf-checkout-item-time">1 free month</span></span>
+                        <span class="bf-time-duration"><span class="bf-checkout-item-time">1 mo free</span></span>
                       </div>
                       <div class="n-plan-text-grey">full depth beyond the best bid &amp; ask</div>
                       <div class="plan-tooltip">
@@ -2103,7 +2103,7 @@ text-decoration: underline dotted #b3b3b3;
                     <div class="checkout-item-text-div">
                       <div class="elite-data-feature-heading">
                         <div class="plan-text-headline">Real-time L3 / MBO data</div>
-                        <span class="bf-time-duration"><span class="bf-checkout-item-time">1 free month</span></span>
+                        <span class="bf-time-duration"><span class="bf-checkout-item-time">1 mo free</span></span>
                       </div>
                       <div class="n-plan-text-grey">individual orders behind the book</div>
                       <div class="plan-tooltip">
@@ -2380,11 +2380,17 @@ text-decoration: underline dotted #b3b3b3;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px 8px;
+  gap: 4px 6px;
 }
 
-#subscription-checkout .elite-data-feature-heading .bf-time-duration {
-  margin-inline-start: auto;
+@media screen and (max-width: 360px) {
+  #subscription-checkout .elite-data-feature-heading .bf-time-duration {
+    padding-inline: 4px;
+  }
+
+  #subscription-checkout .elite-data-feature-heading .bf-checkout-item-time {
+    font-size: 10px;
+  }
 }
 
 #subscription-checkout .n-billed {
