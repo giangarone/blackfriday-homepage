@@ -2056,19 +2056,21 @@ text-decoration: underline dotted #b3b3b3;
         <div class="n-checkout-plans">
           <div class="nn-checkout-plan">
             <div class="nn-plan-head">
-              <div class="div-block-432">
-                <div class="n-plan-name-copy">MarketStream Elite</div>
-                <div class="n-off-tag subscription-discount">
-                  <div class="n-off-tag-text">70% Off</div>
+              <div class="div-block-432 subscription-plan-header">
+                <img src="images/marketstream-logo.svg" width="1897" height="208" alt="MarketStream" class="subscription-plan-logo bf-plan-logo-marketstream">
+                <div class="subscription-plan-tags">
+                  <div class="n-off-tag subscription-tier">
+                    <div class="n-off-tag-text">Elite</div>
+                  </div>
+                  <div class="n-off-tag subscription-discount">
+                    <div class="n-off-tag-text">70% Off</div>
+                  </div>
                 </div>
               </div>
               <div class="div-800">
                 <div class="n-plan-price-old-copy">$199.00</div>
                 <div class="n-plan-price-copy-copy">$59.70<span class="text-span-70">/mo</span></div>
                 <div class="n-billed">first month $59.70, then $199.00/mo</div>
-              </div>
-              <div class="bf-plan-logo">
-                <img src="images/marketstream-logo.svg" width="1897" height="208" alt="" class="bf-plan-logo-marketstream">
               </div>
             </div>
             <div class="nnn-checkout-plan-body">
@@ -2179,19 +2181,21 @@ text-decoration: underline dotted #b3b3b3;
           </div>
           <div class="nn-checkout-plan">
             <div class="nn-plan-head">
-              <div class="div-block-432">
-                <div class="n-plan-name-copy">Prime Automation Builder</div>
-                <div class="n-off-tag subscription-discount">
-                  <div class="n-off-tag-text">70% Off</div>
+              <div class="div-block-432 subscription-plan-header">
+                <img src="images/pa-logo-2.svg" width="164" height="25" alt="Prime Automation" class="subscription-plan-logo">
+                <div class="subscription-plan-tags">
+                  <div class="n-off-tag subscription-tier">
+                    <div class="n-off-tag-text">Builder</div>
+                  </div>
+                  <div class="n-off-tag subscription-discount">
+                    <div class="n-off-tag-text">70% Off</div>
+                  </div>
                 </div>
               </div>
               <div class="div-800">
                 <div class="n-plan-price-old-copy">$333.30</div>
                 <div class="n-plan-price-copy-copy">$99.99<span class="text-span-70">/mo</span></div>
                 <div class="n-billed">first month $99.99, then $333.30/mo</div>
-              </div>
-              <div class="bf-plan-logo">
-                <img src="images/pa-logo-2.svg" width="164" height="25" alt="">
               </div>
             </div>
             <div class="nnn-checkout-plan-body">
@@ -2339,6 +2343,38 @@ text-decoration: underline dotted #b3b3b3;
   color: #bcff63;
 }
 
+#subscription-checkout .subscription-plan-header {
+  gap: 8px;
+}
+
+#subscription-checkout .subscription-plan-logo {
+  width: 144px;
+  min-width: 0;
+  height: 22px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+#subscription-checkout .bf-plan-logo-marketstream {
+  width: 132px;
+}
+
+#subscription-checkout .subscription-plan-tags {
+  display: flex;
+  flex: none;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+#subscription-checkout .subscription-tier {
+  background-color: #271936;
+  border-color: #ad87db;
+}
+
+#subscription-checkout .subscription-tier .n-off-tag-text {
+  color: #e3ccff;
+}
+
 #subscription-checkout .elite-data-feature-heading {
   width: 100%;
   display: flex;
@@ -2357,26 +2393,6 @@ text-decoration: underline dotted #b3b3b3;
   line-height: 1.4;
 }
 
-#subscription-checkout .bf-plan-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 10px;
-  padding: 8px 12px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.06);
-}
-#subscription-checkout .bf-plan-logo img {
-  width: auto;
-  max-width: 100%;
-  height: 22px;
-  object-fit: contain;
-}
-
-#subscription-checkout .bf-plan-logo .bf-plan-logo-marketstream {
-  max-width: min(100%, 132px);
-}
 </style>
         </div>
       </div>
