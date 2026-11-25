@@ -34679,7 +34679,7 @@ img {
 
 .plan-pack {
   grid-column-gap: 12px;
-  grid-row-gap: 12px;
+  grid-row-gap: 8px;
   border-top: .5px solid var(--stroke);
   flex-flow: column;
   justify-content: flex-start;
