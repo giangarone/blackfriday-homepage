@@ -1268,7 +1268,6 @@ background: linear-gradient(115deg,
           <nav class="nn-tab-menu" aria-label="Checkout options">
             <a href="#n-checkout" class="nn-tab-link is-active w-inline-block" aria-current="location">
               <span class="text-block-72">Bundles</span>
-              <span class="tab-save">Black Friday</span>
             </a>
             <a href="#subscription-checkout" class="nn-tab-link w-inline-block">
               <span class="text-block-72">Monthly</span>
@@ -1665,6 +1664,7 @@ background: linear-gradient(115deg,
             </div>
           </div>
           <div class="nn-checkout-plan gold-plan">
+            <span class="checkout-plan-border" aria-hidden="true"></span>
             <div class="nn-plan-head">
               <div class="div-block-432">
                 <div class="n-plan-name-copy">Gold</div>
@@ -2077,7 +2077,6 @@ text-decoration: underline dotted #b3b3b3;
           <nav class="nn-tab-menu" aria-label="Checkout options">
             <a href="#n-checkout" class="nn-tab-link w-inline-block">
               <span class="text-block-72">Bundles</span>
-              <span class="tab-save">Black Friday</span>
             </a>
             <a href="#subscription-checkout" class="nn-tab-link is-active w-inline-block" aria-current="location">
               <span class="text-block-72">Monthly</span>
@@ -2086,7 +2085,8 @@ text-decoration: underline dotted #b3b3b3;
           </nav>
         </div>
         <div class="n-checkout-plans">
-          <div class="nn-checkout-plan">
+          <div class="nn-checkout-plan" data-plan-border="blue">
+            <span class="checkout-plan-border" aria-hidden="true"></span>
             <div class="nn-plan-head">
               <div class="div-block-432 subscription-plan-header">
                 <img src="images/marketstream-logo.svg" width="1897" height="208" alt="MarketStream" class="subscription-plan-logo bf-plan-logo-marketstream">
@@ -2211,7 +2211,8 @@ text-decoration: underline dotted #b3b3b3;
               </a>
             </div>
           </div>
-          <div class="nn-checkout-plan">
+          <div class="nn-checkout-plan" data-plan-border="purple">
+            <span class="checkout-plan-border" aria-hidden="true"></span>
             <div class="nn-plan-head">
               <div class="div-block-432 subscription-plan-header">
                 <img src="images/pa-logo-2.svg" width="164" height="25" alt="Prime Automation" class="subscription-plan-logo">
@@ -2373,18 +2374,25 @@ text-decoration: underline dotted #b3b3b3;
   }
 }
 
-#subscription-checkout .nn-checkout-plan {
-  border-color: #8b67b5;
-  background-color: #1b1526;
-  background-image: linear-gradient(180deg, #2e2143, #1b1526 240px);
+#subscription-checkout .nn-checkout-plan[data-plan-border] {
+  position: relative;
+  border-color: var(--plan-border-stroke);
 }
 
-#subscription-checkout .nnn-checkout-plan-body {
-  border-top-color: #57436d;
+#subscription-checkout [data-plan-border="blue"] {
+  --plan-border-stroke: #364c69;
+  --plan-border-core: #edf8ff;
+  --plan-border-highlight: #89c6ff;
+  --plan-border-glow: #539eff;
+  --plan-border-fade: #3287ec60;
 }
 
-#subscription-checkout :is(.n-plan-price-old-copy, .text-span-70, .n-plan-text-grey) {
-  color: #b5a5c7;
+#subscription-checkout [data-plan-border="purple"] {
+  --plan-border-stroke: #4d3865;
+  --plan-border-core: #f6eaff;
+  --plan-border-highlight: #c8a2ff;
+  --plan-border-glow: #a877ff;
+  --plan-border-fade: #7638f460;
 }
 
 #subscription-checkout .subscription-discount {
@@ -2428,6 +2436,15 @@ text-decoration: underline dotted #b3b3b3;
   color: #e3ccff;
 }
 
+#subscription-checkout [data-plan-border="blue"] .subscription-tier {
+  background-color: #14263b;
+  border-color: var(--plan-border-highlight);
+}
+
+#subscription-checkout [data-plan-border="blue"] .subscription-tier .n-off-tag-text {
+  color: var(--plan-border-highlight);
+}
+
 #subscription-checkout .elite-data-feature-heading {
   width: 100%;
   display: flex;
@@ -2447,7 +2464,7 @@ text-decoration: underline dotted #b3b3b3;
 }
 
 #subscription-checkout .n-billed {
-  color: #d4c8e4;
+  color: var(--70-grey);
   font-size: 12px;
   line-height: 1.4;
 }
@@ -6243,6 +6260,10 @@ head.appendChild(script);
   --home-gold-tag-bg: #987123;
   --home-gold-divider: #624c27;
   --bundle-divider: var(--home-gold-divider);
+  --plan-border-core: #fff9e9;
+  --plan-border-highlight: var(--home-gold-light);
+  --plan-border-glow: var(--home-gold);
+  --plan-border-fade: #ee9a3160;
   position: relative;
   border: 1px solid transparent;
   background:
@@ -6256,13 +6277,13 @@ head.appendChild(script);
 .gold-plan .n-plan-name-copy {
   font-weight: 700;
 }
-.gold-plan-border {
+.checkout-plan-border {
   display: none;
 }
 @media (prefers-reduced-motion: no-preference) and (forced-colors: none) {
   @supports (offset-path: inset(0 round 23px)) and (mask-composite: exclude) {
-    .gold-plan-border {
-      --gold-orbit-duration: 6s;
+    .checkout-plan-border {
+      --plan-border-duration: 6s;
       position: absolute;
       inset: 0;
       display: block;
@@ -6272,8 +6293,8 @@ head.appendChild(script);
       mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
       mask-composite: exclude;
     }
-    .gold-plan-border::before,
-    .gold-plan-border::after {
+    .checkout-plan-border::before,
+    .checkout-plan-border::after {
       content: "";
       position: absolute;
       top: 0;
@@ -6281,28 +6302,29 @@ head.appendChild(script);
       width: 300px;
       height: 140px;
       background:
-        radial-gradient(ellipse 28% 48% at 68% 50%, #fff9e9, var(--home-gold-light) 28%, transparent),
-        radial-gradient(ellipse 44% 49% at 44% 50%, #fac66b, #ee9a3160 56%, transparent);
+        radial-gradient(ellipse 28% 48% at 68% 50%, var(--plan-border-core), var(--plan-border-highlight) 28%, transparent),
+        radial-gradient(ellipse 44% 49% at 44% 50%, var(--plan-border-glow), var(--plan-border-fade) 56%, transparent);
       offset-path: inset(0 round 23px);
       offset-rotate: auto;
-      animation: gold-plan-border-orbit var(--gold-orbit-duration) linear infinite paused;
+      animation: checkout-plan-border-orbit var(--plan-border-duration) linear infinite paused;
     }
-    .gold-plan-border::after {
-      animation-delay: calc(var(--gold-orbit-duration) / -2);
+    .checkout-plan-border::after {
+      animation-delay: calc(var(--plan-border-duration) / -2);
       opacity: .8;
     }
-    .gold-plan.is-in-view .gold-plan-border::before,
-    .gold-plan.is-in-view .gold-plan-border::after {
+    .is-in-view > .checkout-plan-border::before,
+    .is-in-view > .checkout-plan-border::after {
       animation-play-state: running;
     }
-    @keyframes gold-plan-border-orbit {
+    @keyframes checkout-plan-border-orbit {
       from { offset-distance: 0%; }
       to { offset-distance: 100%; }
     }
   }
 }
 @media (forced-colors: active) {
-  .nn-checkout-plan:is(.gold-plan, .silver-plan) {
+  .nn-checkout-plan:is(.gold-plan, .silver-plan),
+  #subscription-checkout .nn-checkout-plan[data-plan-border] {
     border-color: CanvasText;
   }
 }
@@ -6691,22 +6713,22 @@ document.querySelectorAll('#n-checkout, #subscription-checkout').forEach(checkou
 </script>
     <script>
   (() => {
-    const card = document.querySelector('#n-checkout .gold-plan');
-    if (!card) return;
-    if (!card.querySelector(':scope > .gold-plan-border')) {
-      const border = document.createElement('span');
-      border.className = 'gold-plan-border';
-      border.setAttribute('aria-hidden', 'true');
-      card.prepend(border);
-    }
     if (!('IntersectionObserver' in window)) return;
-    let inView = false;
-    const syncMotion = () => card.classList.toggle('is-in-view', inView && !document.hidden);
-    const observer = new IntersectionObserver((entries) => {
-      inView = entries[entries.length - 1].isIntersecting;
+    const cards = [...document.querySelectorAll('.checkout-plan-border')].map(border => border.parentElement);
+    const visibleCards = new Set();
+    const syncMotion = () => {
+      for (const card of cards) {
+        card.classList.toggle('is-in-view', visibleCards.has(card) && !document.hidden);
+      }
+    };
+    const observer = new IntersectionObserver(entries => {
+      for (const { target, isIntersecting } of entries) {
+        if (isIntersecting) visibleCards.add(target);
+        else visibleCards.delete(target);
+      }
       syncMotion();
     });
-    observer.observe(card);
+    cards.forEach(card => observer.observe(card));
     document.addEventListener('visibilitychange', syncMotion);
   })();
 </script>
