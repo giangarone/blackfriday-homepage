@@ -1268,9 +1268,11 @@ background: linear-gradient(115deg,
           <nav class="nn-tab-menu" aria-label="Checkout options">
             <a href="#n-checkout" class="nn-tab-link is-active w-inline-block" aria-current="location">
               <span class="text-block-72">Bundles</span>
+              <span class="tab-save">Black Friday</span>
             </a>
             <a href="#subscription-checkout" class="nn-tab-link w-inline-block">
               <span class="text-block-72">Monthly</span>
+              <span class="tab-save">70% off</span>
             </a>
           </nav>
           <div id="monthly-yearly" class="anchor-link monthly-yearly-anchor"></div>
@@ -2075,9 +2077,11 @@ text-decoration: underline dotted #b3b3b3;
           <nav class="nn-tab-menu" aria-label="Checkout options">
             <a href="#n-checkout" class="nn-tab-link w-inline-block">
               <span class="text-block-72">Bundles</span>
+              <span class="tab-save">Black Friday</span>
             </a>
             <a href="#subscription-checkout" class="nn-tab-link is-active w-inline-block" aria-current="location">
               <span class="text-block-72">Monthly</span>
+              <span class="tab-save">70% off</span>
             </a>
           </nav>
         </div>
@@ -2347,6 +2351,12 @@ text-decoration: underline dotted #b3b3b3;
   scroll-margin-top: 80px;
 }
 
+.nn-tab-menu .nn-tab-link.is-active .tab-save {
+  background-color: #bcff63;
+  border-color: #bcff63;
+  color: #000;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   html:has(#n-checkout:target, #subscription-checkout:target) {
     scroll-behavior: smooth;
@@ -2361,6 +2371,20 @@ text-decoration: underline dotted #b3b3b3;
   #subscription-checkout .section-heading {
     font-size: clamp(1rem, 4.9vw, 2.5rem);
   }
+}
+
+#subscription-checkout .nn-checkout-plan {
+  border-color: #8b67b5;
+  background-color: #1b1526;
+  background-image: linear-gradient(180deg, #2e2143, #1b1526 240px);
+}
+
+#subscription-checkout .nnn-checkout-plan-body {
+  border-top-color: #57436d;
+}
+
+#subscription-checkout :is(.n-plan-price-old-copy, .text-span-70, .n-plan-text-grey) {
+  color: #b5a5c7;
 }
 
 #subscription-checkout .subscription-discount {
@@ -2423,7 +2447,7 @@ text-decoration: underline dotted #b3b3b3;
 }
 
 #subscription-checkout .n-billed {
-  color: var(--70-grey);
+  color: #d4c8e4;
   font-size: 12px;
   line-height: 1.4;
 }
