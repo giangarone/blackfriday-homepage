@@ -834,7 +834,7 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
                   <div class="bravo-financing-receipts" aria-hidden="true"></div>
                 </div>
                 <div class="bravo-financing-provider">
-                  <img src="images/clarity-pay-logo-golden.svg" width="201" height="38" alt="Clarity Pay">
+                  <img src="images/clarity-pay-logo-red.svg" width="201" height="38" alt="Clarity Pay">
                   <p>Select at checkout</p>
                 </div>
               </section>
@@ -939,11 +939,11 @@ head.appendChild(script);
   box-shadow: none;
 }
 .gold-plan .nn-checkout-button .bf-checkout-button-text {
-  color: #181818;
+  color: #24090d;
   font-weight: 700;
 }
 .gold-plan .nn-checkout-button:focus-visible {
-  outline: 2px solid var(--white);
+  outline: 2px solid var(--checkout-accent-light);
   outline-offset: 3px;
 }
 @media (hover: hover) {
@@ -957,19 +957,28 @@ head.appendChild(script);
   }
 }
 #n-checkout {
-  --home-gold-gradient: linear-gradient(115deg, #b8651a, #ee9a31 28%, #ffd98a 55%, #fac66b 78%, #d07c22);
+  --checkout-accent: #ff8187;
+  --checkout-accent-light: #ffaca9;
+  --checkout-accent-gradient: linear-gradient(115deg, #e85a63, #f66b72 28%, var(--checkout-accent-light) 55%, var(--checkout-accent) 78%, #df535f);
+  --checkout-divider: #70323b;
+  border-color: #3c2227;
+}
+#n-checkout.section-grid::before {
+  background-image:
+    linear-gradient(#ff81870a 1px, transparent 1px),
+    linear-gradient(90deg, #ff81870f 1px, transparent 1px);
+}
+#n-checkout ::selection {
+  color: #24090d;
+  background: var(--checkout-accent-light);
 }
 .nn-checkout-plan.gold-plan {
-  --home-gold: #fac66b;
-  --home-gold-light: #ffd98a;
-  --home-gold-tag-bg: #795a1c;
-  --home-gold-divider: #624c27;
   position: relative;
   border: 1px solid transparent;
   background:
-    radial-gradient(ellipse 105% 340px at 70% 0%, #4c3918, transparent) padding-box,
-    linear-gradient(165deg, #221a0d, #19150d 55%, #231b0e) padding-box,
-    var(--home-gold-gradient) border-box;
+    radial-gradient(ellipse 105% 340px at 70% 0%, #501c24, transparent) padding-box,
+    linear-gradient(165deg, #271116, #1a1013 55%, #261316) padding-box,
+    var(--checkout-accent-gradient) border-box;
 }
 .gold-plan :is(.n-plan-name-copy, .n-plan-price-copy-copy, .n-off-tag.gold .n-off-tag-text) {
   color: var(--white);
@@ -977,13 +986,16 @@ head.appendChild(script);
 .gold-plan .n-plan-name-copy {
   font-weight: 700;
 }
+.gold-plan .n-plan-price-old-copy {
+  color: #c5a3a8;
+}
 .bravo-bundle-benefits {
   display: grid;
   gap: 14px;
   width: 100%;
   margin: 12px 0 0;
   padding: 16px 0 0;
-  border-top: 1px solid var(--home-gold-divider);
+  border-top: 1px solid var(--checkout-divider);
   list-style: none;
   font-family: Plus Jakarta Sans, sans-serif;
 }
@@ -1005,7 +1017,7 @@ head.appendChild(script);
   margin: 3px 0 0;
   padding: 0;
   list-style: none;
-  color: #d2d0d0;
+  color: #e1ccd0;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.5;
@@ -1020,7 +1032,7 @@ head.appendChild(script);
   flex: 0 0 14px;
   height: 14px;
   margin-top: 3px;
-  background-color: var(--home-gold);
+  background-color: var(--checkout-accent);
   -webkit-mask: var(--bravo-check) center / contain no-repeat;
   mask: var(--bravo-check) center / contain no-repeat;
 }
@@ -1028,7 +1040,7 @@ head.appendChild(script);
   width: 100%;
   margin-top: 20px;
   padding: 12px;
-  background: #fde2af12;
+  background: #ff9da519;
   border-radius: 16px;
   font-family: Plus Jakarta Sans, sans-serif;
   scroll-margin-top: 88px;
@@ -1041,7 +1053,7 @@ head.appendChild(script);
 }
 .bravo-financing h2 {
   margin: 0 0 7px;
-  color: #fcf8f1;
+  color: #fff4f4;
   font-size: 24px;
   font-weight: 800;
   line-height: 1.08;
@@ -1049,7 +1061,7 @@ head.appendChild(script);
 }
 .bravo-financing p {
   margin: 0;
-  color: #e6d6bc;
+  color: #f0cdd0;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.5;
@@ -1069,20 +1081,20 @@ head.appendChild(script);
 .bravo-financing-receipts::before {
   right: 12%;
   bottom: 11%;
-  border: 1px solid #c29051;
+  border: 1px solid #c76b76;
   border-radius: 4px;
-  background: linear-gradient(155deg, #936234, #39230f);
+  background: linear-gradient(155deg, #943a47, #401923);
   transform: rotate(16deg);
 }
 .bravo-financing-receipts::after {
   top: 9%;
   left: 12%;
   background:
-    linear-gradient(#75451e, #75451e) 28% 27% / 52% 2px no-repeat,
-    linear-gradient(#75451e99, #75451e99) 21% 42% / 36% 1px no-repeat,
-    linear-gradient(#75451e99, #75451e99) 30% 55% / 58% 1px no-repeat,
-    linear-gradient(#75451e, #75451e) 72% 75% / 26% 2px no-repeat,
-    linear-gradient(145deg, #fff3cb, #edb45e 70%, #cf8b40);
+    linear-gradient(#752431, #752431) 28% 27% / 52% 2px no-repeat,
+    linear-gradient(#75243199, #75243199) 21% 42% / 36% 1px no-repeat,
+    linear-gradient(#75243199, #75243199) 30% 55% / 58% 1px no-repeat,
+    linear-gradient(#752431, #752431) 72% 75% / 26% 2px no-repeat,
+    linear-gradient(145deg, #ffe1df, #ff9498 70%, #e16875);
   mask:
     linear-gradient(#000 0 0) top / 100% calc(100% - 4px) no-repeat,
     radial-gradient(circle at 50% 0, #000 4px, transparent 4.5px) bottom / 8px 4px repeat-x;
@@ -1106,7 +1118,7 @@ head.appendChild(script);
 }
 .bravo-financing:focus-visible {
   outline: none;
-  box-shadow: inset 0 1px var(--home-gold-light);
+  box-shadow: inset 0 1px var(--checkout-accent-light);
 }
 @media (forced-colors: active) {
   .bravo-financing:focus-visible {
@@ -1143,8 +1155,8 @@ head.appendChild(script);
       width: 300px;
       height: 140px;
       background:
-        radial-gradient(ellipse 28% 48% at 68% 50%, #fff9e9, var(--home-gold-light) 28%, transparent),
-        radial-gradient(ellipse 44% 49% at 44% 50%, #fac66b, #ee9a3160 56%, transparent);
+        radial-gradient(ellipse 28% 48% at 68% 50%, #fff0ef, var(--checkout-accent-light) 28%, transparent),
+        radial-gradient(ellipse 44% 49% at 44% 50%, var(--checkout-accent), #ea3e4f60 56%, transparent);
       offset-path: inset(0 round 23px);
       offset-rotate: auto;
       animation: gold-plan-border-orbit var(--gold-orbit-duration) linear infinite paused;
@@ -1169,19 +1181,19 @@ head.appendChild(script);
   }
 }
 .gold-plan .nn-checkout-button.gold {
-  border-color: var(--home-gold);
-  background-color: var(--home-gold);
-  background-image: var(--home-gold-gradient);
+  border-color: var(--checkout-accent);
+  background-color: var(--checkout-accent);
+  background-image: var(--checkout-accent-gradient);
 }
 .gold-plan .nn-checkout-button.gold:hover {
-  border-color: var(--home-gold-light);
+  border-color: var(--checkout-accent-light);
 }
 .gold-plan .n-off-tag.gold {
-  border-color: var(--home-gold);
-  background-color: var(--home-gold-tag-bg);
+  border-color: var(--checkout-accent);
+  background-color: #7a242e;
 }
 .gold-plan .bf-time-duration {
-  background-color: #ffffff1a;
+  background-color: #ff9da527;
 }
 #n-checkout .bf-n-checkout-header {
   container-type: inline-size;
@@ -1191,6 +1203,7 @@ head.appendChild(script);
   font-size: min(4rem, 6cqi);
 }
 .bravo-checkout-heading-event {
+  color: var(--checkout-accent-light);
   white-space: nowrap;
 }
 @media (max-width: 767px) {
@@ -1206,7 +1219,7 @@ head.appendChild(script);
 }
 .bravo-checkout-subheading {
   max-width: min(100%, 56rem);
-  color: #d9d9d9;
+  color: #e1ccd0;
   font-size: clamp(.875rem, 1.8cqi, 1.125rem);
   text-wrap: balance;
 }
@@ -1219,12 +1232,16 @@ head.appendChild(script);
   letter-spacing: -0.03em;
 }
 #n-checkout .bf-checkout-countdown .countdown-item {
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--checkout-divider);
+  background: #241217;
   padding: 0;
+}
+#n-checkout .bf-checkout-countdown .countdown-label {
+  color: #c5a3a8;
 }
 .bf-gold-offer {
   margin-top: 12px;
-  color: #d2d0d0;
+  color: #e1ccd0;
   font-family: Plus Jakarta Sans, sans-serif;
   font-size: .75rem;
   font-weight: 500;
@@ -1238,31 +1255,31 @@ head.appendChild(script);
   padding: 0 0 6px;
   border: 0;
   background: transparent;
-  color: #ffc663;
+  color: var(--checkout-accent-light);
   font: inherit;
   cursor: pointer;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .bf-gold-offer-login:hover {
-  color: #fff0d6;
+  color: #fff0ef;
 }
 .bf-gold-offer-login:focus-visible {
-  outline: 2px solid #ffc663;
+  outline: 2px solid var(--checkout-accent-light);
   outline-offset: 2px;
 }
 .bf-checkout-aurora {
   --aurora-background: var(--soft-black);
-  --aurora-base: #ee9a31;
-  --aurora-highlight: #ffd98a;
-  --aurora-stars: #c39b54;
+  --aurora-base: #ea3e4f;
+  --aurora-highlight: #ff7880;
+  --aurora-stars: #d86872;
   position: absolute;
   inset: auto 0 0;
   z-index: -1;
   height: clamp(620px, 68vw, 960px);
   pointer-events: none;
   opacity: .72;
-  background: radial-gradient(ellipse 66% 57% at 62% 14%, #90611636, transparent);
+  background: radial-gradient(ellipse 66% 57% at 62% 14%, #a22a3c46, transparent);
   mask-image: linear-gradient(to bottom, transparent, #000 12% 56%, transparent);
   transform: scaleY(-1);
 }

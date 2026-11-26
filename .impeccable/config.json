@@ -77,6 +77,60 @@
         ],
         "createdAt": "2026-11-24T18:50:41.237Z",
         "reason": "User confirmed the Bravo Bundle card should keep its original gold radial fill and requested restoring it after trying a charcoal replacement."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "jbravo-offer-3.html"
+        ],
+        "createdAt": "2026-11-26T21:49:23.998Z",
+        "reason": "Codex: Chrome measured at least 11px of clearance around countdown text at 320px, 390px, and 1440px; the hero-video border intentionally frames the video with no inset."
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          "jbravo-offer-3.html"
+        ],
+        "createdAt": "2026-11-26T21:49:24.011Z",
+        "reason": "Codex: Plus Jakarta Sans is the established checkout typeface, confirmed by the baseline and rendered page. This change is a checkout recolor."
+      },
+      {
+        "rule": "overused-font",
+        "value": "montserrat",
+        "files": [
+          "jbravo-offer-3.html"
+        ],
+        "createdAt": "2026-11-26T21:49:24.023Z",
+        "reason": "Codex: Montserrat is listed in the shared WebFont loader, but is not used by visible page text in the Chrome preview."
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "jbravo-offer-3.html"
+        ],
+        "createdAt": "2026-11-26T21:49:24.034Z",
+        "reason": "Codex: The local gradient-text rules have no matching markup and the Chrome preview showed no rendered gradient text."
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "jbravo-offer-3.html"
+        ],
+        "createdAt": "2026-11-26T21:49:24.046Z",
+        "reason": "Codex: The legacy pulse-dot stylesheet rule has no matching element on this page, confirmed in the Chrome preview."
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "jbravo-offer-3.html"
+        ],
+        "createdAt": "2026-11-26T21:49:24.057Z",
+        "reason": "Codex: The existing tinted Lifetime Lite card gradient and aurora fallback intentionally carry the requested red checkout palette."
       }
     ]
   }
