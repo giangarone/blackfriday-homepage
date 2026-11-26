@@ -954,6 +954,10 @@ background: linear-gradient(115deg,
 .new-hero.bf-hero::before {
   content: none;
 }
+:root {
+  --bf-aurora-violet: #7638f4;
+  --bf-aurora-highlight: #cb58ff;
+}
 .new-hero.bf-hero {
   --hero-background: #07070a;
   position: relative;
@@ -970,8 +974,8 @@ background: linear-gradient(115deg,
   pointer-events: none;
 }
 .new-hero.bf-hero > .code-embed-10 > .cp-hero-aurora {
-  --aurora-violet: #7638f4;
-  --aurora-highlight: #cb58ff;
+  --aurora-violet: var(--bf-aurora-violet);
+  --aurora-highlight: var(--bf-aurora-highlight);
   display: block;
   width: 100%;
   height: 100%;
@@ -1284,13 +1288,13 @@ background: linear-gradient(115deg,
 </script>
       </div>
     </div>
-    <section id="n-checkout" class="n-checkout section-grid section-border-top section-border-bottom">
+    <section id="n-checkout" aria-labelledby="bundle-checkout-heading" tabindex="-1" class="n-checkout section-grid section-border-top section-border-bottom">
       <section id="register" class="jump_link jump_link-checkout"></section>
       <div class="n-checkout-content">
-        <div class="n-checkout-header bf-n-checkout-header">
+        <div class="n-checkout-header">
           <div class="checkout-header">
             <div class="nn-checkout-header">
-              <div class="section-heading"><strong class="section-heading">Unlock Your Exclusive<br>Black Friday Bundle</strong></div>
+              <div class="section-heading"><strong id="bundle-checkout-heading" class="section-heading" role="heading" aria-level="2">Unlock Your Exclusive<br>Black Friday Bundle</strong></div>
               <div class="bf-checkout-countdown">
                 <div class="n-plan-desc-copy">Get the offer before it's gone</div>
                 <div class="countdown-wrap">
@@ -1319,11 +1323,20 @@ background: linear-gradient(115deg,
                 </div>
               </div>
               <div class="bf-gold-offer">
-                <p>Bought Prime Automation during last year’s Black Friday?</p>
-                <p>Get up to <span class="bf-gold-offer-amount">$1,000 off</span> this year’s Gold Plan.</p>
+                <p>Bought a bundle last year?</p>
+                <p>Get up to <span class="bf-gold-offer-amount">$1,000 off</span> Gold Plan.</p>
               </div>
             </div>
           </div>
+          <nav class="nn-tab-menu" aria-label="Checkout options">
+            <a href="#n-checkout" class="nn-tab-link is-active w-inline-block" aria-current="location">
+              <span class="text-block-72">Bundles</span>
+            </a>
+            <a href="#subscription-checkout" class="nn-tab-link w-inline-block">
+              <span class="text-block-72">Monthly</span>
+              <span class="tab-save">70% off</span>
+            </a>
+          </nav>
           <div id="monthly-yearly" class="anchor-link monthly-yearly-anchor"></div>
         </div>
         <div class="n-checkout-plans">
@@ -1626,6 +1639,7 @@ background: linear-gradient(115deg,
             </div>
           </div>
           <div class="nn-checkout-plan gold-plan">
+            <span class="checkout-plan-border" aria-hidden="true"></span>
             <div class="nn-plan-head">
               <div class="div-block-432">
                 <div class="n-plan-name-copy">Gold</div>
@@ -1957,7 +1971,7 @@ text-decoration: underline dotted #b3b3b3;
         </div>
       </div>
     </section>
-    <section id="subscription-checkout" aria-labelledby="subscription-checkout-heading" class="n-checkout section-grid section-border-top section-border-bottom">
+    <section id="subscription-checkout" aria-labelledby="subscription-checkout-heading" tabindex="-1" class="n-checkout section-grid section-border-top section-border-bottom">
       <div class="n-checkout-content">
         <div class="n-checkout-header">
           <div class="checkout-header">
@@ -1992,9 +2006,19 @@ text-decoration: underline dotted #b3b3b3;
               </div>
             </div>
           </div>
+          <nav class="nn-tab-menu" aria-label="Checkout options">
+            <a href="#n-checkout" class="nn-tab-link w-inline-block">
+              <span class="text-block-72">Bundles</span>
+            </a>
+            <a href="#subscription-checkout" class="nn-tab-link is-active w-inline-block" aria-current="location">
+              <span class="text-block-72">Monthly</span>
+              <span class="tab-save">70% off</span>
+            </a>
+          </nav>
         </div>
         <div class="n-checkout-plans">
-          <div class="nn-checkout-plan">
+          <div class="nn-checkout-plan" data-plan-border="blue">
+            <span class="checkout-plan-border" aria-hidden="true"></span>
             <div class="nn-plan-head">
               <div class="div-block-432 subscription-plan-header">
                 <img src="images/marketstream-logo.svg" width="1897" height="208" alt="MarketStream" class="subscription-plan-logo bf-plan-logo-marketstream">
@@ -2115,11 +2139,12 @@ text-decoration: underline dotted #b3b3b3;
                 </div>
               </div>
               <a role="link" aria-disabled="true" class="nn-checkout-button w-inline-block">
-                <div class="bf-checkout-button-text">Get MarketStream Elite</div>
+                <div class="bf-checkout-button-text">Get MarketStream</div>
               </a>
             </div>
           </div>
-          <div class="nn-checkout-plan">
+          <div class="nn-checkout-plan" data-plan-border="purple">
+            <span class="checkout-plan-border" aria-hidden="true"></span>
             <div class="nn-plan-head">
               <div class="div-block-432 subscription-plan-header">
                 <img src="images/pa-logo-2.svg" width="164" height="25" alt="Prime Automation" class="subscription-plan-logo">
@@ -2244,7 +2269,7 @@ text-decoration: underline dotted #b3b3b3;
                 </div>
               </div>
               <a role="link" aria-disabled="true" class="nn-checkout-button w-inline-block">
-                <div class="bf-checkout-button-text">Get Prime Automation Builder</div>
+                <div class="bf-checkout-button-text">Get Prime Automation</div>
               </a>
             </div>
           </div>
@@ -2255,15 +2280,23 @@ text-decoration: underline dotted #b3b3b3;
         </div>
         <div class="hidden-code w-embed">
           <style>
-#subscription-checkout {
+:is(#n-checkout, #subscription-checkout) {
   scroll-margin-top: 80px;
 }
 
-#subscription-checkout .n-checkout-header {
-  margin-bottom: 24px;
+.nn-tab-menu .nn-tab-link.is-active .tab-save {
+  background-color: #bcff63;
+  border-color: #bcff63;
+  color: #000;
 }
 
-#subscription-checkout :is(.checkout-header, .bf-checkout-countdown) {
+@media (prefers-reduced-motion: no-preference) {
+  html:has(#n-checkout:target, #subscription-checkout:target) {
+    scroll-behavior: smooth;
+  }
+}
+
+#subscription-checkout .bf-checkout-countdown {
   margin-bottom: 0;
 }
 
@@ -2271,6 +2304,53 @@ text-decoration: underline dotted #b3b3b3;
   #subscription-checkout .section-heading {
     font-size: clamp(1rem, 4.9vw, 2.5rem);
   }
+}
+
+#subscription-checkout .nn-checkout-plan[data-plan-border] {
+  position: relative;
+  border-color: var(--plan-border-stroke);
+  background-color: var(--plan-surface);
+}
+
+#subscription-checkout [data-plan-border="blue"] {
+  --plan-surface: #0a1119;
+  --plan-button: #1b3656;
+  --plan-button-hover: #224169;
+  --plan-button-stroke: #597da5;
+  --plan-border-stroke: #364c69;
+  --plan-border-core: #edf8ff;
+  --plan-border-highlight: #89c6ff;
+  --plan-border-glow: #539eff;
+  --plan-border-fade: #3287ec60;
+}
+
+#subscription-checkout [data-plan-border="purple"] {
+  --plan-surface: #15111b;
+  --plan-button: #3c2859;
+  --plan-button-hover: #493269;
+  --plan-button-stroke: #8769a1;
+  --plan-border-stroke: #4d3865;
+  --plan-border-core: #f6eaff;
+  --plan-border-highlight: #c8a2ff;
+  --plan-border-glow: #a877ff;
+  --plan-border-fade: #7638f460;
+}
+
+#subscription-checkout [data-plan-border] .nnn-checkout-plan-body {
+  border-top-color: var(--plan-border-stroke);
+}
+
+#subscription-checkout [data-plan-border] :is(.n-billed, .n-plan-price-old-copy, .text-span-70, .n-plan-text-grey) {
+  color: var(--text-muted);
+}
+
+#subscription-checkout [data-plan-border] .nn-checkout-button {
+  background-color: var(--plan-button);
+  border-color: var(--plan-button-stroke);
+}
+
+#subscription-checkout [data-plan-border] .nn-checkout-button:hover {
+  background-color: var(--plan-button-hover);
 }
 
 #subscription-checkout .subscription-discount {
@@ -2314,6 +2394,15 @@ text-decoration: underline dotted #b3b3b3;
   color: #e3ccff;
 }
 
+#subscription-checkout [data-plan-border="blue"] .subscription-tier {
+  background-color: #14263b;
+  border-color: var(--plan-border-highlight);
+}
+
+#subscription-checkout [data-plan-border="blue"] .subscription-tier .n-off-tag-text {
+  color: var(--plan-border-highlight);
+}
+
 #subscription-checkout .elite-data-feature-heading {
   width: 100%;
   display: flex;
@@ -2333,12 +2422,17 @@ text-decoration: underline dotted #b3b3b3;
 }
 
 #subscription-checkout .n-billed {
-  color: var(--70-grey);
   font-size: 12px;
   line-height: 1.4;
 }
 
 </style>
+          <script>
+// Keep native anchor scrolling so the sticky header offset is applied.
+document.querySelectorAll(':is(#n-checkout, #subscription-checkout) .nn-tab-link').forEach(link => {
+  link.addEventListener('click', event => event.stopPropagation());
+});
+</script>
         </div>
       </div>
     </section>
@@ -6137,6 +6231,10 @@ head.appendChild(script);
   --home-gold-tag-bg: #987123;
   --home-gold-divider: #624c27;
   --bundle-divider: var(--home-gold-divider);
+  --plan-border-core: #fff9e9;
+  --plan-border-highlight: var(--home-gold-light);
+  --plan-border-glow: var(--home-gold);
+  --plan-border-fade: #ee9a3160;
   position: relative;
   border: 1px solid transparent;
   background:
@@ -6150,13 +6248,13 @@ head.appendChild(script);
 .gold-plan .n-plan-name-copy {
   font-weight: 700;
 }
-.gold-plan-border {
+.checkout-plan-border {
   display: none;
 }
 @media (prefers-reduced-motion: no-preference) and (forced-colors: none) {
   @supports (offset-path: inset(0 round 23px)) and (mask-composite: exclude) {
-    .gold-plan-border {
-      --gold-orbit-duration: 6s;
+    .checkout-plan-border {
+      --plan-border-duration: 6s;
       position: absolute;
       inset: 0;
       display: block;
@@ -6166,8 +6264,8 @@ head.appendChild(script);
       mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
       mask-composite: exclude;
     }
-    .gold-plan-border::before,
-    .gold-plan-border::after {
+    .checkout-plan-border::before,
+    .checkout-plan-border::after {
       content: "";
       position: absolute;
       top: 0;
@@ -6175,28 +6273,29 @@ head.appendChild(script);
       width: 300px;
       height: 140px;
       background:
-        radial-gradient(ellipse 28% 48% at 68% 50%, #fff9e9, var(--home-gold-light) 28%, transparent),
-        radial-gradient(ellipse 44% 49% at 44% 50%, #fac66b, #ee9a3160 56%, transparent);
+        radial-gradient(ellipse 28% 48% at 68% 50%, var(--plan-border-core), var(--plan-border-highlight) 28%, transparent),
+        radial-gradient(ellipse 44% 49% at 44% 50%, var(--plan-border-glow), var(--plan-border-fade) 56%, transparent);
       offset-path: inset(0 round 23px);
       offset-rotate: auto;
-      animation: gold-plan-border-orbit var(--gold-orbit-duration) linear infinite paused;
+      animation: checkout-plan-border-orbit var(--plan-border-duration) linear infinite paused;
     }
-    .gold-plan-border::after {
-      animation-delay: calc(var(--gold-orbit-duration) / -2);
+    .checkout-plan-border::after {
+      animation-delay: calc(var(--plan-border-duration) / -2);
       opacity: .8;
     }
-    .gold-plan.is-in-view .gold-plan-border::before,
-    .gold-plan.is-in-view .gold-plan-border::after {
+    .is-in-view > .checkout-plan-border::before,
+    .is-in-view > .checkout-plan-border::after {
       animation-play-state: running;
     }
-    @keyframes gold-plan-border-orbit {
+    @keyframes checkout-plan-border-orbit {
       from { offset-distance: 0%; }
       to { offset-distance: 100%; }
     }
   }
 }
 @media (forced-colors: active) {
-  .nn-checkout-plan:is(.gold-plan, .silver-plan) {
+  .nn-checkout-plan:is(.gold-plan, .silver-plan),
+  #subscription-checkout .nn-checkout-plan[data-plan-border] {
     border-color: CanvasText;
   }
 }
@@ -6225,15 +6324,15 @@ head.appendChild(script);
 .gold-plan img.bf-check[src$="pink-check.svg"] {
   content: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M13.3333%204L5.99996%2011.3333L2.66663%208%22%20stroke%3D%22%23FAC66B%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
 }
-#n-checkout .bf-checkout-countdown > .n-plan-desc-copy {
+:is(#n-checkout, #subscription-checkout) .bf-checkout-countdown > .n-plan-desc-copy {
   letter-spacing: -0.03em;
 }
-/* Give the Home bundle checkout timer a static outline. */
-#n-checkout .bf-checkout-countdown .countdown-item {
+/* Give both checkout timers a static outline. */
+:is(#n-checkout, #subscription-checkout) .bf-checkout-countdown .countdown-item {
   border: 1px solid #3d3d3d;
   padding: 0;
 }
-#n-checkout .bf-checkout-countdown .countdown-item > .rotating-countdown-rainbow {
+:is(#n-checkout, #subscription-checkout) .bf-checkout-countdown .countdown-item > .rotating-countdown-rainbow {
   display: none;
 }
 .bf-gold-offer {
@@ -6261,15 +6360,22 @@ head.appendChild(script);
   --aurora-base: #ee9a31;
   --aurora-highlight: #ffd98a;
   --aurora-stars: #c39b54;
+  --aurora-glow: #90611636;
   position: absolute;
   inset: auto 0 0;
   z-index: -1;
   height: clamp(460px, 52vw, 720px);
   pointer-events: none;
   opacity: .72;
-  background: radial-gradient(ellipse 66% 57% at 62% 14%, #90611636, transparent);
+  background: radial-gradient(ellipse 66% 57% at 62% 14%, var(--aurora-glow), transparent);
   mask-image: linear-gradient(to bottom, transparent, #000 12% 56%, transparent);
   transform: scaleY(-1);
+}
+#subscription-checkout > .bf-checkout-aurora {
+  --aurora-base: var(--bf-aurora-violet);
+  --aurora-highlight: var(--bf-aurora-highlight);
+  --aurora-stars: #7352bf;
+  --aurora-glow: #7638f436;
 }
 .bf-checkout-aurora > .cp-checkout-aurora {
   display: block;
@@ -6290,17 +6396,8 @@ head.appendChild(script);
 }
 </style>
     <script>
-(() => {
-  const checkout = document.querySelector('.bf-n-checkout-header')?.closest('.n-checkout');
-  if (!checkout || checkout.querySelector(':scope > .bf-checkout-aurora')) return;
-  checkout.querySelector('.nn-checkout-plan.most-popular-plan')?.classList.add('silver-plan');
-  const gold = checkout.querySelector('.nn-checkout-plan.gold-plan');
-  if (gold && !gold.querySelector(':scope > .gold-plan-border')) {
-    const border = document.createElement('span');
-    border.className = 'gold-plan-border';
-    border.setAttribute('aria-hidden', 'true');
-    gold.prepend(border);
-  }
+document.querySelectorAll('#n-checkout, #subscription-checkout').forEach(checkout => {
+  if (checkout.querySelector(':scope > .bf-checkout-aurora')) return;
   const layer = document.createElement('div');
   layer.className = 'bf-checkout-aurora';
   layer.setAttribute('aria-hidden', 'true');
@@ -6583,19 +6680,26 @@ head.appendChild(script);
   }
   reducedMotion.addEventListener('change', updateMotion);
   document.addEventListener('visibilitychange', updateMotion);
-})();
+});
 </script>
     <script>
   (() => {
-    const card = document.querySelector('#n-checkout .gold-plan');
-    if (!card || !('IntersectionObserver' in window)) return;
-    let inView = false;
-    const syncMotion = () => card.classList.toggle('is-in-view', inView && !document.hidden);
-    const observer = new IntersectionObserver((entries) => {
-      inView = entries[entries.length - 1].isIntersecting;
+    if (!('IntersectionObserver' in window)) return;
+    const cards = [...document.querySelectorAll('.checkout-plan-border')].map(border => border.parentElement);
+    const visibleCards = new Set();
+    const syncMotion = () => {
+      for (const card of cards) {
+        card.classList.toggle('is-in-view', visibleCards.has(card) && !document.hidden);
+      }
+    };
+    const observer = new IntersectionObserver(entries => {
+      for (const { target, isIntersecting } of entries) {
+        if (isIntersecting) visibleCards.add(target);
+        else visibleCards.delete(target);
+      }
       syncMotion();
     });
-    observer.observe(card);
+    cards.forEach(card => observer.observe(card));
     document.addEventListener('visibilitychange', syncMotion);
   })();
 </script>
