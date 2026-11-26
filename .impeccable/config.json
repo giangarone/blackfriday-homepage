@@ -130,7 +130,16 @@
           "jbravo-offer-3.html"
         ],
         "createdAt": "2026-11-26T21:49:24.057Z",
-        "reason": "Codex: The existing tinted Lifetime Lite card gradient and aurora fallback intentionally carry the requested red checkout palette."
+        "reason": "Codex: The existing tinted Lifetime Lite card gradient and aurora fallback intentionally carry the checkout palette."
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "jbravo-offer-3.html"
+        ],
+        "createdAt": "2026-11-26T21:52:20.148Z",
+        "reason": "Codex: The reported #3acaff text shadow is defined in shared CSS for selectors absent from this page. The Chrome preview also found no rendered text with that shadow."
       }
     ]
   }

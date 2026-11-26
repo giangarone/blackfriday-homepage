@@ -182,12 +182,12 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
     padding: 4px 8px;
     white-space: nowrap;
     border-radius: 999px;
-    background-color: #dbc6ff;
+    background-color: var(--hero-accent-light);
     background-image: linear-gradient(114deg, transparent 16%, rgb(255 255 255 / 76%) 50%, transparent 84%);
     background-position: -100% 0;
     background-size: 50% 100%;
     background-repeat: no-repeat;
-    color: #261b3c;
+    color: var(--hero-ink);
     font-size: 12px;
     font-weight: 600;
     letter-spacing: -0.01em;
@@ -202,7 +202,7 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
     max-width: 100%;
   }
   .cp-bf-sale-countdown .cp-bf-deadline-label {
-    color: #e2d8f2;
+    color: #d7e5f7;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: -0.03em;
@@ -216,18 +216,18 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
   .cp-bf-sale-countdown .cp-bf-unit {
     width: 100%;
     padding: 8px;
-    border-color: #6b5297;
-    background: #261d3999;
+    border-color: #4b73a9;
+    background: #142640d1;
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
   }
   .cp-bf-sale-countdown .countdown-number {
-    color: #f8f2ff;
+    color: #f1f7ff;
     font-variant-numeric: tabular-nums;
   }
   .cp-bf-sale-countdown .countdown-label {
     border-bottom: 0;
-    color: #ddcbf9;
+    color: #c1d7f5;
     text-decoration: none;
   }
   @media (prefers-reduced-motion: no-preference) {
@@ -271,7 +271,7 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
           </div>
         </div>
         <p class="new-hero-heading bf-heading">Get Lifetime Access to my Money Printing Indicators</p>
-        <p class="new-hero-subheading">Automate my proven trading strategies, unlock my exclusive indicators, and connect directly with me and my team in Discord.</p>
+        <p class="new-hero-subheading">Spot your next trade setup with my exclusive indicators and trade live alongside me and my team in Discord.</p>
         <div class="div-801"><img src="images/pa-logo-2.svg" loading="lazy" alt="" class="logos-hero prime-automation"><img src="images/marketstream-logo.svg" loading="lazy" alt="" class="logos-hero marketstream"></div>
         <a href="#register" class="n-cta-btn w-inline-block">
           <div class="btn-text black">Get Lifetime Lite</div><img src="images/black-arrow-2px.svg" loading="lazy" alt="" class="cta-btn-arrow">
@@ -296,14 +296,14 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
   z-index: -1;
   pointer-events: none;
 }
-/* Violet glow above the video. */
+/* Blue glow above the video. */
 .bf-hero .main-hero-video::before {
   inset: 0 clamp(-88px, -7vw, -24px) auto;
   height: clamp(132px, 21vw, 304px);
   transform: translateY(-54%);
   background:
-    radial-gradient(ellipse 36% 16% at 56% 54%, rgb(197 177 255 / 44%), transparent 100%),
-    radial-gradient(ellipse 52% 46% at 53% 54%, rgb(114 80 209 / 46%), rgb(92 63 173 / 17%) 55%, transparent 100%);
+    radial-gradient(ellipse 36% 16% at 56% 54%, rgb(158 206 255 / 44%), transparent 100%),
+    radial-gradient(ellipse 52% 46% at 53% 54%, rgb(61 125 231 / 46%), rgb(38 85 170 / 17%) 55%, transparent 100%);
 }
 /* Faint grid around the glow. */
 .bf-hero .main-hero-video::after {
@@ -313,18 +313,20 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
   height: clamp(390px, 42vw, 640px);
   transform: translate(-50%, -60%);
   background-image:
-    linear-gradient(rgb(214 202 255 / 14%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(214 202 255 / 14%) 1px, transparent 1px);
+    linear-gradient(rgb(var(--hero-grid-rgb) / 14%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--hero-grid-rgb) / 14%) 1px, transparent 1px);
   background-position: center 60%;
   background-size: clamp(23px, 3vw, 46px) clamp(23px, 3vw, 46px);
   mask-image: radial-gradient(ellipse 56% 59% at 50% 60%, #000 12%, rgb(0 0 0 / 65%) 50%, transparent 100%);
 }
 .bf-hero .n-hero-video-stroke {
+  --video-beam-rgb: 105 173 255;
+  --video-beam-highlight: #e5f3ff;
   position: relative;
   isolation: isolate;
   padding: 1px;
   border-radius: var(--cp-video-radius);
-  background-image: radial-gradient(ellipse 64% 72% at 56% 0%, #eee5ff, #b59bf1 36%, #66568f 66%, #282431 100%);
+  background-image: radial-gradient(ellipse 64% 72% at 56% 0%, var(--video-beam-highlight), rgb(var(--video-beam-rgb)) 36%, #3c6499 66%, #182435 100%);
 }
 .bf-hero .n-hero-video-wrapper {
   border-radius: calc(var(--cp-video-radius) - 1px);
@@ -340,13 +342,13 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
     background: conic-gradient(
       from -45deg,
       transparent 0deg,
-      rgb(181 155 241 / 26%) 32deg,
-      #b59bf1 59deg,
-      #eee5ff 73deg,
+      rgb(var(--video-beam-rgb) / 26%) 32deg,
+      rgb(var(--video-beam-rgb)) 59deg,
+      var(--video-beam-highlight) 73deg,
       transparent 77deg 180deg,
-      rgb(181 155 241 / 16%) 212deg,
-      #9a81d4 239deg,
-      #d8c7ff 253deg,
+      rgb(var(--video-beam-rgb) / 16%) 212deg,
+      #528de0 239deg,
+      #b9daff 253deg,
       transparent 257deg 360deg
     );
     pointer-events: none;
@@ -391,11 +393,18 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
   content: none;
 }
 .new-hero.bf-hero {
-  --hero-background: #07070a;
+  --hero-background: #070910;
+  --hero-accent-light: #a1ccff;
+  --hero-ink: #071423;
+  --hero-grid-rgb: 161 198 247;
   position: relative;
   isolation: isolate;
   overflow: hidden;
   background-color: var(--hero-background);
+}
+.bf-hero .n-cta-btn:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
 }
 @media (min-width: 480px) and (max-width: 685px) {
   .bf-hero .new-hero-heading {
@@ -416,8 +425,9 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
   pointer-events: none;
 }
 .new-hero.bf-hero > .code-embed-10 > .cp-hero-aurora {
-  --aurora-violet: #7638f4;
-  --aurora-highlight: #cb58ff;
+  --aurora-base: #2574f0;
+  --aurora-highlight: #69adff;
+  --aurora-stars: #547bbb;
   display: block;
   width: 100%;
   height: 100%;
@@ -435,8 +445,8 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
   z-index: -1;
   pointer-events: none;
   background-image:
-    linear-gradient(rgb(214 202 255 / 12%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(214 202 255 / 12%) 1px, transparent 1px);
+    linear-gradient(rgb(var(--hero-grid-rgb) / 12%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--hero-grid-rgb) / 12%) 1px, transparent 1px);
   background-position: center bottom;
   background-size: clamp(23px, 3vw, 46px) clamp(23px, 3vw, 46px);
   mask-image:
@@ -479,8 +489,9 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
     uniform float uTime;
     uniform float uAspect;
     uniform vec3 uBackground;
-    uniform vec3 uViolet;
+    uniform vec3 uBase;
     uniform vec3 uHighlight;
+    uniform vec3 uStars;
     uniform sampler3D uNoise;
     const int STEPS = 44;
     const vec3 VOLUME_LOW = vec3(-250.0, 50.0, -500.0);
@@ -541,7 +552,7 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
         light += curtainDensity(point, timeFlow) * vec2(1.0 - height, height);
         point += stepVector;
       }
-      return 0.05 * stepSize * (uViolet * light.x + uHighlight * light.y);
+      return 0.05 * stepSize * (uBase * light.x + uHighlight * light.y);
     }
     vec3 toneMap(vec3 light) {
       return clamp((light * (2.51 * light + 0.03)) / (light * (2.43 * light + 0.59) + 0.14), 0.0, 1.0);
@@ -571,7 +582,7 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
       vec3 aurora = pow(toneMap(traceAurora(direction) * fade), vec3(1.0 / 2.2));
       // Give the headline some separation from the brightest parts of the curtains.
       float exposure = mix(0.55, 0.82, smoothstep(0.0, 0.9, abs(2.0 * vUv.x - 1.0)));
-      vec3 light = aurora * exposure + vec3(0.45, 0.32, 0.75) * (0.22 * stars(direction) * fade);
+      vec3 light = aurora * exposure + uStars * (0.22 * stars(direction) * fade);
       fragColor = vec4(uBackground + (1.0 - uBackground) * light, 1.0);
     }
   `;
@@ -640,14 +651,15 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
     gl.enableVertexAttribArray(position);
     gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
     const style = getComputedStyle(canvas);
-    for (const [uniform, property] of [
-      ['uBackground', '--hero-background'],
-      ['uViolet', '--aurora-violet'],
-      ['uHighlight', '--aurora-highlight']
+    for (const [uniform, property, linear] of [
+      ['uBackground', '--hero-background', false],
+      ['uBase', '--aurora-base', true],
+      ['uHighlight', '--aurora-highlight', true],
+      ['uStars', '--aurora-stars', false]
     ]) {
       const hex = parseInt(style.getPropertyValue(property).trim().slice(1), 16);
       const rgb = [(hex >> 16) & 255, (hex >> 8) & 255, hex & 255].map(channel => channel / 255);
-      const color = uniform === 'uBackground' ? rgb : rgb.map(channel => channel ** 2.2);
+      const color = linear ? rgb.map(channel => channel ** 2.2) : rgb;
       gl.uniform3fv(gl.getUniformLocation(program, uniform), color);
     }
     return {
@@ -736,7 +748,7 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
         <div class="n-checkout-header bf-n-checkout-header">
           <div class="checkout-header">
             <div class="nn-checkout-header">
-              <div class="section-heading"><strong class="section-heading">Grab My <span class="bravo-checkout-heading-event">Black Friday</span> Bundle</strong></div>
+              <div class="section-heading"><strong class="section-heading">Get My Indicators for Life</strong></div>
               <p class="section-subheading bravo-checkout-subheading">Get my exclusive indicators and join me for live trading in Discord.</p>
               <div class="bf-checkout-countdown">
                 <div class="n-plan-desc-copy" id="bravo-countdown-label">Offer is guaranteed for</div>
@@ -834,7 +846,7 @@ window.addEventListener('DOMContentLoaded', appendQueryParamsToOutboundLinks);
                   <div class="bravo-financing-receipts" aria-hidden="true"></div>
                 </div>
                 <div class="bravo-financing-provider">
-                  <img src="images/clarity-pay-logo-red.svg" width="201" height="38" alt="Clarity Pay">
+                  <img src="images/clarity-pay-logo-3.svg" width="201" height="38" alt="Clarity Pay">
                   <p>Select at checkout</p>
                 </div>
               </section>
@@ -939,7 +951,7 @@ head.appendChild(script);
   box-shadow: none;
 }
 .gold-plan .nn-checkout-button .bf-checkout-button-text {
-  color: #24090d;
+  color: #181818;
   font-weight: 700;
 }
 .gold-plan .nn-checkout-button:focus-visible {
@@ -957,27 +969,26 @@ head.appendChild(script);
   }
 }
 #n-checkout {
-  --checkout-accent: #ff8187;
-  --checkout-accent-light: #ffaca9;
-  --checkout-accent-gradient: linear-gradient(115deg, #e85a63, #f66b72 28%, var(--checkout-accent-light) 55%, var(--checkout-accent) 78%, #df535f);
-  --checkout-divider: #70323b;
-  border-color: #3c2227;
+  --checkout-accent: #73b5ff;
+  --checkout-accent-light: #a1ccff;
+  --checkout-accent-gradient: linear-gradient(115deg, #488cef, #549df9 28%, var(--checkout-accent-light) 55%, var(--checkout-accent) 78%, #4f96f4);
+  --checkout-divider: #2d4d78;
 }
 #n-checkout.section-grid::before {
   background-image:
-    linear-gradient(#ff81870a 1px, transparent 1px),
-    linear-gradient(90deg, #ff81870f 1px, transparent 1px);
+    linear-gradient(#73b5ff0a 1px, transparent 1px),
+    linear-gradient(90deg, #73b5ff0f 1px, transparent 1px);
 }
 #n-checkout ::selection {
-  color: #24090d;
+  color: #071423;
   background: var(--checkout-accent-light);
 }
 .nn-checkout-plan.gold-plan {
   position: relative;
   border: 1px solid transparent;
   background:
-    radial-gradient(ellipse 105% 340px at 70% 0%, #501c24, transparent) padding-box,
-    linear-gradient(165deg, #271116, #1a1013 55%, #261316) padding-box,
+    radial-gradient(ellipse 105% 340px at 70% 0%, #193865, transparent) padding-box,
+    linear-gradient(165deg, #111e32, #10192a 55%, #122037) padding-box,
     var(--checkout-accent-gradient) border-box;
 }
 .gold-plan :is(.n-plan-name-copy, .n-plan-price-copy-copy, .n-off-tag.gold .n-off-tag-text) {
@@ -987,7 +998,7 @@ head.appendChild(script);
   font-weight: 700;
 }
 .gold-plan .n-plan-price-old-copy {
-  color: #c5a3a8;
+  color: #b7b7b7;
 }
 .bravo-bundle-benefits {
   display: grid;
@@ -1017,7 +1028,7 @@ head.appendChild(script);
   margin: 3px 0 0;
   padding: 0;
   list-style: none;
-  color: #e1ccd0;
+  color: #d9d9d9;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.5;
@@ -1040,7 +1051,7 @@ head.appendChild(script);
   width: 100%;
   margin-top: 20px;
   padding: 12px;
-  background: #ff9da519;
+  background: #8bb8ff19;
   border-radius: 16px;
   font-family: Plus Jakarta Sans, sans-serif;
   scroll-margin-top: 88px;
@@ -1053,7 +1064,7 @@ head.appendChild(script);
 }
 .bravo-financing h2 {
   margin: 0 0 7px;
-  color: #fff4f4;
+  color: var(--white);
   font-size: 24px;
   font-weight: 800;
   line-height: 1.08;
@@ -1061,7 +1072,7 @@ head.appendChild(script);
 }
 .bravo-financing p {
   margin: 0;
-  color: #f0cdd0;
+  color: #d9d9d9;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.5;
@@ -1081,20 +1092,20 @@ head.appendChild(script);
 .bravo-financing-receipts::before {
   right: 12%;
   bottom: 11%;
-  border: 1px solid #c76b76;
+  border: 1px solid #6299d8;
   border-radius: 4px;
-  background: linear-gradient(155deg, #943a47, #401923);
+  background: linear-gradient(155deg, #326ba9, #163052);
   transform: rotate(16deg);
 }
 .bravo-financing-receipts::after {
   top: 9%;
   left: 12%;
   background:
-    linear-gradient(#752431, #752431) 28% 27% / 52% 2px no-repeat,
-    linear-gradient(#75243199, #75243199) 21% 42% / 36% 1px no-repeat,
-    linear-gradient(#75243199, #75243199) 30% 55% / 58% 1px no-repeat,
-    linear-gradient(#752431, #752431) 72% 75% / 26% 2px no-repeat,
-    linear-gradient(145deg, #ffe1df, #ff9498 70%, #e16875);
+    linear-gradient(#245389, #245389) 28% 27% / 52% 2px no-repeat,
+    linear-gradient(#24538999, #24538999) 21% 42% / 36% 1px no-repeat,
+    linear-gradient(#24538999, #24538999) 30% 55% / 58% 1px no-repeat,
+    linear-gradient(#245389, #245389) 72% 75% / 26% 2px no-repeat,
+    linear-gradient(145deg, #d6eaff, #80bbff 70%, #5691de);
   mask:
     linear-gradient(#000 0 0) top / 100% calc(100% - 4px) no-repeat,
     radial-gradient(circle at 50% 0, #000 4px, transparent 4.5px) bottom / 8px 4px repeat-x;
@@ -1155,8 +1166,8 @@ head.appendChild(script);
       width: 300px;
       height: 140px;
       background:
-        radial-gradient(ellipse 28% 48% at 68% 50%, #fff0ef, var(--checkout-accent-light) 28%, transparent),
-        radial-gradient(ellipse 44% 49% at 44% 50%, var(--checkout-accent), #ea3e4f60 56%, transparent);
+        radial-gradient(ellipse 28% 48% at 68% 50%, #eaf4ff, var(--checkout-accent-light) 28%, transparent),
+        radial-gradient(ellipse 44% 49% at 44% 50%, var(--checkout-accent), #2574f060 56%, transparent);
       offset-path: inset(0 round 23px);
       offset-rotate: auto;
       animation: gold-plan-border-orbit var(--gold-orbit-duration) linear infinite paused;
@@ -1190,10 +1201,10 @@ head.appendChild(script);
 }
 .gold-plan .n-off-tag.gold {
   border-color: var(--checkout-accent);
-  background-color: #7a242e;
+  background-color: #214b81;
 }
 .gold-plan .bf-time-duration {
-  background-color: #ff9da527;
+  background-color: #8bb8ff27;
 }
 #n-checkout .bf-n-checkout-header {
   container-type: inline-size;
@@ -1201,10 +1212,6 @@ head.appendChild(script);
 #n-checkout .nn-checkout-header > .section-heading > .section-heading {
   display: block;
   font-size: min(4rem, 6cqi);
-}
-.bravo-checkout-heading-event {
-  color: var(--checkout-accent-light);
-  white-space: nowrap;
 }
 @media (max-width: 767px) {
   #n-checkout,
@@ -1219,7 +1226,7 @@ head.appendChild(script);
 }
 .bravo-checkout-subheading {
   max-width: min(100%, 56rem);
-  color: #e1ccd0;
+  color: #d9d9d9;
   font-size: clamp(.875rem, 1.8cqi, 1.125rem);
   text-wrap: balance;
 }
@@ -1233,15 +1240,18 @@ head.appendChild(script);
 }
 #n-checkout .bf-checkout-countdown .countdown-item {
   border: 1px solid var(--checkout-divider);
-  background: #241217;
+  background: #142640;
   padding: 0;
 }
+#n-checkout .bf-checkout-countdown .countdown-fill {
+  background: transparent;
+}
 #n-checkout .bf-checkout-countdown .countdown-label {
-  color: #c5a3a8;
+  color: #a5bad5;
 }
 .bf-gold-offer {
   margin-top: 12px;
-  color: #e1ccd0;
+  color: #d9d9d9;
   font-family: Plus Jakarta Sans, sans-serif;
   font-size: .75rem;
   font-weight: 500;
@@ -1255,14 +1265,14 @@ head.appendChild(script);
   padding: 0 0 6px;
   border: 0;
   background: transparent;
-  color: var(--checkout-accent-light);
+  color: #e6e6e6;
   font: inherit;
   cursor: pointer;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .bf-gold-offer-login:hover {
-  color: #fff0ef;
+  color: var(--white);
 }
 .bf-gold-offer-login:focus-visible {
   outline: 2px solid var(--checkout-accent-light);
@@ -1270,16 +1280,16 @@ head.appendChild(script);
 }
 .bf-checkout-aurora {
   --aurora-background: var(--soft-black);
-  --aurora-base: #ea3e4f;
-  --aurora-highlight: #ff7880;
-  --aurora-stars: #d86872;
+  --aurora-base: #2574f0;
+  --aurora-highlight: #69adff;
+  --aurora-stars: #5b95e4;
   position: absolute;
   inset: auto 0 0;
   z-index: -1;
   height: clamp(620px, 68vw, 960px);
   pointer-events: none;
   opacity: .72;
-  background: radial-gradient(ellipse 66% 57% at 62% 14%, #a22a3c46, transparent);
+  background: radial-gradient(ellipse 66% 57% at 62% 14%, #2259aa52, transparent);
   mask-image: linear-gradient(to bottom, transparent, #000 12% 56%, transparent);
   transform: scaleY(-1);
 }
