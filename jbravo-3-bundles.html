@@ -891,6 +891,10 @@ background: linear-gradient(115deg,
 .new-hero.bf-hero::before {
   content: none;
 }
+:root {
+  --bf-aurora-violet: #7638f4;
+  --bf-aurora-highlight: #cb58ff;
+}
 .new-hero.bf-hero {
   --hero-background: #07070a;
   position: relative;
@@ -907,8 +911,8 @@ background: linear-gradient(115deg,
   pointer-events: none;
 }
 .new-hero.bf-hero > .code-embed-10 > .cp-hero-aurora {
-  --aurora-violet: #7638f4;
-  --aurora-highlight: #cb58ff;
+  --aurora-violet: var(--bf-aurora-violet);
+  --aurora-highlight: var(--bf-aurora-highlight);
   display: block;
   width: 100%;
   height: 100%;
@@ -6315,15 +6319,22 @@ head.appendChild(script);
   --aurora-base: #ee9a31;
   --aurora-highlight: #ffd98a;
   --aurora-stars: #c39b54;
+  --aurora-glow: #90611636;
   position: absolute;
   inset: auto 0 0;
   z-index: -1;
   height: clamp(460px, 52vw, 720px);
   pointer-events: none;
   opacity: .72;
-  background: radial-gradient(ellipse 66% 57% at 62% 14%, #90611636, transparent);
+  background: radial-gradient(ellipse 66% 57% at 62% 14%, var(--aurora-glow), transparent);
   mask-image: linear-gradient(to bottom, transparent, #000 12% 56%, transparent);
   transform: scaleY(-1);
+}
+#subscription-checkout > .bf-checkout-aurora {
+  --aurora-base: var(--bf-aurora-violet);
+  --aurora-highlight: var(--bf-aurora-highlight);
+  --aurora-stars: #7352bf;
+  --aurora-glow: #7638f436;
 }
 .bf-checkout-aurora > .cp-checkout-aurora {
   display: block;
@@ -6344,16 +6355,8 @@ head.appendChild(script);
 }
 </style>
     <script>
-(() => {
-  const checkout = document.querySelector('.bf-n-checkout-header')?.closest('.n-checkout');
-  if (!checkout || checkout.querySelector(':scope > .bf-checkout-aurora')) return;
-  const gold = checkout.querySelector('.nn-checkout-plan.gold-plan');
-  if (gold && !gold.querySelector(':scope > .gold-plan-border')) {
-    const border = document.createElement('span');
-    border.className = 'gold-plan-border';
-    border.setAttribute('aria-hidden', 'true');
-    gold.prepend(border);
-  }
+document.querySelectorAll('#n-checkout, #subscription-checkout').forEach(checkout => {
+  if (checkout.querySelector(':scope > .bf-checkout-aurora')) return;
   const layer = document.createElement('div');
   layer.className = 'bf-checkout-aurora';
   layer.setAttribute('aria-hidden', 'true');
@@ -6636,12 +6639,19 @@ head.appendChild(script);
   }
   reducedMotion.addEventListener('change', updateMotion);
   document.addEventListener('visibilitychange', updateMotion);
-})();
+});
 </script>
     <script>
   (() => {
     const card = document.querySelector('#n-checkout .gold-plan');
-    if (!card || !('IntersectionObserver' in window)) return;
+    if (!card) return;
+    if (!card.querySelector(':scope > .gold-plan-border')) {
+      const border = document.createElement('span');
+      border.className = 'gold-plan-border';
+      border.setAttribute('aria-hidden', 'true');
+      card.prepend(border);
+    }
+    if (!('IntersectionObserver' in window)) return;
     let inView = false;
     const syncMotion = () => card.classList.toggle('is-in-view', inView && !document.hidden);
     const observer = new IntersectionObserver((entries) => {
