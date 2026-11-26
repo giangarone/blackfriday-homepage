@@ -1324,7 +1324,7 @@ background: linear-gradient(115deg,
               </div>
               <div class="bf-gold-offer">
                 <p>Bought a bundle last year?</p>
-                <p>Get up to <span class="bf-gold-offer-amount">$1,000 off</span> Gold Plan.</p>
+                <p>Get up to <span class="bf-gold-offer-amount">$1,000 off</span> Gold Bundle.</p>
               </div>
             </div>
           </div>
@@ -2308,6 +2308,7 @@ text-decoration: underline dotted #b3b3b3;
 
 #subscription-checkout .nn-checkout-plan[data-plan-border] {
   position: relative;
+  border-width: 1px;
   border-color: var(--plan-border-stroke);
   background-color: var(--plan-surface);
 }
@@ -6278,6 +6279,19 @@ head.appendChild(script);
       offset-path: inset(0 round 23px);
       offset-rotate: auto;
       animation: checkout-plan-border-orbit var(--plan-border-duration) linear infinite paused;
+    }
+    /* Keep the bright center on the path as it rounds each corner. */
+    #subscription-checkout .checkout-plan-border::before,
+    #subscription-checkout .checkout-plan-border::after {
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle closest-side,
+        var(--plan-border-core),
+        var(--plan-border-highlight) 22%,
+        var(--plan-border-glow) 42%,
+        var(--plan-border-fade) 66%,
+        transparent);
+      offset-rotate: 0deg;
     }
     .checkout-plan-border::after {
       animation-delay: calc(var(--plan-border-duration) / -2);
