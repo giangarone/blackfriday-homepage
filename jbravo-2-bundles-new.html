@@ -1295,7 +1295,7 @@ background: linear-gradient(115deg,
               <div class="bundle-inclusion-group">
                 <div class="bundle-inclusion-heading">
                   <h4>Lifetime indicators</h4>
-                  <span class="bundle-duration bundle-duration-lifetime">Lifetime</span>
+                  <span class="bundle-duration bundle-duration-lifetime"><img src="images/infinite-basic.svg" width="22" height="10" alt="">Lifetime</span>
                 </div>
                 <p class="bundle-platforms">
                   <span>On</span>
@@ -1314,7 +1314,7 @@ background: linear-gradient(115deg,
               </div>
               <div class="bundle-inclusion-group">
                 <div class="bundle-inclusion-heading">
-                  <h4>VIP MarketStream trading indicators</h4>
+                  <h4>VIP MarketStream Indicators</h4>
                   <span class="bundle-duration">1 month</span>
                 </div>
                 <ul class="bundle-indicators bundle-vip-indicators" role="list">
@@ -1352,6 +1352,9 @@ background: linear-gradient(115deg,
             <div class="nn-plan-head">
               <div class="div-block-432">
                 <div class="n-plan-name-copy">Gold</div>
+                <div class="n-off-tag gold-popularity-badge">
+                  <span class="n-off-tag-text">Most popular</span>
+                </div>
               </div>
               <div class="div-800">
                 <div class="n-plan-price-old-copy">$4,499.00</div>
@@ -1367,7 +1370,7 @@ background: linear-gradient(115deg,
               <div class="bundle-inclusion-group">
                 <div class="bundle-inclusion-heading">
                   <h4>Lifetime indicators</h4>
-                  <span class="bundle-duration bundle-duration-lifetime">Lifetime</span>
+                  <span class="bundle-duration bundle-duration-lifetime"><img src="images/infinite-gold.svg" width="22" height="10" alt="">Lifetime</span>
                 </div>
                 <p class="bundle-platforms">
                   <span>On</span>
@@ -1386,8 +1389,8 @@ background: linear-gradient(115deg,
               </div>
               <div class="bundle-inclusion-group">
                 <div class="bundle-inclusion-heading">
-                  <h4>VIP MarketStream trading indicators</h4>
-                  <span class="bundle-duration bundle-duration-lifetime">Lifetime</span>
+                  <h4>VIP MarketStream Indicators</h4>
+                  <span class="bundle-duration bundle-duration-lifetime"><img src="images/infinite-gold.svg" width="22" height="10" alt="">Lifetime</span>
                 </div>
                 <ul class="bundle-indicators bundle-vip-indicators" role="list">
                   <li><strong>X-Ray Vision</strong> <span class="bundle-vip-tag">VIP</span></li>
@@ -5666,6 +5669,14 @@ head.appendChild(script);
 .gold-plan .n-plan-name-copy {
   font-weight: 700;
 }
+.gold-popularity-badge {
+  padding-block: 4px;
+  border-color: var(--home-gold);
+  background-color: var(--bundle-vip-bg);
+}
+.gold-popularity-badge .n-off-tag-text {
+  color: var(--home-gold-light);
+}
 .checkout-plan-border {
   display: none;
 }
@@ -5790,6 +5801,9 @@ head.appendChild(script);
   white-space: nowrap;
 }
 .bundle-duration-lifetime {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   border-color: var(--bundle-lifetime-border, var(--bundle-divider));
   color: var(--bundle-accent);
 }
