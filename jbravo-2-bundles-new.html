@@ -1319,13 +1319,13 @@ background: linear-gradient(115deg,
                   <span class="bundle-duration">1 month</span>
                 </div>
                 <ul class="bundle-indicators bundle-vip-indicators" role="list">
-                  <li><strong>X-Ray Vision</strong> <span class="bundle-vip-tag">VIP</span></li>
-                  <li><strong>Liquidity Heat Map</strong> <span class="bundle-vip-tag">VIP</span></li>
-                  <li><strong>Flow Print Blocks</strong> <span class="bundle-vip-tag">VIP</span></li>
-                  <li><strong>Large Trade Detector</strong> <span class="bundle-vip-tag">VIP</span></li>
-                  <li><strong>Absorption</strong> <span class="bundle-vip-tag">VIP</span></li>
-                  <li><strong>Exhaustion</strong> <span class="bundle-vip-tag">VIP</span></li>
-                  <li><strong>Initiative</strong> <span class="bundle-vip-tag">VIP</span></li>
+                  <li><strong>X-Ray Vision</strong></li>
+                  <li><strong>Liquidity Heat Map</strong></li>
+                  <li><strong>Flow Print Blocks</strong></li>
+                  <li><strong>Large Trade Detector</strong></li>
+                  <li><strong>Absorption</strong></li>
+                  <li><strong>Exhaustion</strong></li>
+                  <li><strong>Initiative</strong></li>
                 </ul>
               </div>
               <dl class="bundle-included-terms">
@@ -1390,13 +1390,13 @@ background: linear-gradient(115deg,
                   <span class="bundle-duration bundle-duration-lifetime">Lifetime</span>
                 </div>
                 <ul class="bundle-indicators bundle-vip-indicators" role="list">
-                  <li><strong>X-Ray Vision</strong> <span class="bundle-vip-tag">VIP</span></li>
-                  <li><strong>Liquidity Heat Map</strong> <span class="bundle-vip-tag">VIP</span></li>
-                  <li><strong>Flow Print Blocks</strong> <span class="bundle-vip-tag">VIP</span></li>
-                  <li><strong>Large Trade Detector</strong> <span class="bundle-vip-tag">VIP</span></li>
-                  <li><strong>Absorption</strong> <span class="bundle-vip-tag">VIP</span></li>
-                  <li><strong>Exhaustion</strong> <span class="bundle-vip-tag">VIP</span></li>
-                  <li><strong>Initiative</strong> <span class="bundle-vip-tag">VIP</span></li>
+                  <li><strong>X-Ray Vision</strong></li>
+                  <li><strong>Liquidity Heat Map</strong></li>
+                  <li><strong>Flow Print Blocks</strong></li>
+                  <li><strong>Large Trade Detector</strong></li>
+                  <li><strong>Absorption</strong></li>
+                  <li><strong>Exhaustion</strong></li>
+                  <li><strong>Initiative</strong></li>
                 </ul>
               </div>
               <dl class="bundle-included-terms">
@@ -5605,7 +5605,7 @@ head.appendChild(script);
   box-shadow: none;
 }
 .gold-plan .nn-checkout-button .bf-checkout-button-text {
-  color: #181818;
+  color: var(--home-gold-ink);
   font-weight: 700;
 }
 .bundle-plans .nn-checkout-button:focus-visible {
@@ -5638,13 +5638,11 @@ head.appendChild(script);
 .nn-checkout-plan.gold-plan {
   --home-gold: #fac66b;
   --home-gold-light: #ffd98a;
+  --home-gold-ink: #181818;
   --home-gold-gradient: linear-gradient(115deg, #b8651a, #ee9a31 28%, #ffd98a 55%, #fac66b 78%, #d07c22);
-  --bundle-accent: #ffd680;
   --bundle-divider: #624c27;
   --bundle-muted: #d1c3ae;
-  --bundle-lifetime-border: var(--home-gold);
   --bundle-check-icon: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M13.3333%204L5.99996%2011.3333L2.66663%208%22%20stroke%3D%22%23FAC66B%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
-  --bundle-vip-bg: #fac66b33;
   --plan-border-core: #fff9e9;
   --plan-border-highlight: var(--home-gold-light);
   --plan-border-glow: var(--home-gold);
@@ -5664,11 +5662,9 @@ head.appendChild(script);
 }
 .gold-popularity-badge {
   padding-block: 4px;
-  border-color: var(--home-gold);
-  background-color: var(--bundle-vip-bg);
 }
 .gold-popularity-badge .n-off-tag-text {
-  color: var(--home-gold-light);
+  color: inherit;
 }
 .checkout-plan-border {
   display: none;
@@ -5800,7 +5796,6 @@ head.appendChild(script);
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  border-color: var(--bundle-lifetime-border, var(--bundle-divider));
   color: #fff;
 }
 .bundle-duration-lifetime img {
@@ -5865,11 +5860,17 @@ head.appendChild(script);
   margin-inline-start: 3px;
   padding: 1px 5px;
   border-radius: 6px;
-  background-color: var(--bundle-vip-bg, #d8d8d833);
+  background-color: #d8d8d833;
   color: var(--bundle-accent);
   font-size: .6875rem;
   font-weight: 700;
   vertical-align: 1px;
+}
+.gold-plan :is(.gold-popularity-badge, .bundle-duration, .bundle-vip-tag) {
+  border-color: var(--home-gold);
+  background-color: var(--home-gold);
+  background-image: var(--home-gold-gradient);
+  color: var(--home-gold-ink);
 }
 .bundle-included-terms {
   margin: 18px 0 0;
