@@ -1274,6 +1274,13 @@ background: linear-gradient(115deg,
               <span class="tab-save">70% off</span>
             </a>
           </nav>
+          <div class="bundle-platforms">
+            <p><strong>Lifetime access</strong> to all indicators included in your bundle on both platforms.</p>
+            <div class="bundle-platforms-logos">
+              <img src="images/tradingview-logo.svg" width="755" height="129" alt="TradingView">
+              <img src="images/marketstream-logo.svg" width="1897" height="208" alt="MarketStream">
+            </div>
+          </div>
           <div id="monthly-yearly" class="anchor-link monthly-yearly-anchor"></div>
         </div>
         <div class="n-checkout-plans">
@@ -6029,6 +6036,37 @@ head.appendChild(script);
 }
 #n-checkout .plan-pack {
   grid-row-gap: 8px;
+}
+.bundle-platforms {
+  width: 100%;
+  margin-top: 20px;
+  color: var(--text-muted);
+  font-family: Plus Jakarta Sans, sans-serif;
+  font-size: .875rem;
+  line-height: 1.5;
+  text-align: center;
+}
+.bundle-platforms p {
+  margin: 0;
+  text-wrap: balance;
+}
+.bundle-platforms strong {
+  color: var(--white);
+}
+.bundle-platforms-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 10px;
+}
+.bundle-platforms-logos img {
+  display: block;
+  width: min(42%, 124px);
+  height: auto;
+}
+.bundle-platforms-logos img + img {
+  width: min(46%, 136px);
 }
 .bundle-features-toggle:not([hidden]) {
   display: flex;
